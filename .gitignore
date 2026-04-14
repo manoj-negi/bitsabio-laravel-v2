@@ -1,0 +1,4 @@
+.env
+/vendor
+/beta
+composer.lock
