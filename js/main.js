@@ -1,36 +1,12 @@
-AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
-});
 
 // Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-const lightIcon = document.getElementById('lightIcon');
-const darkIcon = document.getElementById('darkIcon');
-const body = document.body;
+const darkModeToggle = document?.getElementById('darkModeToggle');
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    body.classList.add('dark-mode');
-    lightIcon.classList.add('d-none');
-    darkIcon.classList.remove('d-none');
-}
 
 // Dark mode toggle functionality
 darkModeToggle.addEventListener('click', function() {
-    body.classList.toggle('dark-mode');
-    
-    if (body.classList.contains('dark-mode')) {
-        lightIcon.classList.add('d-none');
-        darkIcon.classList.remove('d-none');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        lightIcon.classList.remove('d-none');
-        darkIcon.classList.add('d-none');
-        localStorage.setItem('theme', 'light');
-    }
+   
+
 });
 
 // Smooth scroll for navigation links
