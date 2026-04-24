@@ -148,4 +148,26 @@
         </div>
     </section>
 
+     <!-- Final CTA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-banner-2">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="text-start me-md-4" data-aos="fade-up">
+                            <h2>Stay Updated with Latest Tech Insights</h2>
+                            <p class="text-white mb-3">Get new articles, tutorials, and industry updates directly in your inbox. No noise, just precision.</p> 
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center">
+                            <input type="email" class="email-form-control me-3" placeholder="Enter your email" required="" >
+                            <a href="#work" class="btn btn-white">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
   @endsection

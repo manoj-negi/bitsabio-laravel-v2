@@ -5,108 +5,118 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 data-aos="fade-up">Let's Build Something Intelligent</h1>
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h1 data-aos="fade-up">Let’s Build <span class="color-liner-004ED0">Something Great</span> Together</h1>
                     <p data-aos="fade-up" data-aos-delay="100">
-                        Schedule a free consultation to discuss your AI project and explore solutions
+                        Have a project, idea, or question? Our team is here to help you with AI solutions, development, and training.
                     </p>
+                   <div class="hero-badge aos-init aos-animate" data-aos="fade-down">
+                        <i class="bi bi-circle-fill" style="color: var(--gradient-blue); font-size: 7px;"></i>
+                        <span>Available for partnerships</span>
+                    </div>
+
                 </div>
-            </div>  
+                <div class="col-md-5">
+                    <div class="contact-hero-img">
+                        <img src="./images/contact.png" alt="contact-hero-img">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Options -->
-    <section class="py-5">
+    <section class="section-contact-options py-5">
         <div class="container">
             <div class="contact-options">
                 <div class="contact-option-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
+                    <div class="icon-box">
+                        <i class="bi bi-telephone text-primary"></i>
                     </div>
-                    <h3>Free Consultation</h3>
-                    <p>30-minute strategy session to discuss your AI goals and potential solutions</p>
-                </div>
-                
-                <div class="contact-option-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3>AI Project Discussion</h3>
-                    <p>Technical deep-dive into requirements, architecture, and implementation roadmap</p>
+                    <h3>Call Us</h3>
+                    <a href="tel:+917717320084">+91 7717320084</a>
+                    <p>Available Mon-Fri, 9am-8pm</p>
                 </div>
                 
                 <div class="contact-option-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
+                    <div class="icon-box">
+                        <i class="bi bi-envelope text-primary"></i>
                     </div>
-                    <h3>Enterprise Inquiry</h3>
-                    <p>Custom solutions for large-scale deployments with dedicated support teams</p>
+                    <h3>Email Us</h3>
+                    <a href="e-mil">contact@aidatalab.com</a>
+                    <p>We respond within 24 hours</p>
+                </div>
+
+                <div class="contact-option-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box">
+                        <i class="bi bi-geo-alt text-primary"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>D-229, Phase 8b,</p>
+                    <p>Industrial Area Mohali, 160071</p>
+                </div>
+
+                <div class="contact-option-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box">
+                        <i class="bi bi-chat-left-dots text-primary"></i>
+                    </div>
+                    <h3>Live Chat</h3>
+                    <a href="https://wa.me/917717320084" target="_blank" >Open WhatsApp</a>
+                    <p>Available for immediate assistance.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Form -->
-    <section class="py-5" style="background-color: var(--color-surface);">
+    <section id="contact-page-form" class="py-5" style="background-color: var(--color-surface);">
         <div class="container">
             <div class="">
-                <h2 class="text-center mb-4">Send Us a Message</h2>
-
-
                 <div class="row align-items-center">
                     <div class="col-md-5">
-                        <div class="feature-highlight" data-aos="fade-up" data-aos-delay="100">
-                            <div class="feature-card-horizontal">
+                        <div class="why-partner-us">
+                            <h2 class="mb-4">Send Us a Message</h2>
+                            <div class="innovators-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                        <polyline points="22,6 12,13 2,6"></polyline>
-                                    </svg>
+                                    <i class="bi bi-lightning-charge-fill text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4>Email</h4>
-                                    <p>contact@aidatalab.com</p>
+                                    <h5>Quick Response</h5>
+                                    <p>We value your time and aim for a 24-hour turnaround on all inquiries.</p>
                                 </div>
                             </div>
-                            
-                            <div class="feature-card-horizontal">
+
+                            <div class="innovators-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                        <rect x="2" y="9" width="4" height="12"></rect>
-                                        <circle cx="4" cy="4" r="2"></circle>
-                                    </svg>
+                                    <i class="bi bi-person-fill-gear text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4>LinkedIn</h4>
-                                    <p>Connect with our team</p>
+                                    <h5>Expert Support</h5>
+                                    <p>Direct access to our lead engineers and designers, no middle layers.</p>
                                 </div>
                             </div>
-                            
-                            <div class="feature-card-horizontal">
+
+                            <div class="innovators-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                    </svg>
+                                    <i class="bi bi-stars text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4>GitHub</h4>
-                                    <p>Explore our open source projects</p>
+                                    <h5>Custom Solutions</h5>
+                                    <p>No templates—everything is architected for your specific organizational goals.</p>
                                 </div>
                             </div>
+
+                            <div class="innovators-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                <div class="icon">
+                                    <i class="bi bi-eye-fill text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5>Transparent Process</h5>
+                                    <p>Clear, honest communication from the very first discovery call to launch.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-md-7">
@@ -284,28 +294,180 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <h2 class="text-center mb-5" data-aos="fade-up">Frequently Asked Questions</h2>
-                    
-                    <div class="problem-grid">
-                        <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
-                            <h4>What's the typical project timeline?</h4>
-                            <p>MVPs typically take 4-8 weeks. Full production systems range from 3-6 months depending on complexity.</p>
-                        </div>
-                        
-                        <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
-                            <h4>Do you work with startups?</h4>
-                            <p>Yes! We've helped dozens of startups build their AI-powered MVPs and scale to production.</p>
-                        </div>
-                        
-                        <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
-                            <h4>What technologies do you use?</h4>
-                            <p>We're tech-agnostic and choose the best tools for your needs—OpenAI, Claude, LangChain, AWS, GCP, and more.</p>
-                        </div>
-                        
-                        <div class="problem-card" data-aos="fade-up" data-aos-delay="400">
-                            <h4>Do you offer ongoing support?</h4>
-                            <p>Yes, we provide maintenance packages, monitoring, and continuous improvement services after deployment.</p>
+                    <div class="container py-5">
+                        <div class="accordion custom-accordion" id="faqAccordion">
+
+                            <!-- Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How quickly will you respond?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                    We pride ourselves on our responsiveness. Our standard is to get back to you within one business day, though usually, it’s even faster.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Do you offer custom training for corporate teams?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Yes, we provide tailored corporate training programs based on your team's needs and goals.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Can I schedule a free 30-minute discovery call?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Absolutely! You can book a free discovery call through our contact page or WhatsApp.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                What services does BitSabio offer?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                We provide end-to-end IT solutions including web development, custom software development, UI/UX design, API integrations, and performance optimization.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                Do you build custom web applications?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Yes, we specialize in building scalable, custom web applications tailored to your business requirements using modern technologies like React, Next.js, and Laravel.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                How long does it take to complete a project?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Project timelines depend on complexity and requirements. A basic website may take 1–2 weeks, while larger custom platforms can take several weeks or months.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 7 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                Do you offer website maintenance and support?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Yes, we provide ongoing maintenance, updates, security monitoring, and performance optimization to ensure your website runs smoothly.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 8 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                Can you improve my website’s speed and SEO?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Absolutely. We optimize Core Web Vitals, improve loading speed, fix technical SEO issues, and enhance overall performance to boost search rankings.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 9 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                Do you work with startups or only established businesses?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                We work with both startups and established businesses. Whether you're launching a new idea or scaling an existing product, we can help.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 10 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                What technologies do you use?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                We use modern technologies such as React, Next.js, Angular, Node.js, Laravel, and cloud platforms to build scalable and high-performance solutions.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 11 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                Do you provide UI/UX design services?
+                                </button>
+                            </h2>
+                            <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                Yes, we design intuitive and user-friendly interfaces that enhance user experience and increase engagement.
+                                </div>
+                            </div>
+                            </div>
+
+                            <!-- Item 12 -->
+                            <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+                                How can I get started with BitSabio?
+                                </button>
+                            </h2>
+                            <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                You can contact us via our website, WhatsApp, or email. Share your requirements, and our team will guide you through the next steps.
+                                </div>
+                            </div>
+                            </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

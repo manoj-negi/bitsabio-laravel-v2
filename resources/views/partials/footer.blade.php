@@ -5,39 +5,27 @@
                 <!-- Brand Column -->
                 <div class="col-lg-4">
                     <div class="footer-brand gradient-text">
-                        <a href="#">
+                        <a href="/">
                             <img src="{{ asset('images/bitsabio_logo.png') }}">
                         </a>
                     </div>
                     <p class="footer-description">
                         We build intelligent web applications and AI-powered solutions that help businesses grow and succeed in the digital age.
                     </p>
-                    <div class="footer-contact">
-                        <a href="mailto:contact@bitsabio.in">
-                            <i class="bi bi-envelope"></i>
-                            contact@bitsabio.in
-                        </a>
-                        <a href="tel:+1234567890">
-                            <i class="bi bi-telephone"></i>
-                            +91 7717320084
-                        </a>
-                        <a href="#">
-                            <i class="bi bi-geo-alt"></i>
-                            D-229 Prosperity Arcade, Phase 8b,<br/> Industrial Area Mohali, 160071
-                        </a>
-                    </div>
+                  
                 </div>
 
+                <div class="col-lg-1 col-md-4"></div>
                 <!-- Services Column -->
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Services</h5>
                     <ul class="footer-links">
-                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">Web/App Development</a></li>
                         <li><a href="#solutions">AI Solutions</a></li>
                         <li><a href="#services">UI/UX Design</a></li>
                         <li><a href="#services">Digital Marketing</a></li>
-                        <li><a href="#services">Performance</a></li>
-                        <li><a href="#services">Mobile Development</a></li>
+                        <!-- <li><a href="#services">Performance</a></li> -->
+                        <!-- <li><a href="#services">Mobile Development</a></li> -->
                     </ul>
                 </div>
 
@@ -46,42 +34,40 @@
                     <h5 class="footer-title">Company</h5>
                     <ul class="footer-links">
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#process">Our Process</a></li>
-                        <li><a href="#work">Case Studies</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <!-- <li><a href="#process">Our Process</a></li> -->
+                        <!-- <li><a href="#work">Case Studies</a></li> -->
+                        <!-- <li><a href="#">Careers</a></li> -->
                         <li><a href="#">Blogs</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Resources Column -->
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="footer-title">Resources</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                    </ul>
-                </div>
+            
 
                 <!-- Newsletter Column -->
-                <div class="col-lg-2 col-md-12">
-                    <h5 class="footer-title">Newsletter</h5>
-                    <p class="text-secondary small mb-3">Stay updated with our latest news and offers.</p>
-                    <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Your email" style="background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-primary);">
-                    </div>
-                    <button class="btn btn-gradient w-100 btn-sm">Subscribe</button>
+                <div class="col-lg-3 col-md-12">
+                    <h5 class="footer-title">Contact</h5>
+                        <div class="footer-contact">
+                            <a href="mailto:contact@bitsabio.in">
+                                <i class="bi bi-envelope"></i>
+                                contact@bitsabio.in
+                            </a>
+                            <a href="tel:+1234567890">
+                                <i class="bi bi-telephone"></i>
+                                +91 7717320084
+                            </a>
+                            <a href="#">
+                                <i class="bi bi-geo-alt"></i>
+                                D-229 Prosperity Arcade, Phase 8b,<br/> Industrial Area Mohali, 160071
+                            </a>
+                        </div>
                 </div>
             </div>
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p class="text-secondary small mb-0">
-                    © 2025 BitSabio. All rights reserved.
+                    © 2026 BitSabio. All rights reserved.
                 </p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/company/bitsabio-pvt-ltd" class="social-link">
@@ -90,9 +76,9 @@
                     <a href="#" class="social-link">
                         <i class="bi bi-twitter"></i>
                     </a>
-                    <a href="#" class="social-link">
+                    <!-- <a href="#" class="social-link">
                         <i class="bi bi-github"></i>
-                    </a>
+                    </a> -->
                     <a href="https://www.instagram.com/bitsabio.in" class="social-link">
                         <i class="bi bi-instagram"></i>
                     </a>

@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI-First Digital Agency - Web Development, AI Solutions, UI/UX Design, SEO & Digital Growth Services">
-    <title>YourBrand - AI-First Digital Agency</title>
+    <title>BitSabio - AI-First Digital Agency</title>
 
     <!-- CSS -->
+    <!-- Font CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/slick.css') }}" rel="stylesheet">
     <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -26,13 +31,13 @@
     @include('partials.footer')
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="{{ asset('js/slick.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -147,38 +152,38 @@ document.addEventListener('DOMContentLoaded', function () {
     /* =============================
        SCROLL TAB AUTO SWITCH
     ============================= */
-    const tabs = [
-        "#v-pills-webDevlopment-tab",
-        "#v-pills-machine-tab",
-        "#v-pills-branding-tab",
-        "#v-pills-seo-tab",
-        "#v-pills-performance-tab",
-        "#v-pills-mobileFirst-tab"
-    ];
+    // const tabs = [
+    //     "#v-pills-webDevlopment-tab",
+    //     "#v-pills-machine-tab",
+    //     "#v-pills-branding-tab",
+    //     "#v-pills-seo-tab",
+    //     "#v-pills-performance-tab",
+    //     "#v-pills-mobileFirst-tab"
+    // ];
 
-    const section = document.querySelector("#services");
+    // const section = document.querySelector("#services");
 
-    if (section) {
-        window.addEventListener("scroll", () => {
+    // if (section) {
+    //     window.addEventListener("scroll", () => {
 
-            const scrollTop = window.scrollY;
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
+    //         const scrollTop = window.scrollY;
+    //         const sectionTop = section.offsetTop;
+    //         const sectionHeight = section.offsetHeight;
 
-            if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
+    //         if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
 
-                const relativeScroll = scrollTop - sectionTop;
-                const stepHeight = sectionHeight / tabs.length;
-                const index = Math.floor(relativeScroll / stepHeight);
+    //             const relativeScroll = scrollTop - sectionTop;
+    //             const stepHeight = sectionHeight / tabs.length;
+    //             const index = Math.floor(relativeScroll / stepHeight);
 
-                const tab = document.querySelector(tabs[index]);
+    //             const tab = document.querySelector(tabs[index]);
 
-                if (tab && !tab.classList.contains("active")) {
-                    new bootstrap.Tab(tab).show();
-                }
-            }
-        });
-    }
+    //             if (tab && !tab.classList.contains("active")) {
+    //                 new bootstrap.Tab(tab).show();
+    //             }
+    //         }
+    //     });
+    // }
 
 });
 </script>

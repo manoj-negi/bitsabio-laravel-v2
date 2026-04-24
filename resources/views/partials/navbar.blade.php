@@ -1,7 +1,7 @@
  <!-- ========== NAVBAR ========== -->
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand gradient-text" href="#">
+            <a class="navbar-brand gradient-text" href="/">
                 <!-- <img src="./images/bitsabio_logo.png" alt="logo"> -->
                 <img src="{{ asset('images/bitsabio_logo.png') }}" alt="logo">
             </a>
