@@ -35,7 +35,7 @@
                         <i class="bi bi-telephone text-primary"></i>
                     </div>
                     <h3>Call Us</h3>
-                    <a href="tel:+917717320084">+91 7717320084</a>
+                    <a href="tel:+9872100824">+91 9872100824</a>
                     <p>Available Mon-Fri, 9am-8pm</p>
                 </div>
                 
@@ -44,7 +44,7 @@
                         <i class="bi bi-envelope text-primary"></i>
                     </div>
                     <h3>Email Us</h3>
-                    <a href="e-mil">contact@aidatalab.com</a>
+                    <a href="e-mil">contact@bitsabio.in</a>
                     <p>We respond within 24 hours</p>
                 </div>
 
@@ -62,7 +62,7 @@
                         <i class="bi bi-chat-left-dots text-primary"></i>
                     </div>
                     <h3>Live Chat</h3>
-                    <a href="https://wa.me/917717320084" target="_blank" >Open WhatsApp</a>
+                    <a href="https://wa.me/9872100824" target="_blank" >Open WhatsApp</a>
                     <p>Available for immediate assistance.</p>
                 </div>
             </div>
