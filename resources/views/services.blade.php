@@ -468,7 +468,7 @@
                 <h2>Ready to Build Scalable AI Solutions?</h2>
                 <p class="text-white mb-3">Let's discuss your challenges and find the right AI solution for your business</p>
                 <a href="{{url('/contact')}}" class="btn btn-primary btn-lg">
-                    Talk to an AI Expert
+                    Talk to an Expert
                 </a>
                 <a href="{{url('/portfolio')}}" class="btn btn-secondary btn-lg ms-3">
                     View Our Work

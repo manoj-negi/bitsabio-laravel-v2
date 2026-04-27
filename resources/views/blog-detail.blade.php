@@ -8,18 +8,22 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <span class="blog-category" data-aos="fade-down">RAG & LLMs</span>
-                    <h1 data-aos="fade-up" data-aos-delay="100">Building Production-Ready RAG Systems</h1>
+                    <span class="blog-category" data-aos="fade-down">{{ $blog->category }}</span>
+                    {{-- <h1 data-aos="fade-up" data-aos-delay="100">Building Production-Ready RAG Systems</h1> --}}
+                    <h1 data-aos="fade-up" data-aos-delay="100">{{ $blog->title }}</h1>
+                    
                     
                     <div class="blog-detail-img mt-3">
                         <img src="./images/futuristic-ai-chip-circuit-board.jpg" alt="futuristic-ai-chip-circuit-board">
                     </div>
                     <div class="blog-detail-meta" data-aos="fade-up" data-aos-delay="200">
                         <span>By Sarah Chen</span>
+                        <span>{{$blog->author }} </span>au
+
                         <span>·</span>
                         <span>January 28, 2026</span>
                         <span>·</span>
-                        <span>8 min read</span>
+                        <span>{{ $blog->read_time }} </span>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('home');
@@ -20,20 +20,36 @@ Route::get('/portfolio', function () {
     return view('portfolio');
 });
 
-Route::get('/blogs', function () {
-    return view('blogs');
-});
-
-// Route::view('/blogs','blogs');
 
 Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/blogs', function () {
 
-Route::get('/blog-detail', function () {
-    return view('blog-detail');
+    $blogs = DB::table('blogs')
+        ->where('status', 'published') 
+        ->latest()
+        ->get();
+
+    return view('blogs', compact('blogs'));
 });
+
+
+Route::get('/blog/{slug}', function ($slug) {
+
+    $blog = DB::table('blogs')
+        ->where('slug', $slug)
+        ->where('status', 'published') 
+        ->first();
+
+    if (!$blog) {
+        abort(404);
+    }
+
+    return view('blog-detail', compact('blog'));
+});
+
 
 // Services start  
 Route::get('/services/ai', function () {

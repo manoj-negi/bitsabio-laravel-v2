@@ -160,7 +160,15 @@
                                         Please enter a valid email
                                     </div>
                                 </div>
-
+                                
+                                <!-- Contact Number -->
+                                <div class="mb-3">
+                                    <label for="number" class="form-label">Contact Number *</label>
+                                    <input type="number" name="contact_number" id="contact_number" class="form-control" required>
+                                    <div class="invalid-feedback">
+                                        Please enter contact number
+                                    </div>
+                                </div>
                              
                                 <!-- Project Type -->
                                 <div class="mb-3">
