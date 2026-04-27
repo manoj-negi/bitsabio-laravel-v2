@@ -52,7 +52,7 @@
                                 <i class="bi bi-envelope"></i>
                                 contact@bitsabio.in
                             </a>
-                            <a href="tel:+1234567890">
+                            <a href="tel:+ +917717320084">
                                 <i class="bi bi-telephone"></i>
                                 +91 7717320084
                             </a>

@@ -35,7 +35,9 @@
                         <i class="bi bi-telephone text-primary"></i>
                     </div>
                     <h3>Call Us</h3>
-                    <a href="tel:+9872100824">+91 9872100824</a>
+                    <a href="tel:+919872100824">+91 9872100824</a>
+                    <a href="tel:+917717320084">+91 7717320084</a>
+
                     <p>Available Mon-Fri, 9am-8pm</p>
                 </div>
                 
@@ -62,7 +64,7 @@
                         <i class="bi bi-chat-left-dots text-primary"></i>
                     </div>
                     <h3>Live Chat</h3>
-                    <a href="https://wa.me/9872100824" target="_blank" >Open WhatsApp</a>
+                    <a href="https://wa.me/+91 7717320084" target="_blank" >Open WhatsApp</a>
                     <p>Available for immediate assistance.</p>
                 </div>
             </div>
@@ -159,12 +161,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Company -->
-                                <div class="mb-3">
-                                    <label for="company" class="form-label">Company</label>
-                                    <input type="text" name="company" id="company" class="form-control">
-                                </div>
-
+                             
                                 <!-- Project Type -->
                                 <div class="mb-3">
                                     <label for="projectType" class="form-label">Project Type *</label>
