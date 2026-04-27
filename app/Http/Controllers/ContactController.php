@@ -37,7 +37,7 @@ class ContactController extends Controller
         Project: {$data['project_type']}\n
         Message: {$data['message']}",
         function ($msg) {
-            $msg->to('chettrisahil254@gmail.com')
+            $msg->to('bitvistara@gmail.com')
                 ->subject('New Contact Message');
         }
     );
