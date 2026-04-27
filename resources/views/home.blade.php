@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-1.png" alt="">
+                                <img src="./images/slide-1.png" alt="slide1">
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-2.png" alt="">
+                                <img src="./images/slide-2.png" alt="slide2">
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-3.png" alt="">
+                                <img src="./images/slide-3.png" alt="slide3">
                             </div>
                         </div>
                     </div>
@@ -163,61 +163,61 @@
             <div class="autoplay powered-by">
 
                 <div class="powered-by-icon">
-                    <img src="./images/icons/aws (1).svg" alt="">
+                    <img src="./images/icons/aws (1).svg" alt="aws">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/bootstrap (1).svg" alt="">
+                    <img src="./images/icons/bootstrap (1).svg" alt="bootstrap">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/laravel (1).svg" alt="">
+                    <img src="./images/icons/laravel (1).svg" alt="laravel">
                 </div>
                  <div class="powered-by-icon">
-                    <img src="./images/icons/adobe.svg" alt="">
+                    <img src="./images/icons/adobe.svg" alt="adobe">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/astro-icon-dark.svg" alt="">
+                    <img src="./images/icons/astro-icon-dark.svg" alt="astro">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/solidjs.svg" alt="">
+                    <img src="./images/icons/solidjs.svg" alt="solidjs">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/svelte.svg" alt="">
+                    <img src="./images/icons/svelte.svg" alt="svelte">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/mailchimp (1).svg" alt="">
+                    <img src="./images/icons/mailchimp (1).svg" alt="mailchimp">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/mongodb (1).svg" alt="">
+                    <img src="./images/icons/mongodb (1).svg" alt="mongodb">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/nodejs (1).svg" alt="">
+                    <img src="./images/icons/nodejs (1).svg" alt="nodejs">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/react.svg" alt="">
+                    <img src="./images/icons/react.svg" alt="react">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tailwind-css (1).svg" alt="">
+                    <img src="./images/icons/tailwind-css (1).svg" alt="tailwind">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/blender.svg" alt="">
+                    <img src="./images/icons/blender.svg" alt="blender">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_2 (1) (1).png" alt="">
+                    <img src="./images/icons/tech_logo_2 (1) (1).png" alt="tech_logo_2">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_3 (1).png" alt="">
+                    <img src="./images/icons/tech_logo_3 (1).png" alt="tech_logo_3">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/figma.svg" alt="">
+                    <img src="./images/icons/figma.svg" alt="figma">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_7 (1).png" alt="">
+                    <img src="./images/icons/tech_logo_7 (1).png" alt="tech_logo_7">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tensorflow (1).svg" alt="">
+                    <img src="./images/icons/tensorflow (1).svg" alt="tensorflow">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/zapier (1).svg" alt="">
+                    <img src="./images/icons/zapier (1).svg" alt="zapier">
                 </div>
             </div>
         </div>
@@ -303,7 +303,7 @@
                                 <div class="tab-pane fade show active" id="v-pills-webDevlopment" role="tabpanel" aria-labelledby="v-pills-webDevlopment-tab">
                                     <div class="help-build-wrap">
                                         <div class="build-service text-center">
-                                            <img src="./images/purple-tech-modern.png" alt="">
+                                            <img src="./images/purple-tech-modern.png" alt="purple-tech-modern">
                                         </div>
                                         <h3 class="service-title">We don’t just build websites <br> we engineer digital experiences that scale with your ambition.</h3>
                                         <p class="service-description">From idea to deployment, we build high-performance web platforms focused on speed, scalability, and growth.
@@ -316,7 +316,7 @@
                                 <div class="tab-pane fade" id="v-pills-machine" role="tabpanel" aria-labelledby="v-pills-machine-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/ai-powerd.png" alt="">
+                                            <img src="./images/ai-powerd.png" alt="ai-powerd">
                                         </div>
                                         <h3 class="service-title">Turn your data into decisions. Turn automation into advantage.</h3>
                                         <p class="service-description">We design intelligent systems that reduce manual work, predict outcomes, and streamline business operations.
@@ -329,7 +329,7 @@ Our custom ML models and RAG-based systems ensure scalable, accurate, and future
                                 <div class="tab-pane fade" id="v-pills-branding" role="tabpanel" aria-labelledby="v-pills-branding-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/uiux.png" alt="">
+                                            <img src="./images/uiux.png" alt="uiux">
                                         </div>
                                         <h3 class="service-title">Design that speaks. Experiences that convert.</h3>
                                         <p class="service-description">We blend creativity with strategy to craft digital interfaces users love and brands are proud of.
@@ -342,7 +342,7 @@ Our brand identity and visual systems ensure consistency, clarity, and lasting i
                                 <div class="tab-pane fade" id="v-pills-seo" role="tabpanel" aria-labelledby="v-pills-seo-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/seo.png" alt="">
+                                            <img src="./images/seo.png" alt="seo">
                                         </div>
                                         <h3 class="service-title">Visibility is power. Growth is strategy.</h3>
                                         <p class="service-description">We position your brand where it matters — at the top of search results and in front of the right audience.
@@ -355,7 +355,7 @@ Our data-driven campaign insights ensure smarter decisions, better performance, 
                                 <div class="tab-pane fade" id="v-pills-performance" role="tabpanel" aria-labelledby="v-pills-performance-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/performance.png" alt="">
+                                            <img src="./images/performance.png" alt="performance">
                                         </div>
                                         <h3 class="service-title">Speed isn’t a feature — it’s a competitive edge.</h3>
                                         <p class="service-description">We optimize every layer of your digital product for fast, secure, and seamless performance.
@@ -368,7 +368,7 @@ Our security hardening and continuous monitoring keep your platform stable, prot
                                 <div class="tab-pane fade" id="v-pills-mobileFirst" role="tabpanel" aria-labelledby="v-pills-mobileFirst-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/mobile-first.png" alt="">
+                                            <img src="./images/mobile-first.png" alt="mobile-first">
                                         </div>
                                         <h3 class="service-title">We don’t just build websites <br> we engineer digital experiences that scale with your ambition.</h3>
                                         <p class="service-description">From idea to deployment, we build high-performance web platforms for speed, scalability, and long-term growth.
@@ -612,7 +612,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
                 </div>
                 <div class="col-md-5">
                     <div class="student-img text-center">
-                        <img src="./images/sweet-friendly-young-student.png" alt="">
+                        <img src="./images/sweet-friendly-young-student.png" alt="sweet-friendly-young-student">
                     </div>
                 </div>
             </div>

@@ -82,11 +82,11 @@
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_2 (1) (1).png') }}" alt="">
+                <img src="{{ asset('images/icons/tech_logo_2 (1) (1).png') }}" alt="tech_logo_2">
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_3 (1).png') }}" alt="">
+                <img src="{{ asset('images/icons/tech_logo_3 (1).png') }}" alt="tech_logo_3">
             </div>
 
             <div class="powered-by-icon">
@@ -94,7 +94,7 @@
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_7 (1).png') }}" alt="">
+                <img src="{{ asset('images/icons/tech_logo_7 (1).png') }}" alt="tech_logo_7">
             </div>
 
             <div class="powered-by-icon">
@@ -338,7 +338,7 @@ $services = [
                     <div class="glass-card p-4 h-100">
 
                     <div class="service-icon icon-clean mb-3">
-                        <img src="{{ asset('images/icons/' . $technology['image']) }}" alt="" width="40">
+                        <img src="{{ asset('images/icons/' . $c['image']) }}" alt="tech_logo_7" width="40">
                     </div>
 
                         <h4 class="fw-bold mb-3">
