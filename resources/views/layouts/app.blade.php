@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI-First Digital Agency - Web Development, AI Solutions, UI/UX Design, SEO & Digital Growth Services">
+    <meta name="google-site-verification" content="48kW_3xYjlOklX8znf7OU-BIrqfsyLzI-fkx51sLnXI" />
     <title>BitSabio - AI-First Digital Agency</title>
 
-    <!-- CSS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP0V9E2SLJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KP0V9E2SLJ');
+    </script>
+
     <!-- Font CSS -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>

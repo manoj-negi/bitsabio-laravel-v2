@@ -453,7 +453,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <img src="./images/trans03.png" alt="">
+                    <img src="./images/trans03.png" alt="trans03">
                 </div>
             </div>
 
