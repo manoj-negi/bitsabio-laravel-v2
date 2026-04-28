@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\BlogController;
 Route::get('/', function () {
     return view('home');
     
@@ -25,31 +25,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/blogs', function () {
-
-    $blogs = DB::table('blogs')
-        ->where('status', 'published') 
-        ->latest()
-        ->get();
-
-    return view('blogs', compact('blogs'));
-});
-
-
-Route::get('/blog/{slug}', function ($slug) {
-
-    $blog = DB::table('blogs')
-        ->where('slug', $slug)
-        ->where('status', 'published') 
-        ->first();
-
-    if (!$blog) {
-        abort(404);
-    }
-
-    return view('blog-detail', compact('blog'));
-});
-
+Route::get('/blogs', [BlogController::class, 'index']);
+Route::get('/blog/{slug}', [BlogController::class, 'show']);
 
 // Services start  
 Route::get('/services/ai', function () {

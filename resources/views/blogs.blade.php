@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-
-
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
@@ -24,10 +21,10 @@
         <div class="container">
             <div class="filter-pills" data-aos="fade-up">
                 <div class="filter-pill active" data-filter="all">All</div>
-                <div class="filter-pill" data-filter="ai">AI & ML</div>
-                <div class="filter-pill" data-filter="rag">RAG & LLMs</div>
-                <div class="filter-pill" data-filter="data">Data Science</div>
-                <div class="filter-pill" data-filter="product">Product & UX</div>
+                <div class="filter-pill" data-filter="ai & ml">AI & ML</div>
+                <div class="filter-pill" data-filter="rag & llm">RAG & LLMs</div>
+                <div class="filter-pill" data-filter="data science">Data Science</div>
+                <div class="filter-pill" data-filter="product & ux">Product & UX</div>
                 <div class="filter-pill" data-filter="engineering">Engineering</div>
             </div>
         </div>
@@ -40,29 +37,20 @@
             <div class="blog-grid">
 
                 @forelse($blogs as $blog)
-
-                    <a href="{{ url('/blog/' . $blog->slug) }}" 
-                    class="blog-card" 
-                    data-category="{{ strtolower($blog->category) }}" 
-                    data-aos="fade-up">
-
+                    <a href="{{ url('/blog/' . $blog->slug) }}" class="blog-card" data-category="{{ strtolower($blog->category) }}" data-aos="fade-up" data-aos-delay="100">
                         <!-- Image -->
                         <div class="blog-card-image">
-                            <img src="{{ asset('storage/' . $blog->image) }}" 
-                                alt="{{ $blog->title }}">
+                            <img src="{{ $blog->image }}" alt="{{ $blog->title }}">
+                                
                         </div>
 
                         <!-- Content -->
                         <div class="blog-card-content">
-
-                            <span class="blog-category">
-                                {{ $blog->category }}
-                            </span>
-
-                            <h3>{{ $blog->title }}</h3>
+                            <span class="blog-category">{{ $blog->title }}</span>
+                            <h3>{{ $blog->blog_heading }}</h3>
 
                             <p>
-                                {{ \Illuminate\Support\Str::limit(strip_tags($blog->content), 120) }}
+                                {{ \Illuminate\Support\Str::limit(strip_tags($blog->blog_description), 120) }}
                             </p>
 
                             <div class="blog-meta">

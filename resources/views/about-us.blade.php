@@ -6,7 +6,6 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    {{-- <div class="section-badge" data-aos="fade-down">Our Story</div> --}}
                     <h1 data-aos="fade-up">Building the Future of Intelligent Systems</h1>
                     <p data-aos="fade-up" data-aos-delay="100">
                         We're a team of AI engineers, data scientists, and product builders creating production-ready AI solutions that drive real business value.
