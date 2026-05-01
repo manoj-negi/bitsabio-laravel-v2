@@ -21,9 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/services') }}">Services</a>
                     </li>
-                      <!-- <li class="nav-item">
+                      <li class="nav-item">
                        <a class="nav-link" href="{{ url('/portfolio') }}">Portfolio</a>
-                    </li> -->
+                    </li> 
                     <li class="nav-item">
                          <a class="nav-link" href="{{ url('/blogs') }}">Blogs</a>
                     </li>

@@ -39,5 +39,9 @@ Route::get('/services/rag_solution', function () {
     return view('services.data_science');
 });
 
+Route::get('/services/ai-ml', function () {
+    return view('services.ai-ml');
+});
+
 Route::post('/contact', [ContactController::class, 'send']);
 
