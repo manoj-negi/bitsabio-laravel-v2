@@ -26,6 +26,8 @@
                 <div class="filter-pill" data-filter="data science">Data Science</div>
                 <div class="filter-pill" data-filter="product & ux">Product & UX</div>
                 <div class="filter-pill" data-filter="engineering">Engineering</div>
+                <div class="filter-pill" data-filter="cybersecurity">Cybersecurity</div>
+
             </div>
         </div>
     </section>
@@ -39,10 +41,8 @@
                 @forelse($blogs as $blog)
                     <a href="{{ url('/blog/' . $blog->slug) }}" class="blog-card" data-category="{{ strtolower($blog->category) }}" data-aos="fade-up" data-aos-delay="100">
                         <!-- Image -->
-                        <div class="blog-card-image">
-                            <img src="/images/{{ $blog->image }}" alt="{{ $blog->title }}">
-                            {{-- <img src="{{ asset('public/' . $blog->image) }}" alt="{{ $blog->title }}"> --}}
-                                                           
+                        <div class="blog-card-image">  
+                            <img src="{{ url('images/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                   
                         </div>
 
                         <!-- Content -->
@@ -60,9 +60,7 @@
                                 <span>
                                     {{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}
                                 </span>
-                                <span>·</span>
-                                <span>{{ $blog->read_time }} min read</span>
-                            </div>
+                                </div>
 
                         </div>
                     </a>

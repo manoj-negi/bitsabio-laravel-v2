@@ -25,9 +25,10 @@ class BlogsTable
 
                 ImageColumn::make('image'),
 
-                TextColumn::make('read_time')
-                    ->label('Read Time'),
+                TextColumn::make('tags')
+                        ->label('Tags'),
 
+        
                 TextColumn::make('status')
                     ->badge()
                     ->colors([

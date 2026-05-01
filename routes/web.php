@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\BlogController;
+
 Route::get('/', function () {
     return view('home');
     

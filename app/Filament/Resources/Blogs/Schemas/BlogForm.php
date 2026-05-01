@@ -4,7 +4,6 @@ namespace App\Filament\Resources\Blogs\Schemas;
 
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
@@ -18,7 +17,7 @@ class BlogForm
                 TextInput::make('title')
                     ->required()
                     ->live(onBlur: true)
-                    ->afterStateUpdated(fn ($state, callable $set) => 
+                    ->afterStateUpdated(fn ($state, callable $set) =>
                         $set('slug', \Str::slug($state))
                     ),
 
@@ -28,18 +27,13 @@ class BlogForm
 
                 TextInput::make('category'),
 
-                TextInput::make('author'),
+                TextInput::make('author')
+                    ->required()
+                    ->visibleOn('create'),
 
                 FileUpload::make('image')
                     ->image()
                     ->directory('blogs'),
-
-                RichEditor::make('content')
-                    ->required(),
-
-                TextInput::make('read_time')
-                    ->numeric()
-                    ->suffix('min'),
 
                 Select::make('status')
                     ->options([
@@ -47,6 +41,27 @@ class BlogForm
                         'published' => 'Published',
                     ])
                     ->default('draft'),
+
+              
+                // Tags
+                TextInput::make('tags')
+                    ->label('Tags')
+                    ->afterStateHydrated(function ($component, $state) {
+                        if (is_array($state)) {
+                            $component->state(implode(', ', $state));
+                        }
+                    })
+                    ->dehydrateStateUsing(function ($state) {
+                        return array_values(array_filter(
+                            array_map('trim', explode(',', strtolower($state)))
+                        ));
+                    }),
+
+                  RichEditor::make('content')
+                    ->columnSpanFull()
+                    ->required(),
+
+
             ]);
     }
 }
