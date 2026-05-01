@@ -13,14 +13,14 @@
                     
                     {{-- Image --}}
                     <div class="blog-detail-img mt-3">
-                         <img src="{{ $blog->image }}" alt="{{ $blog->title }}">
+                         <img src="/images/{{ $blog->image }}" alt="{{ $blog->title }}">
+                         
                     </div>
 
                     <div class="blog-detail-meta" data-aos="fade-up" data-aos-delay="200">
                         <span>{{$blog->author }} </span>
 
                         <span>·</span>
-                        {{-- <span>January 28, 2026</span> --}}
                         <span>
                             {{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}
                         </span>
@@ -48,7 +48,7 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                     </svg>
-                    Contact Us
+                    Contact Us  
                 </a>
             </div>
         </div>
