@@ -24,7 +24,7 @@ Route::get('/portfolio', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');;
 
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/blog/{slug}', [BlogController::class, 'show']);
@@ -33,16 +33,33 @@ Route::get('/blog/{slug}', [BlogController::class, 'show']);
 Route::get('/services/ai', function () {
     return view('services.ai');
 });
+
 Route::get('/services/rag_solution', function () {
     return view('services.rag_solution');
 
-});Route::get('/services/data_science', function () {
-    return view('services.data_science');
 });
 
+Route::get('/services/data_science', function () {
+    return view('services.data_science');
+});
+    
 Route::get('/services/ai-ml', function () {
     return view('services.ai-ml');
 });
+Route::get('/services/web-app',function(){
+    return view('services.web-app');
+});
+Route::get('/services/ai-solution',function(){
+    return view('services.ai-solution');
 
-Route::post('/contact', [ContactController::class, 'send']);
+});
+Route::get('/services/ui-ux',function(){
+    return view('services.ui-ux');
+});
+
+Route::get('/services/digital-marketing',function(){
+    return view('services.digital-marketing');
+});
+
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 

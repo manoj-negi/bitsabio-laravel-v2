@@ -293,3 +293,29 @@ document.addEventListener('DOMContentLoaded', function () {
     fade: true,
     speed: 800
   });
+
+
+
+
+
+
+
+
+
+
+   document.addEventListener("DOMContentLoaded", function () {
+
+    const navType = performance.getEntriesByType("navigation")[0]?.type;
+
+    if (!sessionStorage.getItem("popupShown") || navType === "reload") {
+
+        setTimeout(function () {
+            var popup = new bootstrap.Modal(document.getElementById('infoPopup'));
+            popup.show();
+
+            sessionStorage.setItem("popupShown", "true");
+
+        }, 2000);
+    }
+
+});

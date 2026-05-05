@@ -20,10 +20,10 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Services</h5>
                     <ul class="footer-links">
-                        <li><a href="{{url('/services')}}">Web/App Development</a></li>
-                        <li><a href="{{url('/services')}}">AI Solutions</a></li>
-                        <li><a href="{{url('/services')}}">UI/UX Design</a></li>
-                        <li><a href="{{url('/services')}}">Digital Marketing</a></li>
+                        <li><a href="{{url('/services/web-app') }}">Web/App Development</a></li>
+                        <li><a href="{{url('/services/ai-solution')}}">AI Solutions</a></li>
+                        <li><a href="{{url('/services/ui-ux')}}">UI/UX Design</a></li>
+                        <li><a href="{{ url('/services/digital-marketing') }}">Digital Marketing</a></li>
                         <!-- <li><a href="#services">Performance</a></li> -->
                         <!-- <li><a href="#services">Mobile Development</a></li> -->
                     </ul>
@@ -35,11 +35,13 @@
                     <ul class="footer-links">
                         <li><a href="{{url('/about')}}">About Us</a></li>
                         
+                        
                         <!-- <li><a href="#process">Our Process</a></li> -->
                         <!-- <li><a href="#work">Case Studies</a></li> -->
                         <!-- <li><a href="#">Careers</a></li> -->
                         <li><a href="{{url('blogs')}}">Blogs</a></li>
                         <li><a href="{{url('/contact')}}">Contact</a></li>
+                        <li><a href="{{ url('/contact') }}#faq">FAQ</a></li>
                     </ul>
                 </div>
 

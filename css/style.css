@@ -215,7 +215,7 @@ a {
 }
 
 .glass-white .modal-content {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 
@@ -2630,3 +2630,71 @@ html {
 .custom-accordion .accordion-body {
   border-top: 1px solid #e5e7eb;
 }
+.popup-highlights li {
+  font-size: 16px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.popup-highlights li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+.cs-close-modal {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+}
+.modal-body-rigth {
+  padding: 30px 30px 30px 0px;
+}
+
+
+ 
+/* Card */
+.ss-stats-card {
+  background: linear-gradient(135deg, rgba(20, 25, 50, 0.9), rgba(10, 15, 35, 0.9));
+  border-radius: 12px;
+  padding: 10px 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(120, 130, 255, 0.3);
+  box-shadow: 10px 11px 14px rgba(120, 130, 255, 0.2);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+/* Icon Circle */
+.ss-stats-card .icon-box {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #7b7fff, #6a6eff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 0 15px rgba(120, 130, 255, 0.5);
+  margin-bottom: 0;
+}
+/* Text */
+.ss-stats-card h2 {
+  font-size: 24px;
+}
+.ss-stats-card p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.modal-body-left {
+  background: url(../images/left-image.png);
+    background-size: auto;
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  border-radius: 20px 0px 0px 20px;
+}
+ 

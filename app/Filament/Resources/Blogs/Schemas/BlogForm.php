@@ -7,6 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms;
 
 class BlogForm
 {
@@ -31,9 +32,15 @@ class BlogForm
                     ->required()
                     ->visibleOn('create'),
 
+                // FileUpload::make('image')
+                //     ->image()
+                //     ->directory('blogs'),
                 FileUpload::make('image')
                     ->image()
-                    ->directory('blogs'),
+                    ->directory('blogs')
+                    ->disk('public')
+                    ->nullable()
+                    ->preserveFilenames(),
 
                 Select::make('status')
                     ->options([
@@ -42,26 +49,55 @@ class BlogForm
                     ])
                     ->default('draft'),
 
-              
-                // Tags
-                TextInput::make('tags')
-                    ->label('Tags')
-                    ->afterStateHydrated(function ($component, $state) {
-                        if (is_array($state)) {
-                            $component->state(implode(', ', $state));
-                        }
-                    })
-                    ->dehydrateStateUsing(function ($state) {
-                        return array_values(array_filter(
-                            array_map('trim', explode(',', strtolower($state)))
-                        ));
-                    }),
+                     
+                Forms\Components\TextInput::make('tags.meta.meta_title')
+                    ->label('Meta Title')
+                    ->maxLength(60),
 
-                  RichEditor::make('content')
+                Forms\Components\TextInput::make('tags.meta.keywords')
+                    ->label('Meta Keywords'),
+                    
+                Forms\Components\Textarea::make('tags.meta.description')
+                    ->label('Meta Description')
+                    ->rows(3)
+                    ->maxLength(160),
+
+                Forms\Components\TextInput::make('tags.meta.canonical')
+                    ->label('Canonical URL'),
+
+                Forms\Components\Select::make('tags.meta.robots')
+                    ->label('Robots')
+                    ->options([
+                        'index, follow' => 'Index, Follow',
+                        'noindex, nofollow' => 'No Index, No Follow',
+                    ])
+                    ->default('index, follow'),
+
+               
+                Forms\Components\TextInput::make('tags.open_graph.title')
+                    ->label('Open Graph Title'),
+
+                Forms\Components\Textarea::make('tags.open_graph.description')
+                    ->label('Open Graph Description')
+                    ->rows(3),
+
+                Forms\Components\TextInput::make('tags.open_graph.url')
+                    ->label('Open Graph URL'),
+
+                Forms\Components\Select::make('tags.open_graph.type')
+                    ->label('Open Graph Type')
+                    ->options([
+                        'website' => 'Website',
+                        'article' => 'Article',
+                    ])
+                    ->default('article'),
+
+
+                    RichEditor::make('content')
                     ->columnSpanFull()
                     ->required(),
-
 
             ]);
     }
 }
+

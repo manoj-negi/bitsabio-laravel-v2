@@ -3,6 +3,7 @@
 @section('content')
 
     <!-- ========== HERO SECTION ========== -->
+
     <section class="hero-section gradient-bg">
         <div class="container">
             <div class="hero-slider">
@@ -666,7 +667,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
 
                     <div class="col-md-7">
                         <div class="enquery-form">    
-                            <form method="POST" action="/contact" id="homeForm">
+                            <form method="POST" action={{route ('contact.send')}}>
                                 @csrf
 
                                 <!-- NAME -->
@@ -699,11 +700,11 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
                                 </div>
 
                                 <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
-                                    <a href="{{ url('/contact') }}"class="btn btn-gradient" id="homeSubmitBtn">
+                                    <button class="btn btn-gradient" id="submitBtn">
                                         <i class="bi bi-calendar-check me-2"></i>
                                         Book Free Consultation
                                         <i class="bi bi-arrow-right ms-2"></i>
-                                    </a>
+                                    </button>
                                 </div>
 
                             </form>

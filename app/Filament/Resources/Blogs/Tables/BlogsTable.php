@@ -25,8 +25,8 @@ class BlogsTable
 
                 ImageColumn::make('image'),
 
-                TextColumn::make('tags')
-                        ->label('Tags'),
+                // TextColumn::make('tags')
+                //         ->label('Tags'),
 
         
                 TextColumn::make('status')

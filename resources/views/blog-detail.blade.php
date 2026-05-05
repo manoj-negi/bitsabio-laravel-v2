@@ -1,7 +1,24 @@
 @extends('layouts.app')
+{{-- meta tags --}}
+@section('meta_title', $blog->tags['meta']['title'] ?? $blog->title)
+@section('meta_description', $blog->tags['meta']['description'] ?? '')
+@section('meta_keywords', $blog->tags['meta']['keywords'] ?? '')
+@section('meta_robots', $blog->tags['meta']['robots'] ?? 'index, follow')
+@section('meta_canonical', $blog->tags['meta']['canonical'] ?? url()->current())
+
+
+{{-- open graph --}}
+@section('og_title', $blog->tags['open_graph']['title'] ?? $blog->title)
+
+@section('og_description', 
+    $blog->tags['open_graph']['description'] 
+    ?? $blog->tags['meta']['description'] 
+    ?? ''
+)
+@section('og_type', $blog->tags['open_graph']['type'] ?? 'article')
+@section('og_url', $blog->tags['open_graph']['url'] ?? url()->current())
 
 @section('content')
-
 
     <!-- Blog Detail Hero -->
     <section class="blog-detail-hero">
