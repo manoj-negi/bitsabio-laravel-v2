@@ -13,7 +13,7 @@ class BlogForm
 {
     public static function configure(Schema $schema): Schema
     {
-        return $schema
+        return $schema 
             ->components([
                 TextInput::make('title')
                     ->required()

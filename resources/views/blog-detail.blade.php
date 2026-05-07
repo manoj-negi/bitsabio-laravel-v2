@@ -40,34 +40,50 @@
                         <span>
                             {{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}
                         </span>
-                        <span>·</span>
-                        <span>{{ $blog->read_time }} </span>
+                        {{-- <span>·</span> --}}
+                        {{-- <span>{{ $blog->read_time }} </span> --}}
                     </div>
                 </div>
             </div>
-
-        </div>
-    </section>
-
-    <!-- Blog Content -->
+<!-- Blog Content -->
     <div class="blog-detail-content">
     {!! $blog->content !!}
     </div>
+        </div>
+    </section>
 
-    <!-- CTA Section -->
-    <section class="py-5" style="background-color: var(--color-surface);">
+    
+
+    <!-- Final CTA -->
+       <section class="py-5">
         <div class="container">
-            <div class="cta-banner" data-aos="fade-up">
-                <h2>Want this built for your business?</h2>
-                <p>Our team has deployed RAG systems handling millions of queries. Let's discuss your use case.</p>
-                <a href="{{url('/contact')}}" class="btn btn-lg">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                    Contact Us  
-                </a>
+            <div class="cta-banner-2">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="text-start me-md-4" data-aos="fade-up">
+                            <h2>Stay Updated with Latest Tech Insights</h2>
+                            <p class="text-white mb-3">Get new articles, tutorials, and industry updates directly in your inbox. No noise, just precision.</p> 
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form id="subscriberForm" data-url="{{ route('subscribe') }}">
+
+                        @csrf
+                        <div class="d-flex align-items-center">
+                            <input type="email" class="email-form-control me-3" name="email" placeholder="Enter your email" required >
+                            <button type="submit" class="btn btn-white">Subscribe</button>
+                        </div>
+                             {{-- MESSAGE --}}
+                        <div id="subscriberMessage" class="mt-3 text-white"></div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    {{-- Main inquiry form  --}}
+    @include('components.mainInquiryForm')
 
   @endsection

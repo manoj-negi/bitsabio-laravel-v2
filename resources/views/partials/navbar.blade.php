@@ -3,7 +3,7 @@
         <div class="container">
             <a class="navbar-brand gradient-text" href="/">
                 <!-- <img src="./images/bitsabio_logo.png" alt="logo"> -->
-                <img src="{{ asset('images/bitsabio_logo.png') }}" alt="logo">
+                <img src="{{ asset('images/bitsabio_logo.webp') }}" alt="logo">
             </a>
             
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

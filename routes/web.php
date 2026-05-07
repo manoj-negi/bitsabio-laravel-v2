@@ -4,31 +4,33 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\SitemapController;
 
 Route::get('/', function () {
-    return view('home');
-    
-});
+    return view('home');    
+})->name('home');
+
 Route::get('/about', function () {
     return view('about-us');
-});
+})->name('about-us');
 
 Route::get('/services', function () {
     return view('services');
-});
+})->name('services');
 
 Route::get('/portfolio', function () {
-    return view('portfolio');
-});
+    return view('portfolio');   
+})->name('portfolio');
 
 
 Route::get('/contact', function () {
     return view('contact');
-})->name('contact');;
+})->name('contact');
 
-Route::get('/blogs', [BlogController::class, 'index']);
-Route::get('/blog/{slug}', [BlogController::class, 'show']);
-
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+    
 // Services start  
 Route::get('/services/ai', function () {
     return view('services.ai');
@@ -63,3 +65,11 @@ Route::get('/services/digital-marketing',function(){
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
+Route::post('/subscribe', [SubscriberController::class, 'subscribe'])
+    ->name('subscribe');
+
+Route::get('/unsubscribe/{email}', [SubscriberController::class, 'unsubscribe'])
+    ->name('unsubscribe');
+
+// sitetmap route 
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);

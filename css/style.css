@@ -1690,15 +1690,16 @@ html {
 
 .blog-detail-hero {
     padding: 140px 0 0px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .blog-detail-meta {
     display: flex;
     gap: 24px;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    margin-top: 24px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     color: var(--color-text-muted);
     font-size: 0.9375rem;
 }
@@ -2458,13 +2459,11 @@ html {
     position: relative;
 }
 .cs-card-bg-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-height: 360px;
-    border-radius: 0 0 32px 32px;
-    object-fit: cover;
-    opacity: 0.5;
+  bottom: 0;
+  right: 0;
+  max-height: 360px;
+  border-radius: 14px;
+  object-fit: cover;
 }
 .icon-box {
     width: 48px;
@@ -2690,7 +2689,7 @@ html {
   opacity: 0.8;
 }
 .modal-body-left {
-  background: url(../images/left-image.png);
+  background: url(../images/left-image.webp);
     background-size: auto;
   height: 100%;
   background-size: cover;

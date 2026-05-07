@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="">
-                        <img src="./images/service-hero-img.png" alt="service-hero-img">
+                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
                     </div>
                 </div>
             </div>
@@ -161,7 +161,7 @@
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </span> -->
-                            <img class="cs-card-bg-image" src="/images/ai-bg.jpg" alt="aliml">
+                            <img class="cs-card-bg-image" src="./images/ai-bg.webp" alt="aliml">
                         </div>
                     </a>
                 </div>
@@ -453,7 +453,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <img src="./images/trans03.png" alt="trans03">
+                    <img src="./images/trans03.webp" alt="trans03">
                 </div>
             </div>
 
@@ -476,6 +476,9 @@
             </div>
         </div>
     </section>
+
+    @include('components.mainInquiryForm')
+
 @endsection
 
 

@@ -6,7 +6,7 @@
                 <div class="col-lg-4">
                     <div class="footer-brand gradient-text">
                         <a href="/">
-                            <img src="{{ asset('images/bitsabio_logo.png') }}">
+                            <img src="{{ asset('images/bitsabio_logo.webp') }}">
                         </a>
                     </div>
                     <p class="footer-description">

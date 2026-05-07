@@ -87,9 +87,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <form id="subscriberForm" data-url="{{ route('subscribe') }}">
+
+                        @csrf
                         <div class="d-flex align-items-center">
-                            <input type="email" class="email-form-control me-3" placeholder="Enter your email" required="" >
-                            <a href="#work" class="btn btn-white">Subscribe</a>
+                            <input type="email" class="email-form-control me-3" name="email" placeholder="Enter your email" required >
+                            <button type="submit" class="btn btn-white">Subscribe</button>
+                        </div>
+                             {{-- MESSAGE --}}
+                        <div id="subscriberMessage" class="mt-3 text-white"></div>
+                        </form>
                         </div>
                     </div>
                 </div>

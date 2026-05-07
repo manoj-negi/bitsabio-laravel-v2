@@ -82,11 +82,11 @@
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_2 (1) (1).png') }}" alt="tech_logo_2">
+                <img src="{{ asset('images/icons/tech_logo_2 (1) (1).webp') }}" alt="tech_logo_2">
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_3 (1).png') }}" alt="tech_logo_3">
+                <img src="{{ asset('images/icons/tech_logo_3 (1).webp') }}" alt="tech_logo_3">
             </div>
 
             <div class="powered-by-icon">
@@ -94,7 +94,7 @@
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_7 (1).png') }}" alt="tech_logo_7">
+                <img src="{{ asset('images/icons/tech_logo_7 (1).webp') }}" alt="tech_logo_7">
             </div>
 
             <div class="powered-by-icon">

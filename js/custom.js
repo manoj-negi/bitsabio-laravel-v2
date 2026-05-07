@@ -295,15 +295,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-
-
-
-
-
-
-
-
-   document.addEventListener("DOMContentLoaded", function () {
+// Initial pop up script  
+  document.addEventListener("DOMContentLoaded", function () {
 
     const navType = performance.getEntriesByType("navigation")[0]?.type;
 
@@ -319,3 +312,68 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+//  js for subscriberForm 
+
+const form = document.getElementById('subscriberForm');
+
+if (form) {
+
+    form.addEventListener('submit', async (e) => {
+
+        e.preventDefault();
+
+        const button = form.querySelector('button');
+        const message = document.getElementById('subscriberMessage');
+
+        button.disabled = true;
+        button.innerText = 'Subscribing...';
+
+        try {
+
+            const response = await fetch(form.dataset.url, {
+
+                method: 'POST',
+
+                headers: {
+                    'X-CSRF-TOKEN': document
+                        .querySelector('meta[name="csrf-token"]')
+                        .content,
+
+                    'Accept': 'application/json',
+                },
+
+                body: new FormData(form),
+            });
+
+            const text = await response.text();
+
+            console.log(text);
+
+            const data = JSON.parse(text);
+
+            message.innerHTML = `
+                <span class="${response.ok ? 'text-success' : 'text-warning'}">
+                    ${data.message}
+                </span>
+            `;
+
+            if (response.ok) {
+                form.reset();
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            message.innerHTML = `
+                <span class="text-danger">
+                    Check console error
+                </span>
+            `;
+        }
+
+        button.disabled = false;
+        button.innerText = 'Subscribe';
+    });
+}
