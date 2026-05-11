@@ -8,6 +8,9 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms;
+use Illuminate\Support\Str;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Filament\Forms\Components\Hidden;
 
 class BlogForm
 {
@@ -15,6 +18,9 @@ class BlogForm
     {
         return $schema 
             ->components([
+                   Hidden::make('user_id')
+                    ->default(auth()->id()),
+
                 TextInput::make('title')
                     ->required()
                     ->live(onBlur: true)
@@ -29,18 +35,34 @@ class BlogForm
                 TextInput::make('category'),
 
                 TextInput::make('author')
-                    ->required()
-                    ->visibleOn('create'),
+                    ->disabled()
+                    ->dehydrated()
+                    ->afterStateHydrated(function ($component) {
+                        $component->state(auth()->user()?->name);
+                    })
+                    ->dehydrateStateUsing(function () {
+                        return auth()->user()?->name;
+                    })
+                    ->required(),
 
-                // FileUpload::make('image')
-                //     ->image()
-                //     ->directory('blogs'),
                 FileUpload::make('image')
                     ->image()
-                    ->directory('blogs')
-                    ->disk('public')
                     ->nullable()
-                    ->preserveFilenames(),
+                    ->maxSize(5120)
+                    ->imageEditor(false)
+
+                    ->getUploadedFileNameForStorageUsing(
+                        function (TemporaryUploadedFile $file): string {
+
+                            $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+
+                            $name = Str::slug(Str::lower($name));
+
+                            $extension = strtolower($file->getClientOriginalExtension());
+
+                            return time() . '-' . $name . '.' . $extension;
+                        }
+                    ),
 
                 Select::make('status')
                     ->options([

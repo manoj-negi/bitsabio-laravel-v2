@@ -1,8 +1,11 @@
- <section class="py-5" id="faq">
+@extends('layouts.app')
+
+@section('content')
+ <section class="page-hero" id="faq">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <h2 class="text-center mb-5" data-aos="fade-up">Frequently Asked Questions</h2>
+                    <h2 class="text-center mb-3" data-aos="fade-up">Frequently Asked Questions</h2>
                     <div class="container py-5">
                         <div class="accordion custom-accordion" id="faqAccordion">
 
@@ -181,3 +184,9 @@
             </div>
         </div>
     </section>
+
+{{-- Form  --}}
+
+@include('components.inquiryForm')
+
+@endsection

@@ -21,7 +21,8 @@ class BlogsTable
 
                 TextColumn::make('category'),
 
-                TextColumn::make('author'),
+                TextColumn::make('user.name')
+                    ->name("Author"),
 
                 ImageColumn::make('image'),
 

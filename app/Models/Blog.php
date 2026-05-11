@@ -20,10 +20,13 @@ class Blog extends Model
         'status',
         'tags',
     ];
-
     protected $casts = [
         'tags' => 'array',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     
 // send mail 
     protected static function booted()

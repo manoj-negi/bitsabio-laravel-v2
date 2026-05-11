@@ -73,7 +73,4 @@
     {{-- Inquiry Form  --}}
     @include('components.mainInquiryForm')
 
-    <!-- FAQ / Common Questions -->
-    @include('components.faq')
-
 @endsection

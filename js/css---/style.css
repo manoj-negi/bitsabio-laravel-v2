@@ -420,7 +420,7 @@ a {
         content: "";
         position: absolute;
         /* background: linear-gradient(135deg, #000b18 0%, #16004d 100%); */
-        background: url(../images/edu-bg.jpg);
+        background: url(../images/edu-bg.webp);
         background-position: bottom;
         background-size: cover;
         width: 100%;

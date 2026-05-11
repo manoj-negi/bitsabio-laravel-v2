@@ -161,7 +161,7 @@
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
                             </span> -->
-                            <img class="cs-card-bg-image" src="./images/ai-bg.webp" alt="aliml">
+                            <img class="cs-card-bg-image" src="./images/1778494133-ai-bg.webp" alt="aliml">
                         </div>
                     </a>
                 </div>

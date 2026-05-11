@@ -31,6 +31,10 @@ Route::get('/contact', function () {
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
     
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
 // Services start  
 Route::get('/services/ai', function () {
     return view('services.ai');

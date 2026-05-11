@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-2.webp" alt="slide2">
+                                <img src="./images/1778494755-slide-2.webp" alt="slide2">
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-3.webp" alt="slide3">
+                                <img src="./images/1778494526-slide-3.webp" alt="slide3">
                             </div>
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                                 <div class="tab-pane fade show active" id="v-pills-webDevlopment" role="tabpanel" aria-labelledby="v-pills-webDevlopment-tab">
                                     <div class="help-build-wrap">
                                         <div class="build-service text-center">
-                                            <img src="./images/purple-tech-modern.webp" alt="purple-tech-modern">
+                                            <img src="./images/1778493210-purple-tech-modern.webp" alt="purple-tech-modern">
                                         </div>
                                         <h3 class="service-title">We don’t just build websites <br> we engineer digital experiences that scale with your ambition.</h3>
                                         <p class="service-description">From idea to deployment, we build high-performance web platforms focused on speed, scalability, and growth.
@@ -317,7 +317,7 @@
                                 <div class="tab-pane fade" id="v-pills-machine" role="tabpanel" aria-labelledby="v-pills-machine-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/ai-powerd.webp" alt="ai-powerd">
+                                            <img src="./images/1778494276-ai-powerd.webp" alt="ai-powerd">
                                         </div>
                                         <h3 class="service-title">Turn your data into decisions. Turn automation into advantage.</h3>
                                         <p class="service-description">We design intelligent systems that reduce manual work, predict outcomes, and streamline business operations.
@@ -598,7 +598,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
 
 
     <!-- ========== TRAINING ========== -->
-    <section class="education">
+     <section class="education">
         <div class="container">
             <div class="row align-items-baseline">
                 <div class="col-md-7">
