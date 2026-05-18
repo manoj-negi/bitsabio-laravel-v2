@@ -376,4 +376,9 @@ if (form) {
         button.disabled = false;
         button.innerText = 'Subscribe';
     });
+    tinymce.init({
+    selector: 'textarea',
+    plugins: 'code table lists link image',
+    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | table | code'
+});
 }

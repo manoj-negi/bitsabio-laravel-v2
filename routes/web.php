@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\ContentController;
 
 Route::get('/', function () {
     return view('home');    
@@ -18,6 +19,11 @@ Route::get('/about', function () {
 Route::get('/services', function () {
     return view('services');
 })->name('services');
+
+Route::get('/courses', [ContentController::class, 'courses'])
+    ->name('courses');
+Route::get('/content/{slug}', [ContentController::class, 'show'])
+    ->name('content.show');
 
 Route::get('/portfolio', function () {
     return view('portfolio');   

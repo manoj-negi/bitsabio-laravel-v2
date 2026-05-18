@@ -47,24 +47,49 @@ class BlogForm
 
                 FileUpload::make('image')
                     ->image()
+                    ->disk('public')
+                    ->visibility('public')
                     ->nullable()
                     ->maxSize(5120)
                     ->imageEditor(false)
 
                     ->getUploadedFileNameForStorageUsing(
                         function (TemporaryUploadedFile $file): string {
-
-                            $name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-
-                            $name = Str::slug(Str::lower($name));
-
-                            $extension = strtolower($file->getClientOriginalExtension());
-
+                            $name = pathinfo(
+                                $file->getClientOriginalName(),
+                                PATHINFO_FILENAME
+                            );
+                            $name = Str::slug($name);
+                            $extension = $file->getClientOriginalExtension();
                             return time() . '-' . $name . '.' . $extension;
                         }
-                    ),
+                    )
+                    ->getUploadedFileUsing(
+                            function ($file): ?array {
 
-                Select::make('status')
+                                if (! $file) {
+                                    return null;
+                                }
+
+                                return [
+                                    'name' => $file,
+
+                                    'size' => filesize(
+                                        storage_path('app/public/' . $file)
+                                    ),
+
+                                    'type' => mime_content_type(
+                                        storage_path('app/public/' . $file)
+                                    ),
+
+                                    // 'url' => '/bitsabio-laravel-v/public/storage/' . $file,
+
+                                     'url' => url('/public/storage/' . $file),
+                                ];
+                            }
+                    ),
+                
+                 Select::make('status')
                     ->options([
                         'draft' => 'Draft',
                         'published' => 'Published',

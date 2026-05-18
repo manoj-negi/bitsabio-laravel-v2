@@ -58,6 +58,7 @@
 
     <!-- JS -->
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
     <script src="{{ asset('js/slick.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
@@ -191,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
 });
+
 </script>
 
 </body>

@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/services') }}">Services</a>
                     </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="{{ url('/courses') }}">Courses</a>
+                    </li>
                       <li class="nav-item">
                        <a class="nav-link" href="{{ url('/portfolio') }}">Portfolio</a>
                     </li> 
@@ -30,7 +33,7 @@
                     <li class="nav-item">
                          <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                     </li>
-
+                     
                     <li class="nav-item ms-3">
                         <a href="{{url('/contact')}}" class="get-start-btn btn-gradient">Get Started</a>
                     </li>

@@ -42,7 +42,8 @@
                     <a href="{{ url('/blog/' . $blog->slug) }}" class="blog-card" data-category="{{ strtolower($blog->category) }}" data-aos="fade-up" data-aos-delay="100">
                         <!-- Image -->
                         <div class="blog-card-image">  
-                            <img src="{{ url('images/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                   
+                            <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                    
+                            
                         </div>
 
                         <!-- Content -->

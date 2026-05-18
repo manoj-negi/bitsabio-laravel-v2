@@ -21,15 +21,12 @@ class BlogsTable
 
                 TextColumn::make('category'),
 
-                TextColumn::make('user.name')
-                    ->name("Author"),
+                 ImageColumn::make('image')
+                    ->disk('public')
+                    ->visibility('public'),
+                    
+                
 
-                ImageColumn::make('image'),
-
-                // TextColumn::make('tags')
-                //         ->label('Tags'),
-
-        
                 TextColumn::make('status')
                     ->badge()
                     ->colors([

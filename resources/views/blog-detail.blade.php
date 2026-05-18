@@ -30,7 +30,7 @@
                     
                     {{-- Image --}}
                     <div class="blog-detail-img mt-3">
-                        <img src="{{ url('images/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                 
+                        <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                 
                     </div>
 
                     <div class="blog-detail-meta" data-aos="fade-up" data-aos-delay="200">
