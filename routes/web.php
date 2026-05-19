@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\SitemapController;
-use App\Http\Controllers\ContentController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('home');    
@@ -15,15 +15,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about-us');
 })->name('about-us');
-
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
-
-Route::get('/courses', [ContentController::class, 'courses'])
-    ->name('courses');
-Route::get('/content/{slug}', [ContentController::class, 'show'])
-    ->name('content.show');
 
 Route::get('/portfolio', function () {
     return view('portfolio');   
@@ -34,9 +25,23 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
-    
+// Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+// Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+Route::get('/blogs', [PostController::class, 'blogs'])->name('blogs');
+Route::get('/blog/{slug}', [PostController::class, 'showBlog']);
+
+Route::get('/courses', [PostController::class, 'courses'])->name('courses');
+Route::get('/course/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
+
+Route::get('/services', [PostController::class, 'services'])->name('services');
+Route::get('/service/{slug}', [PostController::class, 'showService'])->name('content.showService');
+
+
+// Route::get('/services', function () {
+//     return view('services');
+// })->name('services');
+
 Route::get('/faq', function () {
     return view('faq');
 })->name('faq');

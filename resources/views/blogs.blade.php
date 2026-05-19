@@ -49,10 +49,10 @@
                         <!-- Content -->
                         <div class="blog-card-content">
                             <span class="blog-category">{{ $blog->title }}</span>
-                            <h3>{{ $blog->blog_heading }}</h3>
+                            <h3>{{ $blog->short_description}}</h3>
 
                             <p>
-                                {{ \Illuminate\Support\Str::limit(strip_tags($blog->blog_description), 120) }}
+                                {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 120) }}
                             </p>
 
                             <div class="blog-meta">

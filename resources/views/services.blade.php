@@ -220,14 +220,17 @@
 
                 <!-- BOTTOM CARDS -->
                 <div class="col-lg-4">
-                    <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
+                     @foreach($services as $service)
+                    {{-- <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="100"> --}}
+                    <a href="{{ url('/service/' . $service->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
+
                         <div class="card-custom">
                             <div class="icon-box">
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
                             </div>
-                            <h5>Full Stack Development</h5>
+                            <h5>{{$service->title}}</h5>
                             <p>
-                            Robust, scalable web and mobile applications engineered for high-traffic enterprise demands.
+                            {{$service->short_description}}
                             </p>
                             <!-- <span class="view-link">
                                 View Details
@@ -238,6 +241,7 @@
                             </span> -->
                         </div>
                     </a>
+                    @endforeach
                 </div>
 
                 <div class="col-lg-4">

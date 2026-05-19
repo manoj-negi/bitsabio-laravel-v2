@@ -10,12 +10,12 @@
             <i class="bi bi-gear-wide-connected text-primary"></i>
         </div>
 
-        <h5>{{ $content->title }}</h5>
+        <h5>{{ $service->title }}</h5>
 
-        <p>{{ $content->short_description }}</p>
+        <p>{{ $service->short_description }}</p>
 
         <div>
-            {!! $content->description !!}
+            {!! $service->description !!}
         </div>
 
     </div>

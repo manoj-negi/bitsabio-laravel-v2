@@ -26,7 +26,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <span class="blog-category" data-aos="fade-down">{{ $blog->category }}</span>
-                    <h1 data-aos="fade-up" data-aos-delay="100">{{ $blog->blog_heading }}</h1>
+                    <h1 data-aos="fade-up" data-aos-delay="100">{{ $blog->short_description }}</h1>
                     
                     {{-- Image --}}
                     <div class="blog-detail-img mt-3">

@@ -26,9 +26,12 @@ class ContentController extends Controller
     {
         $content = Content::where('slug', $slug)->firstOrFail();
 
+        // Fetch all courses
+        $courses = Content::where('type', 'course')->get();
+
         if ($content->type === 'course') {
 
-            return view('course-detail', compact('content'));
+            return view('course-detail', compact('content','courses'));
         }
 
         return view('service-detail', compact('content'));

@@ -198,7 +198,7 @@
                 @foreach($courses as $course)
                 <div class="col-lg-3">
                     {{-- <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100"> --}}
-                      <a href="{{ url('/content/' . $course->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
+                      <a href="{{ url('/course/' . $course->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
                         <div class="glass-card p-4 h-100">
                             <div class="icon-box">
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
