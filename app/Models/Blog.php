@@ -27,17 +27,16 @@ class Blog extends Model
     {
         return $this->belongsTo(User::class);
     }
-    
-// send mail 
+
+    // send mail
     protected static function booted()
     {
         static::created(function ($blog) {
 
-                $subscribers = Subscriber::where(
+            $subscribers = Subscriber::where(
                 'is_subscribed',
                 true
             )->get();
-            
 
             foreach ($subscribers as $subscriber) {
 

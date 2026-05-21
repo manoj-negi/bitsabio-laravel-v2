@@ -84,17 +84,17 @@ class PostForm
 
             TextInput::make('hero_title_black')
                 ->visible(fn (Get $get) =>
-                    in_array($get('type'), ['course'])
+                    in_array($get('type'), ['course','service'])
                 ),
 
             TextInput::make('hero_title_blue')
                 ->visible(fn (Get $get) =>
-                    in_array($get('type'), ['course'])
+                    in_array($get('type'), ['course','service'])
                 ),
 
             Textarea::make('hero_description')
                 ->visible(fn (Get $get) =>
-                    in_array($get('type'), ['course'])
+                    in_array($get('type'), ['course','service'])
                 ),
 
                 FileUpload::make('hero_image')
@@ -103,7 +103,7 @@ class PostForm
                     ->visibility('public')
                     ->nullable()
                     ->maxSize(5120)
-                    ->visible(fn (Get $get) => in_array($get('type'), ['course']))
+                    ->visible(fn (Get $get) => in_array($get('type'), ['course','service']))
                     ->imageEditor(false)
 
                     ->getUploadedFileNameForStorageUsing(

@@ -107,9 +107,7 @@
                             </div>
                                 <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
                                     <button type ="submit"class="btn btn-gradient w-100 justify-content-center" id="submitBtn">
-                                        {{-- <i class="bi bi-calendar-check me-2"></i> --}}
                                         Start Learning Now
-                                        {{-- <i class="bi bi-arrow-right ms-2"></i> --}}
                                     </button>
                                 </div>
 

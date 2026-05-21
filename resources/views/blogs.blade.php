@@ -3,19 +3,37 @@
 @section('content')
 
     <!-- Page Hero -->
-    <section class="page-hero">
+   <section class="page-hero">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 data-aos="fade-up">AI Insights & Engineering Guides</h1>
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="hero-badge aos-init aos-animate" data-aos="fade-down">
+                        <i class="bi bi-circle-fill" style="color: var(--gradient-blue); font-size: 7px;"></i>
+                        <span>Enterprise AI Strategies</span>
+                    </div>
+                    <h1 data-aos="fade-up">AI Insights & <span class="color-liner-004ED0">Engineering Guides</span> </h1>
                     <p data-aos="fade-up" data-aos-delay="100">
                         Practical AI knowledge, implementation strategies, and real-world case studies
+
                     </p>
+                    <div class="d-flex align-items-center">
+                        <a href="{{url('/contact')}}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
+                        Book Free Consultation
+                    </a>
+                    <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
+                        View Our Work
+                    </a>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <div class="">
+                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Category Filters -->
     <section class="py-4">
         <div class="container">
@@ -52,14 +70,14 @@
                             <h3>{{ $blog->short_description}}</h3>
 
                             <p>
-                                {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 120) }}
+                                {{$blog->description}}
                             </p>
 
                             <div class="blog-meta">
                                 <span>By {{ $blog->author }}</span>
                                 <span>·</span>
                                 <span>
-                                    {{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}
+                                   {{ $blog->created_at->format('M d, Y') }}
                                 </span>
                                 </div>
 

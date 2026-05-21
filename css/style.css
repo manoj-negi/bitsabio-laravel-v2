@@ -1617,6 +1617,14 @@ html {
     justify-content: center;
     font-size: 3rem;
 }
+.blog-card-image img {
+ height: 100%;
+ object-fit: cover;
+}
+.blog-right-side {
+    position: sticky;
+    top: 100px;
+}
 
 .blog-card-content {
     padding: 24px;

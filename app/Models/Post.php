@@ -26,10 +26,32 @@ class Post extends Model
     'content',
     'tags',
     'status',
+    'priority',
 ];
 protected $casts = [
     'tags' => 'array',
 ];
+public $sortable = [
+    'order_column_name' => 'priority',
+    'sort_when_creating' => true,
+];
+
+public function buildSortQuery()
+    {
+        return static::query()->where('type', $this->type);
+    }
+protected static function booted()
+{
+    static::creating(function ($post) {
+
+        $maxPriority = static::where('type', $post->type)
+            ->max('priority');
+
+        $post->priority = $maxPriority
+            ? $maxPriority + 1
+            : 1;
+    });
+}
 public function user()
     {
         return $this->belongsTo(User::class);

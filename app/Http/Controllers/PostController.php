@@ -14,6 +14,7 @@ class PostController extends Controller
         $blogs = Post::with('user')
             ->where('type', 'blog')
             ->where('status', 'published')
+            ->orderBy('priority')
             ->latest()
             ->get();
 
@@ -25,6 +26,7 @@ class PostController extends Controller
     {
         $courses = Post::where('type', 'course')
             ->where('status', 'published')
+            ->orderBy('priority')
             ->latest()
             ->get();
 
@@ -37,6 +39,7 @@ class PostController extends Controller
     {
         $services = Post::where('type', 'service')
             ->where('status', 'published')
+            ->orderBy('priority')
             ->latest()
             ->get();
 
@@ -76,13 +79,21 @@ class PostController extends Controller
 
     // service detail 
 
-    public function showService($slug)
+   public function showService($slug)
     {
         $service = Post::where('type', 'service')
             ->where('slug', $slug)
             ->where('status', 'published')
             ->firstOrFail();
 
-        return view('service-detail', compact('service'));
+        $services = Post::where('type', 'service')
+            ->where('status', 'published')
+            ->latest()
+            ->get();
+
+        return view('service-detail', compact(
+            'service',
+            'services'
+        ));
     }
 }

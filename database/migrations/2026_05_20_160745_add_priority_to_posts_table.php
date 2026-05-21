@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-              $table->foreignId('role_id')->nullable()->constrained()->cascadeOnDelete();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->unsignedInteger('priority')->nullable()->after('id');
         });
     }
 
@@ -21,9 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['role_id']); // remove FK
-            $table->dropColumn('role_id');    // remove column
+        Schema::table('posts', function (Blueprint $table) {
+            //
         });
     }
 };

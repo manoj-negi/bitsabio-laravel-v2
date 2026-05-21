@@ -52,7 +52,7 @@
 
                 <div class="contact-option-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon-box">
-                        <i class="bi bi-geo-alt text-primary"></i>
+                    <i class="bi bi-geo-alt text-primary"></i>
                     </div>
                     <h3>Visit Us</h3>
                     <p>D-229, Phase 8b,</p>
