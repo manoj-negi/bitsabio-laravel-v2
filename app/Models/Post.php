@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Events\PostPublished;
 
 class Post extends Model
 {
@@ -42,6 +43,7 @@ public function buildSortQuery()
     }
 protected static function booted()
 {
+    // Priority logic
     static::creating(function ($post) {
 
         $maxPriority = static::where('type', $post->type)
@@ -51,6 +53,15 @@ protected static function booted()
             ? $maxPriority + 1
             : 1;
     });
+    // email notification logic 
+            static::created(function ($post) {
+
+            if (in_array($post->type, ['blog', 'course', 'service'])) {
+
+                event(new PostPublished($post));
+
+            }
+        });
 }
 public function user()
     {

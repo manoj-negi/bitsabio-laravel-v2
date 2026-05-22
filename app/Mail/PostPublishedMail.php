@@ -2,28 +2,25 @@
 
 namespace App\Mail;
 
-use App\Models\Blog;
-use App\Models\Subscriber;
+use App\Models\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class BlogPublishedMail extends Mailable
+class PostPublishedMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $blog;
-    public $subscriber;
+    public $post;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(Blog $blog, Subscriber $subscriber)
+    public function __construct(Post $post)
     {
-        $this->blog = $blog;
-        $this->subscriber = $subscriber;
+        $this->post = $post;
     }
 
     /**
@@ -32,7 +29,7 @@ class BlogPublishedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Blog Published: ' . $this->blog->title,
+            subject: 'New ' . ucfirst($this->post->type) . ' Published',
         );
     }
 
@@ -42,17 +39,10 @@ class BlogPublishedMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.mailtemplate',
+            view: 'emails.post-published',
         );
     }
 
-
-    public function build()
-    {
-        return $this
-            ->subject('New Blog Published: ' . $this->blog->title)
-            ->view('emails.mailtemplate');
-    }
     /**
      * Get the attachments for the message.
      */

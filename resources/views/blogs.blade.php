@@ -111,7 +111,7 @@
                         @csrf
                         <div class="d-flex align-items-center">
                             <input type="email" class="email-form-control me-3" name="email" placeholder="Enter your email" required >
-                            <button type="submit" class="btn btn-white">Subscribe</button>
+                            <button type="submit" class="btn btn-white" id="subscribeBtn">Subscribe</button>
                         </div>
                              {{-- MESSAGE --}}
                         <div id="subscriberMessage" class="mt-3 text-white"></div>

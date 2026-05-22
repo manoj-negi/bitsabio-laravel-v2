@@ -8,7 +8,7 @@
             <div class="hero-slider">
                 <div class="px-3">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 ">
+                        <div class="col-lg-7">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
@@ -35,16 +35,16 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img src="./images/edu-home2.jpg" alt="edu-home">
+                                <img class="rounded-3" src="./images/edu-home2.jpg" alt="edu-home">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-3">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 ">
+                        <div class="col-lg-7 ">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
@@ -71,16 +71,16 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img src="./images/slide2.jpg" alt="edu-home">
+                                <img class="rounded-3" src="./images/slide2.jpg" alt="edu-home">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-3">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 ">
+                        <div class="col-lg-7 ">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
@@ -107,9 +107,9 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img src="./images/slide3.jpg" alt="edu-home">
+                                <img class="rounded-3" src="./images/slide3.jpg" alt="edu-home">
                             </div>
                         </div>
                     </div>
@@ -186,16 +186,18 @@
              <div class="row g-4">
                 @foreach($courses as $course)
                 <div class="col-lg-3">
-                      <a href="{{ url('/course/' . $course->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
                         <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
+                            {{-- <div class="icon-box">
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
+                            </div> --}}
+                            <div>
+                                <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                    
                             </div>
                             <h5>{{$course->title}}</h5>
-                            <p>
+                            <p class="four-line-ellipsis">
                             {{$course->short_description}}
                             </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
+                            {{-- <div class="d-flex justify-content-between align-items-center my-5">
                                 <div class="level-duration">
                                     <i class="bi bi-clock"></i>
                                     <span>{{$course->duration}}</span>
@@ -203,10 +205,10 @@
                                 <div>
                                     <span class="level-tag">{{$course->level}}</span>
                                 </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
+                            </div> --}}
+                            <a href="{{ url('/course/' . $course->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
                         </div>
-                    </a>
+                   
                 </div>
                 @endforeach
 

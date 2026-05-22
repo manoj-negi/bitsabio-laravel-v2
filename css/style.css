@@ -1625,6 +1625,17 @@ html {
     position: sticky;
     top: 100px;
 }
+.course-card-img {
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.four-line-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;   
+  overflow: hidden;
+}
 
 .blog-card-content {
     padding: 24px;

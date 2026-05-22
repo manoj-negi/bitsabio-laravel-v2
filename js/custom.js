@@ -313,72 +313,66 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-//  js for subscriberForm 
 
-const form = document.getElementById('subscriberForm');
+// js for subscriberForm
+document.getElementById('subscriberForm').addEventListener('submit', function(e) {
 
-if (form) {
+    e.preventDefault();
 
-    form.addEventListener('submit', async (e) => {
+    let form = this;
+    let url = form.dataset.url;
 
-        e.preventDefault();
+    let formData = new FormData(form);
 
-        const button = form.querySelector('button');
-        const message = document.getElementById('subscriberMessage');
+    let button = document.getElementById('subscribeBtn');
+    let message = document.getElementById('subscriberMessage');
 
-        button.disabled = true;
-        button.innerText = 'Subscribing...';
+    // LOADING
+    button.innerText = 'Subscribing...';
+    button.disabled = true;
 
-        try {
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': form.querySelector('[name=_token]').value,
+            'Accept': 'application/json'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
 
-            const response = await fetch(form.dataset.url, {
+        if (data.status === 'success') {
 
-                method: 'POST',
+            button.innerText = 'Subscribed';
+            message.innerHTML = data.message;
 
-                headers: {
-                    'X-CSRF-TOKEN': document
-                        .querySelector('meta[name="csrf-token"]')
-                        .content,
+            form.reset();
 
-                    'Accept': 'application/json',
-                },
+        } else if (data.status === 'exists') {
 
-                body: new FormData(form),
-            });
-
-            const text = await response.text();
-
-            console.log(text);
-
-            const data = JSON.parse(text);
-
-            message.innerHTML = `
-                <span class="${response.ok ? 'text-success' : 'text-warning'}">
-                    ${data.message}
-                </span>
-            `;
-
-            if (response.ok) {
-                form.reset();
-            }
-
-        } catch (error) {
-
-            console.error(error);
-
-            message.innerHTML = `
-                <span class="text-danger">
-                    Check console error
-                </span>
-            `;
+            button.innerText = 'Subscribed';
+            message.innerHTML = data.message;
         }
 
         button.disabled = false;
+
+    })
+    .catch(error => {
+
+        console.log(error);
+
         button.innerText = 'Subscribe';
+        button.disabled = false;
+
+        message.innerHTML = 'Something went wrong.';
     });
-    tinymce.init({
-    selector: 'textarea',
-    plugins: 'code table lists link image',
-    toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | table | code'
+
 });
-}
+
+
+tinymce.init({
+selector: 'textarea',
+plugins: 'code table lists link image',
+toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | table | code'
+});
