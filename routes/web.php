@@ -80,11 +80,10 @@ Route::get('/services/digital-marketing',function(){
 
 Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
-Route::post('/subscribe', [SubscriberController::class, 'subscribe'])
-    ->name('subscribe');
+Route::post('/subscribe', [SubscriberController::class, 'subscribe'])->name('subscribe');
+// Route::post('/subscribe', [SubscriberController::class, 'store'])->name('subscribe');
 
-Route::get('/unsubscribe/{email}', [SubscriberController::class, 'unsubscribe'])
-    ->name('unsubscribe');
+Route::get('/unsubscribe/{email}', [SubscriberController::class, 'unsubscribe'])->name('unsubscribe');
 
 // sitetmap route 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

@@ -8,7 +8,7 @@
             <div class="hero-slider">
                 <div class="px-3">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 ">
+                        <div class="col-lg-7">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
@@ -35,16 +35,16 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img src="./images/edu-home2.jpg" alt="edu-home">
+                                <img class="rounded-3" src="./images/edu-home2.jpg" alt="edu-home">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-3">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 ">
+                        <div class="col-lg-7 ">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
@@ -71,16 +71,16 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img src="./images/slide2.jpg" alt="edu-home">
+                                <img class="rounded-3" src="./images/slide2.jpg" alt="edu-home">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-3">
                     <div class="row align-items-center">
-                        <div class="col-lg-6 ">
+                        <div class="col-lg-7 ">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
@@ -107,9 +107,9 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img src="./images/slide3.jpg" alt="edu-home">
+                                <img class="rounded-3" src="./images/slide3.jpg" alt="edu-home">
                             </div>
                         </div>
                     </div>
@@ -180,34 +180,24 @@
                             </p>
                         </div>
                     </div>
-                    <!-- <div class="col-md-5">
-                        <div class="text-end">
-                            <a class="view-link">
-                                Explore All Capabilities
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
              <div class="row g-4">
                 @foreach($courses as $course)
                 <div class="col-lg-3">
-                    {{-- <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100"> --}}
-                      <a href="{{ url('/course/' . $course->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
                         <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
+                            {{-- <div class="icon-box">
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
+                            </div> --}}
+                            <div>
+                                <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                    
                             </div>
                             <h5>{{$course->title}}</h5>
-                            <p>
+                            <p class="four-line-ellipsis">
                             {{$course->short_description}}
                             </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
+                            {{-- <div class="d-flex justify-content-between align-items-center my-5">
                                 <div class="level-duration">
                                     <i class="bi bi-clock"></i>
                                     <span>{{$course->duration}}</span>
@@ -215,276 +205,12 @@
                                 <div>
                                     <span class="level-tag">{{$course->level}}</span>
                                 </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
+                            </div> --}}
+                            <a href="{{ url('/course/' . $course->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
                         </div>
-                    </a>
+                   
                 </div>
                 @endforeach
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-code-square text-primary"></i>
-                            </div>
-                            <h5>Generative AI & RAG</h5>
-                            <p>
-                                Master LLMs, prompt engineering, and building retrieval-augmented generation apps.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>3 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Intermediate</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-database text-primary"></i>
-                            </div>
-                            <h5>Data Science</h5>
-                            <p>
-                                Analyze complex data sets and extract actionable insights using Python and SQL.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>5 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Intermediate</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-layers text-primary"></i>
-                            </div>
-                            <h5>Full Stack Development</h5>
-                            <p>
-                            End-to-end web development with modern stacks like MERN and Next.js.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>8 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Beginner</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-window-sidebar text-primary"></i>
-                            </div>
-                            <h5>Frontend Development</h5>
-                            <p>
-                                Craft stunning user interfaces using HTML, CSS, JavaScript, and React.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>4 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Beginner</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-braces text-primary"></i>
-                            </div>
-                            <h5>Backend & APIs</h5>
-                            <p>
-                                Build robust server-side logic and scalable APIs with Node.js and PostgreSQL.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>4 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Intermediate</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-phone text-primary"></i>
-                            </div>
-                            <h5>Mobile App Development</h5>
-                            <p>
-                                Create cross-platform mobile apps for iOS and Android using Flutter or React Native.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>5 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Intermediate</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-palette2 text-primary"></i>
-                            </div>
-                            <h5>UI/UX Design</h5>
-                            <p>
-                            Learn the user-centered design process from wireframing to high fidelity prototyping.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>3 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Beginner</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-gear-wide-connected text-primary"></i>
-                            </div>
-                            <h5>Graphic Design</h5>
-                            <p>
-                            Master visual communication, typography, and branding with modern design tools.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-palette"></i>
-                                    <span>3 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Beginner</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-cloud text-primary"></i>
-                            </div>
-                            <h5>Cloud & DevOps</h5>
-                            <p>
-                            Learn AWS, Docker, Kubernetes and CI/CD pipelines to manage scalable infrastructure.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>6 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Advanced</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-shield-lock text-primary"></i>
-                            </div>
-                            <h5>Cyber Security</h5>
-                            <p>
-                            Protect systems and networks from digital attacks with offensive and defensive skills.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>6 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Intermediate</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
-
-                {{-- <div class="col-lg-3">
-                    <a href="#" class="service-card-link aos-init" data-aos="fade-up" data-aos-delay="100">
-                        <div class="glass-card p-4 h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-archive text-primary"></i>
-                            </div>
-                            <h5>Product Design</h5>
-                            <p>
-                            Bridge the gap between design and business to create products users love.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center my-5">
-                                <div class="level-duration">
-                                    <i class="bi bi-clock"></i>
-                                    <span>4 Months</span>
-                                </div>
-                                <div>
-                                    <span class="level-tag">Intermediate</span>
-                                </div>
-                            </div>
-                            <a href="" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">Talk to a Mentor</a>
-                        </div>
-                    </a>
-                </div> --}}
 
             </div>
         </div>
@@ -675,9 +401,7 @@
                     <p>Our goal is to equip you with in-demand skills, hands-on project experience, and expert guidance so you can confidently step into the tech industry and achieve long-term career success — all at affordable pricing.</p>
                         <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
                                     <button type ="submit"class="btn btn-gradient justify-content-center" id="submitBtn">
-                                        {{-- <i class="bi bi-calendar-check me-2"></i> --}}
                                         Start Learning Now
-                                        {{-- <i class="bi bi-arrow-right ms-2"></i> --}}
                                     </button>
                         </div>
                 </div>
@@ -767,7 +491,6 @@
                                  <label class="form-label">Select Course</label>
                                 <select name="course" class="form-select">
                                     <option value="" disabled selected>Select Course</option>
-
                                     <option value="full_stack">Full Stack Web Developer</option>
                                     <option value="data_science">Data Science</option>
                                     <option value="data_analyst_ai">Data Analyst With AI</option>

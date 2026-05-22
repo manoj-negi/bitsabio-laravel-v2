@@ -30,7 +30,8 @@
                     
                     {{-- Image --}}
                     <div class="blog-detail-img mt-3">
-                        <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                 
+                        <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                    
+
                     </div>
 
                     <div class="blog-detail-meta" data-aos="fade-up" data-aos-delay="200">
@@ -38,10 +39,10 @@
 
                         <span>·</span>
                         <span>
-                            {{ \Carbon\Carbon::parse($blog->created_at)->format('M d, Y') }}
+                            {{ $blog->created_at->format('M d, Y') }}
+
                         </span>
-                        {{-- <span>·</span> --}}
-                        {{-- <span>{{ $blog->read_time }} </span> --}}
+                     
                     </div>
                 </div>
             </div>
@@ -84,6 +85,6 @@
     </section>
 
     {{-- Main inquiry form  --}}
-    @include('components.mainInquiryForm')
+      @include('components.mainInquiryForm')
 
   @endsection

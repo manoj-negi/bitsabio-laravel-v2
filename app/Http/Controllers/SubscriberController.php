@@ -15,8 +15,7 @@ class SubscriberController extends Controller
 
         $subscriber = Subscriber::where('email', $request->email)->first();
 
-// New user 
-
+        // New user
         if (! $subscriber) {
 
             Subscriber::create([
@@ -26,11 +25,12 @@ class SubscriberController extends Controller
             ]);
 
             return response()->json([
+                'status' => 'success',
                 'message' => 'Successfully subscribed.',
             ]);
         }
 
-    //    Re-subscribe 
+        // Re-subscribe 
 
         if (! $subscriber->is_subscribed) {
 
@@ -41,17 +41,19 @@ class SubscriberController extends Controller
             ]);
 
             return response()->json([
+                'status' => 'success',
                 'message' => 'Welcome back! Subscription reactivated.',
             ]);
         }
-//  subscribed
 
+        //  subscribed
         return response()->json([
+            'status' => 'exists',
             'message' => 'You are already subscribed.',
-        ], 409);
+        ]);
     }
 
-// unsubscribe
+    // unsubscribe
     public function unsubscribe($email)
     {
         $subscriber = Subscriber::where('email', $email)->first();

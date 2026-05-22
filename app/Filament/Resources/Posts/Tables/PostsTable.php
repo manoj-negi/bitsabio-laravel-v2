@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Posts\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Columns\ImageColumn;
 
 use Filament\Tables\Table;
@@ -18,6 +19,8 @@ class PostsTable
     {
      
         return $table
+            ->reorderable('priority')
+            ->defaultSort('priority')
             ->columns([
 
                 
@@ -25,6 +28,9 @@ class PostsTable
                 ->searchable()
                 ->sortable()
                 ->limit(40),
+
+                TextColumn::make('priority')
+                    ->sortable(),
                 
                 TextColumn::make('slug')
                 ->searchable()
@@ -60,6 +66,12 @@ class PostsTable
             ])
             ->filters([
                 //
+               SelectFilter::make('type')
+                    ->options([
+                        'blog' => 'Blog',
+                        'course' => 'Course',
+                        'service' => 'Service',
+                    ]),
             ])
             ->recordActions([
                 EditAction::make(),
