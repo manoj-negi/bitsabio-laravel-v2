@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-3">
                     <div class="blog-right-side">
-                        @include('components.edu-from')
+                        @include('components.courseForm')
                             <h5 class="mt-5"> Courses Offered</h5>
                             
                            <ul>
@@ -65,7 +65,7 @@
     </div>
 </Section>
 
-@include('components.mainInquiryForm')
+@include('components.mainCourseForm')
 
 
 

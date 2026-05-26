@@ -1,5 +1,4 @@
-<!-- ========== CTA SECTION ========== -->
-    <section id="contact" class="cta-section gradient-bg">
+<section id="contact" class="cta-section gradient-bg">
         <div class="container">
             <div class="glass-card cta-card" data-aos="zoom-in">
                 <div class="text-center mb-5">
@@ -45,8 +44,9 @@
 
                     <div class="col-md-7">
                         <div class="enquery-form">    
-                            <form method="POST" action={{route ('contact.send')}}>
+                            <form method="POST" action={{route ('contact.send')}} class="needs-validation" novalidate>
                                 @csrf
+                                  <input type="hidden" name="form_type" value="inquiryForm">
 
                                 <!-- NAME -->
                                 <div class="mb-3">
@@ -78,13 +78,13 @@
                                 </div>
 
                                 <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
-                                    <button class="btn btn-gradient" id="submitBtn">
+                                    <button type ="submit" class="btn btn-gradient" id="submitBtn">
                                         <i class="bi bi-calendar-check me-2"></i>
                                         Book Free Consultation
                                         <i class="bi bi-arrow-right ms-2"></i>
                                     </button>
                                 </div>
-
+                    
                             </form>
                         </div>
                     </div>
@@ -105,4 +105,4 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
