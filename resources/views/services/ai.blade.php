@@ -82,11 +82,11 @@
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_2 (1) (1).png') }}" alt="tech_logo_2">
+                <img src="{{ asset('images/icons/tech_logo_2 (1) (1).webp') }}" alt="tech_logo_2">
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_3 (1).png') }}" alt="tech_logo_3">
+                <img src="{{ asset('images/icons/tech_logo_3 (1).webp') }}" alt="tech_logo_3">
             </div>
 
             <div class="powered-by-icon">
@@ -94,7 +94,7 @@
             </div>
 
             <div class="powered-by-icon">
-                <img src="{{ asset('images/icons/tech_logo_7 (1).png') }}" alt="tech_logo_7">
+                <img src="{{ asset('images/icons/tech_logo_7 (1).webp') }}" alt="tech_logo_7">
             </div>
 
             <div class="powered-by-icon">
@@ -302,13 +302,13 @@ $services = [
         <div class="container">
             <div class="cta-banner" data-aos="fade-up">
                 <h2>Looking to build powerful AI solutions for your business?</h2>
-                <p>  From AI chatbots to intelligent automation and data-driven insights, 
-      we help you design and deploy scalable AI systems tailored to your needs.</p>
+                <p> From AI chatbots to intelligent automation and data-driven insights, 
+                    we help you design and deploy scalable AI systems tailored to your needs.</p>
                 <a href="{{url('/contact')}}" class="btn btn-lg">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                     </svg>
-                    Talk to an AI Expert
+                    Talk to an Expert
                 </a>
             </div>
         </div>

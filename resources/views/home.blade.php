@@ -3,6 +3,7 @@
 @section('content')
 
     <!-- ========== HERO SECTION ========== -->
+
     <section class="hero-section gradient-bg">
         <div class="container">
             <div class="hero-slider">
@@ -51,7 +52,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-1.png" alt="slide1">
+                                <img src="./images/slide-1.webp" alt="slide1">
                             </div>
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-2.png" alt="slide2">
+                                <img src="./images/1778494755-slide-2.webp" alt="slide2">
                             </div>
                         </div>
                     </div>
@@ -145,7 +146,7 @@
                         </div>
                         <div class="col-lg-5">
                             <div class="slide-img-1">
-                                <img src="./images/slide-3.png" alt="slide3">
+                                <img src="./images/1778494526-slide-3.webp" alt="slide3">
                             </div>
                         </div>
                     </div>
@@ -202,16 +203,16 @@
                     <img src="./images/icons/blender.svg" alt="blender">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_2 (1) (1).png" alt="tech_logo_2">
+                    <img src="./images/icons/tech_logo_2 (1) (1).webp" alt="tech_logo_2">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_3 (1).png" alt="tech_logo_3">
+                    <img src="./images/icons/tech_logo_3 (1).webp" alt="tech_logo_3">
                 </div>
                 <div class="powered-by-icon">
                     <img src="./images/icons/figma.svg" alt="figma">
                 </div>
                 <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_7 (1).png" alt="tech_logo_7">
+                    <img src="./images/icons/tech_logo_7 (1).webp" alt="tech_logo_7">
                 </div>
                 <div class="powered-by-icon">
                     <img src="./images/icons/tensorflow (1).svg" alt="tensorflow">
@@ -303,7 +304,7 @@
                                 <div class="tab-pane fade show active" id="v-pills-webDevlopment" role="tabpanel" aria-labelledby="v-pills-webDevlopment-tab">
                                     <div class="help-build-wrap">
                                         <div class="build-service text-center">
-                                            <img src="./images/purple-tech-modern.png" alt="purple-tech-modern">
+                                            <img src="./images/1778493210-purple-tech-modern.webp" alt="purple-tech-modern">
                                         </div>
                                         <h3 class="service-title">We don’t just build websites <br> we engineer digital experiences that scale with your ambition.</h3>
                                         <p class="service-description">From idea to deployment, we build high-performance web platforms focused on speed, scalability, and growth.
@@ -316,7 +317,7 @@
                                 <div class="tab-pane fade" id="v-pills-machine" role="tabpanel" aria-labelledby="v-pills-machine-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/ai-powerd.png" alt="ai-powerd">
+                                            <img src="./images/1778494276-ai-powerd.webp" alt="ai-powerd">
                                         </div>
                                         <h3 class="service-title">Turn your data into decisions. Turn automation into advantage.</h3>
                                         <p class="service-description">We design intelligent systems that reduce manual work, predict outcomes, and streamline business operations.
@@ -329,7 +330,7 @@ Our custom ML models and RAG-based systems ensure scalable, accurate, and future
                                 <div class="tab-pane fade" id="v-pills-branding" role="tabpanel" aria-labelledby="v-pills-branding-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/uiux.png" alt="uiux">
+                                            <img src="./images/uiux.webp" alt="uiux">
                                         </div>
                                         <h3 class="service-title">Design that speaks. Experiences that convert.</h3>
                                         <p class="service-description">We blend creativity with strategy to craft digital interfaces users love and brands are proud of.
@@ -342,7 +343,7 @@ Our brand identity and visual systems ensure consistency, clarity, and lasting i
                                 <div class="tab-pane fade" id="v-pills-seo" role="tabpanel" aria-labelledby="v-pills-seo-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/seo.png" alt="seo">
+                                            <img src="./images/seo.webp" alt="seo">
                                         </div>
                                         <h3 class="service-title">Visibility is power. Growth is strategy.</h3>
                                         <p class="service-description">We position your brand where it matters — at the top of search results and in front of the right audience.
@@ -355,7 +356,7 @@ Our data-driven campaign insights ensure smarter decisions, better performance, 
                                 <div class="tab-pane fade" id="v-pills-performance" role="tabpanel" aria-labelledby="v-pills-performance-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/performance.png" alt="performance">
+                                            <img src="./images/performance.webp" alt="performance">
                                         </div>
                                         <h3 class="service-title">Speed isn’t a feature — it’s a competitive edge.</h3>
                                         <p class="service-description">We optimize every layer of your digital product for fast, secure, and seamless performance.
@@ -368,7 +369,7 @@ Our security hardening and continuous monitoring keep your platform stable, prot
                                 <div class="tab-pane fade" id="v-pills-mobileFirst" role="tabpanel" aria-labelledby="v-pills-mobileFirst-tab">
                                     <div class="help-build-wrap text-center">
                                         <div class="build-service">
-                                            <img src="./images/mobile-first.png" alt="mobile-first">
+                                            <img src="./images/mobile-first.webp" alt="mobile-first">
                                         </div>
                                         <h3 class="service-title">We don’t just build websites <br> we engineer digital experiences that scale with your ambition.</h3>
                                         <p class="service-description">From idea to deployment, we build high-performance web platforms for speed, scalability, and long-term growth.
@@ -597,7 +598,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
 
 
     <!-- ========== TRAINING ========== -->
-    <section class="education">
+     <section class="education">
         <div class="container">
             <div class="row align-items-baseline">
                 <div class="col-md-7">
@@ -612,121 +613,16 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
                 </div>
                 <div class="col-md-5">
                     <div class="student-img text-center">
-                        <img src="./images/sweet-friendly-young-student.png" alt="sweet-friendly-young-student">
+                        <img src="./images/sweet-friendly-young-student.webp" alt="sweet-friendly-young-student">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    {{-- Form  --}}
 
-    <!-- ========== CTA SECTION ========== -->
-    <section id="contact" class="cta-section gradient-bg">
-        <div class="container">
-            <div class="glass-card cta-card" data-aos="zoom-in">
-                <div class="text-center mb-5">
-                    <h3 class="section-title gradient-text mb-2">
-                        Ready to Transform Your Business?
-                    </h3>
-                    <p class="lead text-secondary">
-                        Let's discuss how we can help you achieve your goals. Book a free 30-minute strategy call with our experts.
-                    </p>
-                </div>
-                
-                <div class="row align-items-center">
-                    <div class="col-md-5">
-                        <div class="cta-options">
-                            <div class="cta-option" data-aos="fade-up" data-aos-delay="0">
-                                <i class="bi bi-calendar-check" style="color: var(--gradient-blue);"></i>
-                                <div class="">
-                                    <div class="cta-option-title">Free Consultation</div>
-                                    <div class="cta-option-text">30-minute strategy call</div>
-                                </div>
-                                
-                            </div>
-
-                            <div class="cta-option" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bi bi-chat-dots" style="color: var(--gradient-purple);"></i>
-                                <div>
-                                    <div class="cta-option-title">Quick Response</div>
-                                    <div class="cta-option-text">Reply within 24 hours</div>
-                                </div>
-
-                            </div>
-
-                            <div class="cta-option" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bi bi-envelope-check" style="color: var(--gradient-cyan);"></i>
-                                <div>
-                                    <div class="cta-option-title">No Commitment</div>
-                                    <div class="cta-option-text">Free quote & proposal</div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-7">
-                        <div class="enquery-form">    
-                            <form method="POST" action="/contact" id="homeForm">
-                                @csrf
-
-                                <!-- NAME -->
-                                <div class="mb-3">
-                                    <label class="form-label">Your name *</label>
-                                    <input type="text" name="name" class="form-control" required>
-                                </div>
-
-                                <!-- EMAIL + PHONE -->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Email *</label>
-                                            <input type="email" name="email" class="form-control" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Contact number *</label>
-                                            <input type="tel" name="phone" class="form-control" required>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MESSAGE -->
-                                <div class="mb-3">
-                                    <label class="form-label">Your Requirement</label>
-                                    <textarea name="message" class="form-control" rows="3"></textarea>
-                                </div>
-
-                                <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
-                                    <a href="{{ url('/contact') }}"class="btn btn-gradient" id="homeSubmitBtn">
-                                        <i class="bi bi-calendar-check me-2"></i>
-                                        Book Free Consultation
-                                        <i class="bi bi-arrow-right ms-2"></i>
-                                    </a>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                
-                <div class="trust-indicators">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="pulse-dot"></div>
-                        <span>Available now</span>
-                    </div>
-                    <span>•</span>
-                    <span>No credit card required</span>
-                    <span>•</span>
-                    <span>100% satisfaction guarantee</span>
-                </div>
-            </div>
-        </div>
-    </section>
+@include('components.inquiryForm')
+    
 
      <!-- Modal sendmsg -->
    <div class="modal fade glass-white" id="sendmsg" tabindex="-1">

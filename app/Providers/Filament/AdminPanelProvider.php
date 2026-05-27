@@ -27,6 +27,8 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+             ->brandName('BitSabio')
+            //  ->brandLogo(asset('images/bitsabio_logo.png'))
             ->login()
             ->colors([
                 'primary' => Color::Amber,

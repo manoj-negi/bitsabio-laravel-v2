@@ -46,6 +46,11 @@ class User extends Authenticatable
         // return $this->belongsTo(Role::class);
         return $this->belongsTo(Role::class)->withDefault();
     }
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
+
     public function projects()
     {
         return $this->belongsToMany(Project::class);

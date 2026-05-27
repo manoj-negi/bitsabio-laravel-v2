@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="">
-                        <img src="./images/service-hero-img.png" alt="service-hero-img">
+                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
                     </div>
                 </div>
             </div>
@@ -142,145 +142,23 @@
             </div>
 
              <div class="row g-4">
+                 @foreach($services as $service)
+                 <div class="col-lg-4">
+                    <a href="{{ url('/service/' . $service->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
 
-                <!-- LEFT BIG CARD -->
-                <div class="col-lg-8">
-                    <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-custom h-100">
-                            <div class="icon-box">
-                                <i class="bi bi-gear-fill text-primary"></i>
-                            </div>
-                            <h5>AI & Machine Learning</h5>
-                            <p>
-                            Custom predictive models and autonomous systems designed to process complex datasets and deliver actionable foresight.
-                            </p>
-                            <!-- <span class="view-link">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span> -->
-                            <img class="cs-card-bg-image" src="/images/ai-bg.jpg" alt="aliml">
-                        </div>
-                    </a>
-                </div>
-
-                <!-- RIGHT SIDE -->
-                <div class="col-lg-4">
-                <div class="row g-4 h-100">
-
-                    <!-- BLUE CARD -->
-                    <div class="col-12">
-                        <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card-custom card-blue">
-                                <div class="icon-box">
-                                    <i class="bi bi-stars text-primary"></i>
-                                </div>
-                                <h5>Generative AI & RAG</h5>
-                                <p>
-                                Specialized LLM deployments with Retrieval-Augmented Generation for enterprise-grade knowledge management.
-                                </p>
-                                <!-- <span class="view-link">
-                                    View Details
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                        <polyline points="12 5 19 12 12 19"></polyline>
-                                    </svg>
-                                </span> -->
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- DATA SCIENCE -->
-                    <div class="col-12">
-                        <!-- <a href="{{ url('/services/data_science') }}"> -->
-                        <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card-custom">
-                                <div class="icon-box">
-                                    <i class="bi bi-bar-chart-fill text-primary"></i>
-                                </div>
-                                <h5>Data Science</h5>
-                                <p>
-                                Converting raw data into competitive advantages through rigorous statistical analysis and visualization.
-                                </p>
-                                <!-- <span class="view-link">
-                                    View Details
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                        <polyline points="12 5 19 12 12 19"></polyline>
-                                    </svg>
-                                </span> -->
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-                </div>
-
-                <!-- BOTTOM CARDS -->
-                <div class="col-lg-4">
-                    <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-custom">
                             <div class="icon-box">
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
                             </div>
-                            <h5>Full Stack Development</h5>
+                            <h5>{{$service->title}}</h5>
                             <p>
-                            Robust, scalable web and mobile applications engineered for high-traffic enterprise demands.
+                            {{$service->short_description}}
                             </p>
-                            <!-- <span class="view-link">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span> -->
                         </div>
                     </a>
                 </div>
-
-                <div class="col-lg-4">
-                    <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="500">
-                        <div class="card-custom">
-                            <div class="icon-box">
-                                <i class="bi bi-cloud-fill text-primary"></i>
-                            </div>
-                            <h5>Cloud & DevOps</h5>
-                            <p>
-                            Optimized infrastructure automation and continuous deployment pipelines for 99.9% uptime.
-                            </p>
-                            <!-- <span class="view-link">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span> -->
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4">
-                    <a href="#" class="service-card-link" data-aos="fade-up" data-aos-delay="600">
-                        <div class="card-custom">
-                            <div class="icon-box">
-                                <i class="bi bi-diagram-3-fill text-primary"></i>
-                            </div>
-                            <h5>Backend & APIs</h5>
-                            <p>
-                            High-performance API architectures and microservices that connect your digital ecosystem seamlessly.
-                            </p>
-                            <!-- <span class="view-link">
-                                View Details
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span> -->
-                        </div>
-                    </a>
-                </div>
+                    @endforeach
+           
             </div>
         </div>
     </section>
@@ -453,7 +331,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <img src="./images/trans03.png" alt="trans03">
+                    <img src="./images/trans03.webp" alt="trans03">
                 </div>
             </div>
 
@@ -468,7 +346,7 @@
                 <h2>Ready to Build Scalable AI Solutions?</h2>
                 <p class="text-white mb-3">Let's discuss your challenges and find the right AI solution for your business</p>
                 <a href="{{url('/contact')}}" class="btn btn-primary btn-lg">
-                    Talk to an AI Expert
+                    Talk to an Expert
                 </a>
                 <a href="{{url('/portfolio')}}" class="btn btn-secondary btn-lg ms-3">
                     View Our Work
@@ -476,6 +354,9 @@
             </div>
         </div>
     </section>
+
+    @include('components.mainInquiryForm')
+
 @endsection
 
 

@@ -3,7 +3,7 @@
         <div class="container">
             <a class="navbar-brand gradient-text" href="/">
                 <!-- <img src="./images/bitsabio_logo.png" alt="logo"> -->
-                <img src="{{ asset('images/bitsabio_logo.png') }}" alt="logo">
+                <img src="{{ asset('images/bitsabio_logo.webp') }}" alt="logo">
             </a>
             
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -21,16 +21,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/services') }}">Services</a>
                     </li>
-                      <!-- <li class="nav-item">
+                    <li class="nav-item">
+                         <a class="nav-link" href="{{ url('/courses') }}">Courses</a>
+                    </li>
+                      <li class="nav-item">
                        <a class="nav-link" href="{{ url('/portfolio') }}">Portfolio</a>
-                    </li> -->
+                    </li> 
                     <li class="nav-item">
                          <a class="nav-link" href="{{ url('/blogs') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
                          <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                     </li>
-
+                     
                     <li class="nav-item ms-3">
                         <a href="{{url('/contact')}}" class="get-start-btn btn-gradient">Get Started</a>
                     </li>

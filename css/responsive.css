@@ -1,5 +1,8 @@
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+    .modal-body-rigth {
+        padding: 20px;
+        }
     .hero-section {
         padding-top: 100px;
     }

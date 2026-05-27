@@ -293,3 +293,86 @@ document.addEventListener('DOMContentLoaded', function () {
     fade: true,
     speed: 800
   });
+
+
+// Initial pop up script  
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const navType = performance.getEntriesByType("navigation")[0]?.type;
+
+    if (!sessionStorage.getItem("popupShown") || navType === "reload") {
+
+        setTimeout(function () {
+            var popup = new bootstrap.Modal(document.getElementById('infoPopup'));
+            popup.show();
+
+            sessionStorage.setItem("popupShown", "true");
+
+        }, 2000);
+    }
+
+});
+
+
+// js for subscriberForm
+document.getElementById('subscriberForm').addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+    let form = this;
+    let url = form.dataset.url;
+
+    let formData = new FormData(form);
+
+    let button = document.getElementById('subscribeBtn');
+    let message = document.getElementById('subscriberMessage');
+
+    // LOADING
+    button.innerText = 'Subscribing...';
+    button.disabled = true;
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': form.querySelector('[name=_token]').value,
+            'Accept': 'application/json'
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        if (data.status === 'success') {
+
+            button.innerText = 'Subscribed';
+            message.innerHTML = data.message;
+
+            form.reset();
+
+        } else if (data.status === 'exists') {
+
+            button.innerText = 'Subscribed';
+            message.innerHTML = data.message;
+        }
+
+        button.disabled = false;
+
+    })
+    .catch(error => {
+
+        console.log(error);
+
+        button.innerText = 'Subscribe';
+        button.disabled = false;
+
+        message.innerHTML = 'Something went wrong.';
+    });
+
+});
+
+
+tinymce.init({
+selector: 'textarea',
+plugins: 'code table lists link image',
+toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | table | code'
+});

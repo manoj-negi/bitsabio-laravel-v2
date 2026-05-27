@@ -2,148 +2,94 @@
 
 @section('content')
 
-
-
-
     <!-- Page Hero -->
-    <section class="page-hero">
+   <section class="page-hero">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 data-aos="fade-up">AI Insights & Engineering Guides</h1>
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="hero-badge aos-init aos-animate" data-aos="fade-down">
+                        <i class="bi bi-circle-fill" style="color: var(--gradient-blue); font-size: 7px;"></i>
+                        <span>Enterprise AI Strategies</span>
+                    </div>
+                    <h1 data-aos="fade-up">AI Insights & <span class="color-liner-004ED0">Engineering Guides</span> </h1>
                     <p data-aos="fade-up" data-aos-delay="100">
                         Practical AI knowledge, implementation strategies, and real-world case studies
+
                     </p>
+                    <div class="d-flex align-items-center">
+                        <a href="{{url('/contact')}}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
+                        Book Free Consultation
+                    </a>
+                    <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
+                        View Our Work
+                    </a>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <div class="">
+                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Category Filters -->
     <section class="py-4">
         <div class="container">
             <div class="filter-pills" data-aos="fade-up">
                 <div class="filter-pill active" data-filter="all">All</div>
-                <div class="filter-pill" data-filter="ai">AI & ML</div>
-                <div class="filter-pill" data-filter="rag">RAG & LLMs</div>
-                <div class="filter-pill" data-filter="data">Data Science</div>
-                <div class="filter-pill" data-filter="product">Product & UX</div>
+                <div class="filter-pill" data-filter="ai & ml">AI & ML</div>
+                <div class="filter-pill" data-filter="rag & llm">RAG & LLMs</div>
+                <div class="filter-pill" data-filter="data science">Data Science</div>
+                <div class="filter-pill" data-filter="product & ux">Product & UX</div>
                 <div class="filter-pill" data-filter="engineering">Engineering</div>
+                <div class="filter-pill" data-filter="cybersecurity">Cybersecurity</div>
+
             </div>
         </div>
     </section>
 
     <!-- Blog Grid -->
+    
     <section class="py-5">
         <div class="container">
             <div class="blog-grid">
-                <a href="{{ url('/blog-detail') }}" class="blog-card" data-category="rag" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-card-image">
-                        <img src="{{ asset('images/edu-bg.jpg') }}">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">RAG & LLMs</span>
-                        <h3>Building Production-Ready RAG Systems</h3>
-                        <p>A complete guide to implementing Retrieval-Augmented Generation for enterprise applications, from data ingestion to deployment.</p>
-                        <div class="blog-meta">
-                            <span>By Sarah Chen</span>
-                            <span>·</span>
-                            <span>Jan 28, 2026</span>
-                            <span>·</span>
-                            <span>8 min read</span>
+
+                @forelse($blogs as $blog)
+                    <a href="{{ url('/blog/' . $blog->slug) }}" class="blog-card" data-category="{{ strtolower($blog->category) }}" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Image -->
+                        <div class="blog-card-image">  
+                            <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                    
+                            
                         </div>
-                    </div>
-                </a>
-                
-              <a href="{{ url('/blog-detail') }}" class="blog-card"  data-category="data"  data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-card-image">
-                        <img src="{{ asset('images/purple-tech-modern.png') }}">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">Data Science</span>
-                        <h3>Vector Databases Explained</h3>
-                        <p>Understanding semantic search, embeddings, and choosing the right vector database for your AI application.</p>
-                        <div class="blog-meta">
-                            <span>By Michael Torres</span>
-                            <span>·</span>
-                            <span>Jan 25, 2026</span>
-                            <span>·</span>
-                            <span>6 min read</span>
+
+                        <!-- Content -->
+                        <div class="blog-card-content">
+                            <span class="blog-category">{{ $blog->title }}</span>
+                            <h3>{{ $blog->short_description}}</h3>
+
+                            <p>
+                                {{$blog->description}}
+                            </p>
+
+                            <div class="blog-meta">
+                                <span>By {{ $blog->author }}</span>
+                                <span>·</span>
+                                <span>
+                                   {{ $blog->created_at->format('M d, Y') }}
+                                </span>
+                                </div>
+
                         </div>
+                    </a>
+
+                @empty
+                    <div class="text-center">
+                        <p>No blogs found</p>
                     </div>
-                </a>
-                
-                <a href="{{ url('/blog-detail') }}"  class="blog-card" data-category="ai"  data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-card-image">
-                        <img src="{{ asset('images/futuristic-ai-chip-circuit-board.jpg') }}">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">AI & ML</span>
-                        <h3>Fine-Tuning LLMs for Business Use</h3>
-                        <p>Learn how to customize large language models for specific domains and improve accuracy with your own data.</p>
-                        <div class="blog-meta">
-                            <span>By Alex Kumar</span>
-                            <span>·</span>
-                            <span>Jan 22, 2026</span>
-                            <span>·</span>
-                            <span>10 min read</span>
-                        </div>
-                    </div>
-                </a>
-                  
-                <a href="{{ url('/blog-detail') }}"  class="blog-card" data-category="product"   data-aos="fade-up" data-aos-delay="400">
-                     <div class="blog-card-image">
-                        <img src="{{ asset('images/futuristic-ai-chip-circuit-board.jpg') }}">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">Product & UX</span>
-                        <h3>Designing AI-First User Experiences</h3>
-                        <p>Best practices for creating intuitive interfaces that make complex AI features accessible to everyone.</p>
-                        <div class="blog-meta">
-                            <span>By Emma Wilson</span>
-                            <span>·</span>
-                            <span>Jan 20, 2026</span>
-                            <span>·</span>
-                            <span>7 min read</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="{{ url('/blog-detail') }}"  class="blog-card" data-category="engineering"  data-aos="fade-up" data-aos-delay="500">
-                    <div class="blog-card-image">
-                        <img src="{{ asset('images/edu-bg.jpg') }}">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">Engineering</span>
-                        <h3>MLOps Best Practices for 2026</h3>
-                        <p>Infrastructure patterns and deployment strategies for scaling machine learning models in production.</p>
-                        <div class="blog-meta">
-                            <span>By David Park</span>
-                            <span>·</span>
-                            <span>Jan 18, 2026</span>
-                            <span>·</span>
-                            <span>12 min read</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="{{ url('/blog-detail') }}"  class="blog-card" data-category="engineering"  data-aos="fade-up" data-aos-delay="600">
-                    <div class="blog-card-image">
-                        <img src="{{ asset('images/purple-tech-modern.png') }}">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">AI & ML</span>
-                        <h3>Prompt Engineering Fundamentals</h3>
-                        <p>Master the art of crafting effective prompts that unlock the full potential of language models.</p>
-                        <div class="blog-meta">
-                            <span>By Lisa Martinez</span>
-                            <span>·</span>
-                            <span>Jan 15, 2026</span>
-                            <span>·</span>
-                            <span>5 min read</span>
-                        </div>
-                    </div>
-                </a>
+                @endforelse
+
             </div>
         </div>
     </section>
@@ -160,9 +106,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <form id="subscriberForm" data-url="{{ route('subscribe') }}">
+
+                        @csrf
                         <div class="d-flex align-items-center">
-                            <input type="email" class="email-form-control me-3" placeholder="Enter your email" required="" >
-                            <a href="#work" class="btn btn-white">Subscribe</a>
+                            <input type="email" class="email-form-control me-3" name="email" placeholder="Enter your email" required >
+                            <button type="submit" class="btn btn-white" id="subscribeBtn">Subscribe</button>
+                        </div>
+                             {{-- MESSAGE --}}
+                        <div id="subscriberMessage" class="mt-3 text-white"></div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -171,3 +124,4 @@
     </section>
 
   @endsection
+

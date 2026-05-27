@@ -4,13 +4,31 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <div class="section-badge" data-aos="fade-down">Our Story</div>
-                    <h1 data-aos="fade-up">Building the Future of Intelligent Systems</h1>
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="hero-badge aos-init aos-animate" data-aos="fade-down">
+                        <i class="bi bi-circle-fill" style="color: var(--gradient-blue); font-size: 7px;"></i>
+                        <span>ENTERPRISE AI READY</span>
+                    </div>
+                    <h1 data-aos="fade-up">Building the Future of <span class="color-liner-004ED0">Intelligent Systems</span> </h1>
                     <p data-aos="fade-up" data-aos-delay="100">
                         We're a team of AI engineers, data scientists, and product builders creating production-ready AI solutions that drive real business value.
+
                     </p>
+                    <div class="d-flex align-items-center">
+                        <a href="{{url('/contact')}}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
+                        Book Free Consultation
+                    </a>
+                    <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
+                        View Our Work
+                    </a>
+                    </div>
+
+                </div>
+                <div class="col-md-5">
+                    <div class="">
+                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,64 +150,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <!-- <section class="py-5" style="background-color: var(--color-surface);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 data-aos="fade-up">Meet Our Leadership</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    World-class team with deep expertise in AI and engineering
-                </p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card-compact text-center">
-                        <div class="icon mx-auto" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 20px;">
-                            👨‍💼
-                        </div>
-                        <h3 style="font-size: 1.25rem;">Dr. Alex Kumar</h3>
-                        <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 8px;">CEO & Co-Founder</p>
-                        <p style="font-size: 0.875rem;">Former Stanford AI Lab. PhD in Machine Learning. 10+ years building AI systems.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card-compact text-center">
-                        <div class="icon mx-auto" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 20px;">
-                            👩‍💻
-                        </div>
-                        <h3 style="font-size: 1.25rem;">Sarah Chen</h3>
-                        <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 8px;">CTO & Co-Founder</p>
-                        <p style="font-size: 0.875rem;">Ex-Google AI. MIT Computer Science. Architect of our RAG platform.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card-compact text-center">
-                        <div class="icon mx-auto" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 20px;">
-                            👨‍🔬
-                        </div>
-                        <h3 style="font-size: 1.25rem;">Dr. Michael Torres</h3>
-                        <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 8px;">Head of Research</p>
-                        <p style="font-size: 0.875rem;">Carnegie Mellon PhD. 50+ published papers in NLP and deep learning.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card-compact text-center">
-                        <div class="icon mx-auto" style="width: 80px; height: 80px; font-size: 2rem; margin-bottom: 20px;">
-                            👩‍💼
-                        </div>
-                        <h3 style="font-size: 1.25rem;">Emma Wilson</h3>
-                        <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 8px;">VP of Product</p>
-                        <p style="font-size: 0.875rem;">Former OpenAI Product Lead. Built AI products used by millions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
         <!-- ========== STATS ========== -->
 
     <div id="stats-section" class="info-lable">
@@ -275,7 +235,7 @@
    
 
     <!-- Certifications & Partners -->
-    <section class="py-5" style="background-color: var(--color-surface);">
+    {{-- <section class="py-5" style="background-color: var(--color-surface);">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 data-aos="fade-up">Trusted & Certified</h2>
@@ -295,7 +255,7 @@
                 <div class="tech-pill">OpenAI Partner</div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Culture & Careers Teaser -->
     <section class="py-5">
@@ -398,19 +358,6 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="cta-banner" data-aos="fade-up">
-                <h2>Ready to Work Together?</h2>
-                <p>Let's discuss how we can help you build intelligent systems that drive real business results.</p>
-                    <a href="{{ url('/contact') }}"  class="btn btn-lg">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                    Start a Conversation
-                </a>
-            </div>
-        </div>
-    </section>
-
+    @include('components.inquiryForm')
+  
 @endsection

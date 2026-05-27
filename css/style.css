@@ -215,7 +215,7 @@ a {
 }
 
 .glass-white .modal-content {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 
@@ -420,7 +420,7 @@ a {
         content: "";
         position: absolute;
         /* background: linear-gradient(135deg, #000b18 0%, #16004d 100%); */
-        background: url(../images/edu-bg.jpg);
+        background: url(../images/1778493020-edu-bg.webp);
         background-position: bottom;
         background-size: cover;
         width: 100%;
@@ -1617,6 +1617,25 @@ html {
     justify-content: center;
     font-size: 3rem;
 }
+.blog-card-image img {
+ height: 100%;
+ object-fit: cover;
+}
+.blog-right-side {
+    position: sticky;
+    top: 100px;
+}
+.course-card-img {
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.four-line-ellipsis {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;   
+  overflow: hidden;
+}
 
 .blog-card-content {
     padding: 24px;
@@ -1690,15 +1709,16 @@ html {
 
 .blog-detail-hero {
     padding: 140px 0 0px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .blog-detail-meta {
     display: flex;
     gap: 24px;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    margin-top: 24px;
+    margin-top: 5px;
+    margin-bottom: 20px;
     color: var(--color-text-muted);
     font-size: 0.9375rem;
 }
@@ -2458,13 +2478,11 @@ html {
     position: relative;
 }
 .cs-card-bg-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-height: 360px;
-    border-radius: 0 0 32px 32px;
-    object-fit: cover;
-    opacity: 0.5;
+  bottom: 0;
+  right: 0;
+  max-height: 360px;
+  border-radius: 14px;
+  object-fit: cover;
 }
 .icon-box {
     width: 48px;
@@ -2503,7 +2521,7 @@ html {
 }
 
 .bg-globe-img {
-  background: url('/images/1095018_8010.jpg') center/cover no-repeat;
+  background: url('../images/1095018_8010.webp') center/cover no-repeat;
 }
 
 .build-slider .overlay {
@@ -2630,3 +2648,71 @@ html {
 .custom-accordion .accordion-body {
   border-top: 1px solid #e5e7eb;
 }
+.popup-highlights li {
+  font-size: 16px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.popup-highlights li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+.cs-close-modal {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+}
+.modal-body-rigth {
+  padding: 30px 30px 30px 0px;
+}
+
+
+ 
+/* Card */
+.ss-stats-card {
+  background: linear-gradient(135deg, rgba(20, 25, 50, 0.9), rgba(10, 15, 35, 0.9));
+  border-radius: 12px;
+  padding: 10px 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(120, 130, 255, 0.3);
+  box-shadow: 10px 11px 14px rgba(120, 130, 255, 0.2);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+/* Icon Circle */
+.ss-stats-card .icon-box {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #7b7fff, #6a6eff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 0 15px rgba(120, 130, 255, 0.5);
+  margin-bottom: 0;
+}
+/* Text */
+.ss-stats-card h2 {
+  font-size: 24px;
+}
+.ss-stats-card p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.modal-body-left {
+  background: url(../images/left-image.webp);
+    background-size: auto;
+  height: 100%;
+  background-size: cover;
+  position: relative;
+  border-radius: 20px 0px 0px 20px;
+}
+ 

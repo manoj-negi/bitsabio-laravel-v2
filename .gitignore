@@ -5,3 +5,5 @@ composer.lock
 /wp-backup
 /academy.bitsabio
 backup23april2026.tar
+storage/
+bootstrap/cache/
