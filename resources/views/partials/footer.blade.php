@@ -59,10 +59,25 @@
                                 <i class="bi bi-telephone"></i>
                                 +91 7717320084
                             </a>
-                            <a href="#">
+                            <a 
+                                href="https://www.google.com/maps?q=D-229+Prosperity+Arcade+Phase+8b+Industrial+Area+Mohali+160071"
+                                target="_blank" class="location-link"
+                            >
                                 <i class="bi bi-geo-alt"></i>
                                 D-229 Prosperity Arcade, Phase 8b,<br/> Industrial Area Mohali, 160071
                             </a>
+
+                    {{-- <div class="footer-map">
+                        <iframe
+                            width="100%"
+                            height="300"
+                            style="border:0; border-radius:12px;"
+                            loading="lazy"
+                            allowfullscreen
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps?q=30.7334,76.7600&z=15&output=embed">
+                         </iframe>
+                    </div> --}}
                         </div>
                 </div>
             </div>

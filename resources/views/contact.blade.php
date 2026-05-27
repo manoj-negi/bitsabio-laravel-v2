@@ -64,13 +64,14 @@
                         <i class="bi bi-chat-left-dots text-primary"></i>
                     </div>
                     <h3>Live Chat</h3>
-                    <a href="https://wa.me/+91 7717320084" target="_blank" >Open WhatsApp</a>
+                    {{-- <a href="https://wa.me/+91 7717320084" target="_blank" >Open WhatsApp</a> --}}
+                    <a href="https://wa.me/917717320084" target="_blank">Open WhatsApp</a>
                     <p>Available for immediate assistance.</p>
                 </div>
             </div>
         </div>
     </section>
     {{-- Inquiry Form  --}}
-    @include('components.mainCourseForm')
+    @include('components.mainServiceForm')
 
 @endsection

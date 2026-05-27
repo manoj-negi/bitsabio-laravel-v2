@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Blog;
+use App\Models\Post;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
@@ -40,15 +40,18 @@ class SitemapController extends Controller
         }
 
         // blog pages
-
-        $blogs = Blog::all();
+        
+        $blogs = Post::where('type', 'blog')
+            ->select('slug', 'updated_at')
+            ->get();
 
         foreach ($blogs as $blog) {
 
             $sitemap->add(
-                Url::create("/blog/{$blog->slug}")
+                Url::create(url('blog/' . $blog->slug))
                     ->setLastModificationDate($blog->updated_at)
                     ->setPriority(0.7)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
             );
         }
 

@@ -47,7 +47,10 @@ class ContactController extends Controller
             Message: {$data['message']}",
 
                 function ($msg) {
-                    $msg->to('bitvistara@gmail.com')
+                         $msg->to([
+                                env('ADMIN_MAIL'),
+                                env('SUPPORT_MAIL')
+                            ])
                         ->subject('New Contact Message');
                 }
             );

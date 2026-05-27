@@ -1,6 +1,6 @@
 <div class="modal fade" id="globalModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content text-center p-4 rounded-4">
+        <div class="modal-content p-4 rounded-4">
             <!-- Close -->
             <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal">         </button>
 
@@ -18,7 +18,7 @@
             <div id="modalMessage" class="text-muted"></div>
 
             <!-- Buttons -->
-            <div class="mt-4">
+            <div class="mt-4 text-end">
 
                 <a href="#" id="modalButton" class="btn btn-primary rounded-pill px-4 d-none">
                     View More

@@ -3,7 +3,8 @@
 namespace App\Filament\Resources\Employees\Schemas;
 use Filament\Forms\Components\Hidden;
 use Filament\Schemas\Schema;
-
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
 class EmployeeForm
 {
     public static function configure(Schema $schema): Schema

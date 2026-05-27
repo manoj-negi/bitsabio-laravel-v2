@@ -85,6 +85,6 @@
     </section>
 
     {{-- Main inquiry form  --}}
-      @include('components.mainInquiryForm')
+      @include('components.mainCourseForm')
 
   @endsection

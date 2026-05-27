@@ -114,7 +114,7 @@
                             <button type="submit" class="btn btn-white" id="subscribeBtn">Subscribe</button>
                         </div>
                              {{-- MESSAGE --}}
-                        <div id="subscriberMessage" class="mt-3 text-white"></div>
+                        <div id="subscriberMessage" class="mt-3 text-white text-start"></div>
                         </form>
                         </div>
                     </div>

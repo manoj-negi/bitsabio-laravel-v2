@@ -19,7 +19,7 @@ class EmployeeResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -55,7 +55,12 @@ class EmployeeResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-            // ->where('role_id', '2');
-            ->whereHas('role', fn ($q) => $q->where('name', 'employee'));
+        ->whereHas('roles', function ($q) {
+            $q->whereIn('name', [
+                'employee',
+                'admin',
+                'super_admin',
+            ]);
+        });
     }
 }

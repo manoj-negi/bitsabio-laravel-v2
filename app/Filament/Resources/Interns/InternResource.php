@@ -20,7 +20,7 @@ class InternResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -56,7 +56,6 @@ class InternResource extends Resource
        public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-            // ->where('role_id', '3');
-            ->whereHas('role', fn ($q) => $q->where('name', 'intern'));
+           ->role('intern');
     }
 }
