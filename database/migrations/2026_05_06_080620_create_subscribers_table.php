@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscribers', function (Blueprint $table) {
-            $table->id();
+        if (!Schema::hasTable('subscribers')) {
 
-            $table->string('email')->unique();
+            Schema::create('subscribers', function (Blueprint $table) {
+                $table->id();
+                $table->string('email')->unique();
+                $table->boolean('is_subscribed')->default(true);
+                $table->timestamp('subscribed_at')->nullable();
+                $table->timestamp('unsubscribed_at')->nullable();
+                $table->timestamps();
 
-            $table->boolean('is_subscribed')->default(true);
+            });
 
-            $table->timestamp('subscribed_at')->nullable();
-
-            $table->timestamp('unsubscribed_at')->nullable();
-
-            $table->timestamps();
-        });
+        }
     }
 
     /**

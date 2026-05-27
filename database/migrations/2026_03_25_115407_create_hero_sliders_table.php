@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hero_sliders', function (Blueprint $table) {
-            $table->id();
-            $table->string('badge')->nullable();
-            $table->string('title');
-            $table->text('subtitle')->nullable();
+        if (!Schema::hasTable('hero_sliders')) {
 
-            $table->json('highlights')->nullable();
+            Schema::create('hero_sliders', function (Blueprint $table) {
 
-            $table->string('button_text')->nullable();
-            $table->string('button_link')->nullable();
+                $table->id();
+                $table->string('badge')->nullable();
+                $table->string('title');
+                $table->text('subtitle')->nullable();
+                $table->json('highlights')->nullable();
+                $table->string('button_text')->nullable();
+                $table->string('button_link')->nullable();
+                $table->string('image')->nullable();
+                $table->timestamps();
 
-            $table->string('image')->nullable();
-            $table->timestamps();
-        });
+            });
+
+        }
     }
 
     /**

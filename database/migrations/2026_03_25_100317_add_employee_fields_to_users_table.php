@@ -12,19 +12,39 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('phone')->nullable();
 
-            $table->string('designation')->nullable();
-            $table->decimal('salary', 10, 2)->nullable();
+            if (!Schema::hasColumn('users', 'phone')) {
+                $table->string('phone')->nullable();
+            }
 
-            $table->date('joining_date')->nullable();
-            $table->date('leaving_date')->nullable();
+            if (!Schema::hasColumn('users', 'designation')) {
+                $table->string('designation')->nullable();
+            }
 
-            $table->integer('number_of_leaves')->default(5);
+            if (!Schema::hasColumn('users', 'salary')) {
+                $table->decimal('salary', 10, 2)->nullable();
+            }
 
-            $table->string('status')->default('active');
+            if (!Schema::hasColumn('users', 'joining_date')) {
+                $table->date('joining_date')->nullable();
+            }
 
-            $table->text('notes')->nullable();
+            if (!Schema::hasColumn('users', 'leaving_date')) {
+                $table->date('leaving_date')->nullable();
+            }
+
+            if (!Schema::hasColumn('users', 'number_of_leaves')) {
+                $table->integer('number_of_leaves')->default(5);
+            }
+
+            if (!Schema::hasColumn('users', 'status')) {
+                $table->string('status')->default('active');
+            }
+
+            if (!Schema::hasColumn('users', 'notes')) {
+                $table->text('notes')->nullable();
+            }
+
         });
     }
 
@@ -34,14 +54,39 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-        $table->dropColumn('phone');
-        $table->dropColumn('designation');
-        $table->dropColumn('salary');
-        $table->dropColumn('joining_date');
-        $table->dropColumn('leaving_date');
-        $table->dropColumn('number_of_leaves');
-        $table->dropColumn('status');
-        $table->dropColumn('notes');
+
+            if (Schema::hasColumn('users', 'phone')) {
+                $table->dropColumn('phone');
+            }
+
+            if (Schema::hasColumn('users', 'designation')) {
+                $table->dropColumn('designation');
+            }
+
+            if (Schema::hasColumn('users', 'salary')) {
+                $table->dropColumn('salary');
+            }
+
+            if (Schema::hasColumn('users', 'joining_date')) {
+                $table->dropColumn('joining_date');
+            }
+
+            if (Schema::hasColumn('users', 'leaving_date')) {
+                $table->dropColumn('leaving_date');
+            }
+
+            if (Schema::hasColumn('users', 'number_of_leaves')) {
+                $table->dropColumn('number_of_leaves');
+            }
+
+            if (Schema::hasColumn('users', 'status')) {
+                $table->dropColumn('status');
+            }
+
+            if (Schema::hasColumn('users', 'notes')) {
+                $table->dropColumn('notes');
+            }
+
         });
     }
 };

@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('roles', function (Blueprint $table) {
-               $table->string('guard_name')->default('web');
-        });
+        if (!Schema::hasColumn('roles', 'guard_name')) {
+            Schema::table('roles', function (Blueprint $table) {
+
+                $table->string('guard_name')->default('web');
+
+            });
+
+        }
     }
 
     /**
@@ -21,8 +26,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('roles', function (Blueprint $table) {
-            //
-        });
+        if (Schema::hasColumn('roles', 'guard_name')) {
+            Schema::table('roles', function (Blueprint $table) {
+                $table->dropColumn('guard_name');
+            });
+
+        }
     }
 };

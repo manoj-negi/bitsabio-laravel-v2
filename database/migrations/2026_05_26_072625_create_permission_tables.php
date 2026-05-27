@@ -8,78 +8,102 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
-            $table->id();
+        if (!Schema::hasTable('permissions')) {
 
-            $table->string('name');
+            Schema::create('permissions', function (Blueprint $table) {
 
-            $table->string('guard_name');
+                $table->id();
 
-            $table->timestamps();
-        });
+                $table->string('name');
 
-        Schema::create('model_has_permissions', function (Blueprint $table) {
-            $table->unsignedBigInteger('permission_id');
+                $table->string('guard_name');
 
-            $table->string('model_type');
+                $table->timestamps();
 
-            $table->unsignedBigInteger('model_id');
+            });
 
-            $table->index(['model_id', 'model_type']);
+        }
 
-            $table->foreign('permission_id')
-                ->references('id')
-                ->on('permissions')
-                ->onDelete('cascade');
+        if (!Schema::hasTable('model_has_permissions')) {
 
-            $table->primary([
-                'permission_id',
-                'model_id',
-                'model_type'
-            ]);
-        });
+            Schema::create('model_has_permissions', function (Blueprint $table) {
 
-        Schema::create('model_has_roles', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id');
+                $table->unsignedBigInteger('permission_id');
 
-            $table->string('model_type');
+                $table->string('model_type');
 
-            $table->unsignedBigInteger('model_id');
+                $table->unsignedBigInteger('model_id');
 
-            $table->index(['model_id', 'model_type']);
+                $table->index(['model_id', 'model_type']);
 
-            $table->foreign('role_id')
-                ->references('id')
-                ->on('roles')
-                ->onDelete('cascade');
+                $table->foreign('permission_id')
+                    ->references('id')
+                    ->on('permissions')
+                    ->onDelete('cascade');
 
-            $table->primary([
-                'role_id',
-                'model_id',
-                'model_type'
-            ]);
-        });
+                $table->primary([
+                    'permission_id',
+                    'model_id',
+                    'model_type'
+                ]);
 
-        Schema::create('role_has_permissions', function (Blueprint $table) {
-            $table->unsignedBigInteger('permission_id');
+            });
 
-            $table->unsignedBigInteger('role_id');
+        }
 
-            $table->foreign('permission_id')
-                ->references('id')
-                ->on('permissions')
-                ->onDelete('cascade');
+        if (!Schema::hasTable('model_has_roles')) {
 
-            $table->foreign('role_id')
-                ->references('id')
-                ->on('roles')
-                ->onDelete('cascade');
+            Schema::create('model_has_roles', function (Blueprint $table) {
 
-            $table->primary([
-                'permission_id',
-                'role_id'
-            ]);
-        });
+                $table->unsignedBigInteger('role_id');
+
+                $table->string('model_type');
+
+                $table->unsignedBigInteger('model_id');
+
+                $table->index(['model_id', 'model_type']);
+
+                $table->foreign('role_id')
+                    ->references('id')
+                    ->on('roles')
+                    ->onDelete('cascade');
+
+                $table->primary([
+                    'role_id',
+                    'model_id',
+                    'model_type'
+                ]);
+
+            });
+
+        }
+
+        if (!Schema::hasTable('role_has_permissions')) {
+
+            Schema::create('role_has_permissions', function (Blueprint $table) {
+
+                $table->unsignedBigInteger('permission_id');
+
+                $table->unsignedBigInteger('role_id');
+
+                $table->foreign('permission_id')
+                    ->references('id')
+                    ->on('permissions')
+                    ->onDelete('cascade');
+
+                $table->foreign('role_id')
+                    ->references('id')
+                    ->on('roles')
+                    ->onDelete('cascade');
+
+                $table->primary([
+                    'permission_id',
+                    'role_id'
+                ]);
+
+            });
+
+        }
     }
 
     public function down(): void
