@@ -71,6 +71,6 @@
         </div>
     </section>
     {{-- Inquiry Form  --}}
-    @include('components.mainInquiryForm')
+    @include('components.mainCourseForm')
 
 @endsection

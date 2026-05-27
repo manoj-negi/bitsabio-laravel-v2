@@ -376,3 +376,34 @@ selector: 'textarea',
 plugins: 'code table lists link image',
 toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | table | code'
 });
+
+// Global Modal Function
+
+function showGlobalModal(data) {
+    const modalTitle =
+        document.getElementById("modalTitle");
+    const modalMessage =
+        document.getElementById("modalMessage");
+    const modalButton =
+        document.getElementById("modalButton");
+    // Set title
+    modalTitle.innerHTML = data.title;
+    // Set message
+    modalMessage.innerHTML = data.message;
+    // Button logic
+    if (data.button_text && data.button_link) {
+        modalButton.classList.remove("d-none");
+        modalButton.innerText = data.button_text;
+        modalButton.href = data.button_link;
+    } else {
+        modalButton.classList.add("d-none");
+    }
+    // Show modal
+    const modal =
+        new bootstrap.Modal(
+            document.getElementById("globalModal")
+        );
+
+    modal.show();
+
+}

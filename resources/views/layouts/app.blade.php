@@ -28,7 +28,6 @@
 
     <!-- Font CSS -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
@@ -37,7 +36,7 @@
     <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-
+    
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
@@ -54,105 +53,117 @@
 
     {{-- FOOTER --}}
     @include('partials.footer')
-       @include('partials.popup')
+    @include('partials.popup')
+    @include('partials.global-modal')
+       
+       <!-- AOS -->
+       <!-- JS -->
+       <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+       <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+       <script src="{{ asset('js/slick.js') }}"></script>
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+       <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
+       <script src="{{ asset('js/main.js') }}"></script>
+       <script src="{{ asset('js/custom.js') }}"></script>
+       
 
-    <!-- JS -->
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
-    <script src="{{ asset('js/slick.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    @if(session('modal'))
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            showGlobalModal(@json(session('modal')));
+        });
+        </script>
+    @endif
+    
 
     <!-- Bootstrap -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
     /* =============================
        AOS INIT
     ============================= */
-    AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 100
-    });
+    // AOS.init({
+    //     duration: 800,
+    //     easing: 'ease-out-cubic',
+    //     once: true,
+    //     offset: 100
+    // });
 
     /* =============================
        SLICK SLIDERS
     ============================= */
-    if (window.jQuery) {
-        $('.hero-slider').slick({
-            dots: false,
-            arrows: true,
-            autoplay: true,
-            autoplaySpeed: 6000
-        });
+    // if (window.jQuery) {
+    //     $('.hero-slider').slick({
+    //         dots: false,
+    //         arrows: true,
+    //         autoplay: true,
+    //         autoplaySpeed: 6000
+    //     });
 
-        $('.autoplay').slick({
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 0,
-            speed: 5000,
-            cssEase: 'linear',
-            infinite: true,
-            arrows: false,
-            dots: false,
-            pauseOnHover: false
-        });
-    }
+    //     $('.autoplay').slick({
+    //         slidesToShow: 6,
+    //         slidesToScroll: 1,
+    //         autoplay: true,
+    //         autoplaySpeed: 0,
+    //         speed: 5000,
+    //         cssEase: 'linear',
+    //         infinite: true,
+    //         arrows: false,
+    //         dots: false,
+    //         pauseOnHover: false
+    //     });
+    // }
 
     /* =============================
        FORM VALIDATION (ALL FORMS)
     ============================= */
-    const forms = document.querySelectorAll('.needs-validation');
+    // const forms = document.querySelectorAll('.needs-validation');
 
-    forms.forEach(form => {
-        form.addEventListener('submit', function (event) {
+    // forms.forEach(form => {
+    //     form.addEventListener('submit', function (event) {
 
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            } else {
-                handleFormSubmit(form);
-            }
+    //         if (!form.checkValidity()) {
+    //             event.preventDefault();
+    //             event.stopPropagation();
+    //         } else {
+    //             handleFormSubmit(form);
+    //         }
 
-            form.classList.add('was-validated');
-        });
-    });
+    //         form.classList.add('was-validated');
+    //     });
+    // });
 
     /* =============================
        FORM SUBMIT LOADER
     ============================= */
-    function handleFormSubmit(form) {
+    // function handleFormSubmit(form) {
 
-        const button = form.querySelector('#submitBtn');
-        const loader = form.querySelector('#btnLoader');
-        const text = form.querySelector('#btnText');
+    //     const button = form.querySelector('#submitBtn');
+    //     const loader = form.querySelector('#btnLoader');
+    //     const text = form.querySelector('#btnText');
 
-        if (loader) loader.classList.remove('d-none');
-        if (text) text.innerText = "Sending...";
-        if (button) button.disabled = true;
+    //     if (loader) loader.classList.remove('d-none');
+    //     if (text) text.innerText = "Sending...";
+    //     if (button) button.disabled = true;
 
-        // delay for UX (optional)
-        setTimeout(() => {
-            form.submit();
-        }, 1200);
-    }
+    //     // delay for UX (optional)
+    //     setTimeout(() => {
+    //         form.submit();
+    //     }, 1200);
+    // }
 
     /* =============================
        RESET BUTTON ON LOAD
     ============================= */
-    window.addEventListener('load', function () {
-        document.querySelectorAll('#submitBtn').forEach(btn => btn.disabled = false);
-        document.querySelectorAll('#btnLoader').forEach(ld => ld.classList.add('d-none'));
-        document.querySelectorAll('#btnText').forEach(txt => txt.innerText = "Send Message");
-    });
+    // window.addEventListener('load', function () {
+    //     document.querySelectorAll('#submitBtn').forEach(btn => btn.disabled = false);
+    //     document.querySelectorAll('#btnLoader').forEach(ld => ld.classList.add('d-none'));
+    //     document.querySelectorAll('#btnText').forEach(txt => txt.innerText = "Send Message");
+    // });
 
 
     /* =============================
@@ -191,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //     });
     // }
 
-});
+// });
 
 </script>
 

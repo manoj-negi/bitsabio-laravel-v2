@@ -642,10 +642,10 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
         </div>
     </div>
 </div>
-        <script>
+        {{-- <script>
         document.getElementById("homeForm").addEventListener("submit", function () {
             document.getElementById("homeBtnText").innerText = "Sending...";
             document.getElementById("homeBtnLoader").classList.remove("d-none");
         });
-        </script>
+        </script> --}}
 @endsection

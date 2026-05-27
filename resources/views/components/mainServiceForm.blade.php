@@ -50,26 +50,9 @@
                     </div>
                     <div class="col-md-7">
                         <div class="contact-form-container" data-aos="fade-up">
-                                    <!-- <form id="contactForm"> -->
-                                <!-- @if(session('success'))
-                        <div style="background: #28a745; color: white; padding: 12px; margin-bottom: 15px; border-radius: 5px;">
-                            {{ session('success') }}
-                        </div>
-                        @endif -->
-
-                        @if(session('success'))
-                            <script>
-                                document.addEventListener("readystatechange", function () {
-                                    if (document.readyState === "interactive") {
-                                        var modal = new bootstrap.Modal(document.getElementById('successModal'));
-                                        modal.show();
-                                    }
-                                });
-                            </script>
-                        @endif
-                                <form method="POST" action="{{ route('contact.send') }}">
+                            <form method="POST" action="{{ route('contact.send') }}" class="needs-validation" novalidate>
                                 @csrf
-
+                                <input type="hidden" name="form_type" value="mainService">
                                 <!-- Name -->
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name *</label>
@@ -137,12 +120,10 @@
                                         </span>
 
                                     </button>
-                            </form>
-
-
-                        
-                    </div>
+                            </form>                        
+                        </div>
                     </div>  
+
                     <div class="trust-indicators">
                             <div class="trust-item">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -173,41 +154,4 @@
             </div>
         </div>
 
-                    <!-- Sucess Modal  -->
-            <div class="modal fade" id="successModal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content text-center p-4 rounded-4">
-
-                <!-- Close button -->
-                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-
-                <!-- Icon -->
-                <div class="mx-auto mb-3 d-flex align-items-center justify-content-center"
-                    style="width:70px;height:70px;background:#28a745;border-radius:50%;">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
-                    <polyline points="5 13 9 17 19 7"></polyline>
-                    </svg>
-                </div>
-
-                <!-- Title -->
-                <h4 class="fw-bold">Success</h4>
-
-                <!-- Message -->
-                <p class="text-muted">
-                    {{ session('success') ?? 'Your message has been sent successfully.' }}
-                </p>
-
-                <!-- Button -->
-                <div class="d-flex justify-content-center mt-3">
-                    <button 
-                        class="btn btn-success rounded-pill px-4 py-2" style="width: auto;" data-bs-dismiss="modal"
-                        >
-                        OK
-                    </button>
-                </div>
-
-                </div>
-            </div>
-            </div>
-
-    </section>
+            

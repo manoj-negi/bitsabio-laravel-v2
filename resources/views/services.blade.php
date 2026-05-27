@@ -355,7 +355,7 @@
         </div>
     </section>
 
-    @include('components.mainInquiryForm')
+    @include('components.mainServiceForm')
 
 @endsection
 

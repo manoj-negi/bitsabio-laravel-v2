@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\Role;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles;
 
     protected $fillable = [
         'name',
         'email',
         'password',
-        'role_id',
         'phone',
         'designation',
         'salary',
@@ -41,11 +40,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function role()
-    {
-        // return $this->belongsTo(Role::class);
-        return $this->belongsTo(Role::class)->withDefault();
-    }
     public function blogs()
     {
         return $this->hasMany(Blog::class);
@@ -54,10 +48,5 @@ class User extends Authenticatable
     public function projects()
     {
         return $this->belongsToMany(Project::class);
-    }
-    public function hasPermission($permission)
-    {
-        return $this->role
-            && $this->role->permissions->contains('name', $permission);
     }
 }

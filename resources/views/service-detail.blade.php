@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-3">
                     <div class="blog-right-side">
-                        @include('components.edu-form-with-text')
+                        @include('components.serviceForm')
                             <h5 class="mt-5"> Services Offered</h5>
                             
                            <ul>

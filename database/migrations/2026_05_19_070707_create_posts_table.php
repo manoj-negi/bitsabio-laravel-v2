@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+    if (!Schema::hasTable('posts')) {
         Schema::create('posts', function (Blueprint $table) {
         $table->id();
         $table->enum('type', ['blog', 'course', 'service']);
@@ -44,6 +45,7 @@ return new class extends Migration
 
         $table->timestamps();
         });
+      }
     }
 
     /**

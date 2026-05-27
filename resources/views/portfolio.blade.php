@@ -232,5 +232,5 @@
     </section>
 
     {{-- Main inquiry form  --}}
-    @include('components.mainInquiryForm')
+    @include('components.mainServiceForm')
 @endsection
