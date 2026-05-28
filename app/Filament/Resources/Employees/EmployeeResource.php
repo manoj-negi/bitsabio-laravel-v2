@@ -52,15 +52,22 @@ class EmployeeResource extends Resource
             'edit' => EditEmployee::route('/{record}/edit'),
         ];
     }
+    // public static function getEloquentQuery(): Builder
+    // {
+    //     return parent::getEloquentQuery()
+    //     ->whereHas('roles', function ($q) {
+    //         $q->whereIn('name', [
+    //             'employee',
+    //             'admin',
+    //             'super_admin',
+    //         ]);
+    //     });
+    // }
     public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()
-        ->whereHas('roles', function ($q) {
-            $q->whereIn('name', [
-                'employee',
-                'admin',
-                'super_admin',
-            ]);
+{
+    return parent::getEloquentQuery()
+        ->whereDoesntHave('roles', function ($q) {
+            $q->where('name', 'intern');
         });
-    }
+}
 }

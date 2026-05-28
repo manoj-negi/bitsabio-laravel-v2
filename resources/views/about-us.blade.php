@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('meta_title', 'BitSabio - About')
 
 @section('content')
     <!-- Page Hero -->
@@ -8,7 +9,7 @@
                 <div class="col-md-7">
                     <div class="hero-badge aos-init aos-animate" data-aos="fade-down">
                         <i class="bi bi-circle-fill" style="color: var(--gradient-blue); font-size: 7px;"></i>
-                        <span>ENTERPRISE AI READY</span>
+                        <span>Your Trusted IT Partner</span>
                     </div>
                     <h1 data-aos="fade-up">Building the Future of <span class="color-liner-004ED0">Intelligent Systems</span> </h1>
                     <p data-aos="fade-up" data-aos-delay="100">
@@ -20,7 +21,7 @@
                         Book Free Consultation
                     </a>
                     <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
-                        View Our Work
+                        Explore Services
                     </a>
                     </div>
 

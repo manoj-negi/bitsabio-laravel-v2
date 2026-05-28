@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@section('meta_title', 'BitSabio - Blogs')
+{{-- @extends('layouts.app', [
+    'title' => 'Blogs | BitSabio'
+]) --}}
 @section('content')
 
     <!-- Page Hero -->
@@ -20,15 +23,15 @@
                         <a href="{{url('/contact')}}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
                         Book Free Consultation
                     </a>
-                    <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
-                        View Our Work
+                    <a href="{{url('/services')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
+                        Explore Service
                     </a>
                     </div>
 
                 </div>
                 <div class="col-md-5">
                     <div class="">
-                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
+                        <img class="rounded" src="./images/data-science.jpg" alt="service-hero-img">
                     </div>
                 </div>
             </div>

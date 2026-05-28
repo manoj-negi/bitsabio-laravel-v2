@@ -1,6 +1,6 @@
 @extends('layouts.app')
 {{-- meta tags --}}
-@section('meta_title', $blog->tags['meta']['title'] ?? $blog->title)
+@section('meta_title', $blog->tags['meta']['title'] ?? $blog->title. ' | BitSabio')
 @section('meta_description', $blog->tags['meta']['description'] ?? '')
 @section('meta_keywords', $blog->tags['meta']['keywords'] ?? '')
 @section('meta_robots', $blog->tags['meta']['robots'] ?? 'index, follow')

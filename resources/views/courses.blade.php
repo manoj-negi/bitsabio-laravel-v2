@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('meta_title', 'BitSabio - Courses')
 
 @section('content')
 

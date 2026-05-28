@@ -73,8 +73,6 @@ class ContactController extends Controller
 
         }
 
-    //   Dynamic data 
-
     //  Course Data 
         if ($formType === 'course') {
             return back()->with('modal', [
@@ -134,18 +132,5 @@ class ContactController extends Controller
                 'button_link' => route('services')
             ]);
         }
-
-    //    default modal 
-
-        return back()->with('modal', [
-            'title' =>
-                'Request Submitted Successfully!',
-            'message' => '
-                <p>
-                    Thank you for reaching out to us.
-                    Our team will contact you shortly.
-                </p>
-            '
-        ]);
     }
 }

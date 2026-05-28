@@ -361,7 +361,7 @@ a {
         padding: 0;
     }
 
-    .nav-links a {
+    /* .nav-links a {
         color: var(--color-text-secondary);
         text-decoration: none;
         font-size: 0.9375rem;
@@ -371,7 +371,7 @@ a {
 
     .nav-links a:hover {
         color: var(--color-primary);
-    }
+    } */
 
     .nav-cta {
         padding: 10px 24px;
@@ -1471,6 +1471,13 @@ html {
     background: #E6E8EA;
 }
 
+
+
+/* style for active class in navbar  */
+.nav-link.active-nav {
+    color: #1900ff;
+    font-weight: 800;
+}
 /* ==========================================
    Problem/Solution Cards
    ========================================== */
@@ -2071,14 +2078,13 @@ html {
 }
 
 .nav-link {
-    color: var(--text-secondary) !important;
     font-weight: 500;
     transition: color 0.3s ease;
     margin: 0 0.5rem;
 }
 
 .nav-link:hover {
-    color: var(--text-primary) !important;
+    color: var(--text-primary);
 }
 
 .gradient-bg {

@@ -21,31 +21,6 @@ class PostController extends Controller
         return view('blogs', compact('blogs'));
     }
 
-// course list 
-    public function courses()
-    {
-        $courses = Post::where('type', 'course')
-            ->where('status', 'published')
-            ->orderBy('priority')
-            ->latest()
-            ->get();
-
-        return view('courses', compact('courses'));
-    }
-
-// service list 
-
-    public function services()
-    {
-        $services = Post::where('type', 'service')
-            ->where('status', 'published')
-            ->orderBy('priority')
-            ->latest()
-            ->get();
-
-        return view('services', compact('services'));
-    }
-
 //  blog detail 
     public function showBlog($slug)
     {
@@ -58,7 +33,19 @@ class PostController extends Controller
         return view('blog-detail', compact('blog'));
     }
 
-    // course detail 
+// course list 
+    public function courses()
+    {
+        $courses = Post::where('type', 'course')
+            ->where('status', 'published')
+            ->orderBy('priority')
+            ->latest()
+            ->get();
+
+        return view('courses', compact('courses'));
+    }
+
+        // course detail 
     public function showCourse($slug)
     {
         $course = Post::where('type', 'course')
@@ -75,6 +62,19 @@ class PostController extends Controller
             'course',
             'courses'
         ));
+    }
+
+// service list 
+
+    public function services()
+    {
+        $services = Post::where('type', 'service')
+            ->where('status', 'published')
+            ->orderBy('priority')
+            ->latest()
+            ->get();
+
+        return view('services', compact('services'));
     }
 
     // service detail 

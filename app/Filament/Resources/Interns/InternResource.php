@@ -7,7 +7,6 @@ use App\Filament\Resources\Interns\Pages\EditIntern;
 use App\Filament\Resources\Interns\Pages\ListInterns;
 use App\Filament\Resources\Interns\Schemas\InternForm;
 use App\Filament\Resources\Interns\Tables\InternsTable;
-// use App\Models\Intern;
 use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -53,9 +52,11 @@ class InternResource extends Resource
             'edit' => EditIntern::route('/{record}/edit'),
         ];
     }
-       public static function getEloquentQuery(): Builder
+    public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-           ->role('intern');
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'intern');
+            });
     }
 }

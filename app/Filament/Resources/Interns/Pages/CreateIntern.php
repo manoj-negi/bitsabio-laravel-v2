@@ -8,4 +8,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateIntern extends CreateRecord
 {
     protected static string $resource = InternResource::class;
+    protected function afterCreate(): void
+{
+    $this->record->syncRoles(['intern']);
+}
 }

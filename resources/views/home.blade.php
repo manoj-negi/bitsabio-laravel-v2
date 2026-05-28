@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('meta_title', 'BitSabio - Home')
 
 @section('content')
 
@@ -443,7 +444,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
             </div>
 
             <div class="text-center" data-aos="fade-up">
-                <a href="#contact" class="btn btn-gradient">Explore AI Solutions</a>
+                <a href="{{ url('/services') }}" class="btn btn-gradient">Explore AI Solutions</a>
             </div>
         </div>
     </section>

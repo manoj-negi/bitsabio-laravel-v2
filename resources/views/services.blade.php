@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@section('meta_title', 'BitSabio - Service')
+{{-- @extends('layouts.app', [
+    'title' => 'Services | BitSabio'
+]) --}}
 @section('content')
 
     <!-- Page Hero -->
@@ -19,15 +22,15 @@
                         <a href="{{url('/contact')}}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
                         Book Free Consultation
                     </a>
-                    <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
+                    {{-- <a href="{{url('/contact')}}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
                         View Our Work
-                    </a>
+                    </a> --}}
                     </div>
 
                 </div>
                 <div class="col-md-5">
                     <div class="">
-                        <img src="./images/service-hero-img.webp" alt="service-hero-img">
+                        <img class="rounded" src="./images/web-designing.jpg" alt="service-hero-img">
                     </div>
                 </div>
             </div>
@@ -141,7 +144,7 @@
                 </div>
             </div>
 
-             <div class="row g-4">
+             {{-- <div class="row g-4">
                  @foreach($services as $service)
                  <div class="col-lg-4">
                     <a href="{{ url('/service/' . $service->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
@@ -159,6 +162,24 @@
                 </div>
                     @endforeach
            
+            </div> --}}
+            <div class="row g-4">
+               @foreach($services as $service)
+                <div class="col-lg-3">
+                        <div class="glass-card p-4 h-100">
+                            <div>
+                                <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $service->hero_image) }}" alt="{{ $service->title }}">                                                                                    
+                            </div>
+                            <h5>{{$service->title}}</h5>
+                            <p class="four-line-ellipsis">
+                            {{$service->short_description}}
+                            </p>
+                            <a href="{{ url('/service/' . $service->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
+                        </div>
+                   
+                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
