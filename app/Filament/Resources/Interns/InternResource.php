@@ -7,7 +7,6 @@ use App\Filament\Resources\Interns\Pages\EditIntern;
 use App\Filament\Resources\Interns\Pages\ListInterns;
 use App\Filament\Resources\Interns\Schemas\InternForm;
 use App\Filament\Resources\Interns\Tables\InternsTable;
-// use App\Models\Intern;
 use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -20,7 +19,7 @@ class InternResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -53,10 +52,11 @@ class InternResource extends Resource
             'edit' => EditIntern::route('/{record}/edit'),
         ];
     }
-       public static function getEloquentQuery(): Builder
+    public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-            // ->where('role_id', '3');
-            ->whereHas('role', fn ($q) => $q->where('name', 'intern'));
+            ->whereHas('roles', function ($q) {
+                $q->where('name', 'intern');
+            });
     }
 }

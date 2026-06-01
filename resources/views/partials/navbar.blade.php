@@ -11,33 +11,65 @@
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                       <a class="nav-link" href="{{ url('/') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/about') }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/services') }}">Services</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{ url('/courses') }}">Courses</a>
-                    </li>
-                      <li class="nav-item">
-                       <a class="nav-link" href="{{ url('/portfolio') }}">Portfolio</a>
-                    </li> 
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{ url('/blogs') }}">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
-                    </li>
-                     
-                    <li class="nav-item ms-3">
-                        <a href="{{url('/contact')}}" class="get-start-btn btn-gradient">Get Started</a>
-                    </li>
-                </ul>
-            </div>
+    <ul class="navbar-nav ms-auto align-items-center">
+
+<li class="nav-item">
+    <a class="nav-link {{ Request::segment(1) == null ? 'active-nav' : '' }}"
+       href="{{ url('/') }}">
+        Home
+    </a>
+</li>
+
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('about') ? 'active-nav' : '' }}"
+               href="{{ url('/about') }}">
+                About
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('services') ? 'active-nav' : '' }}"
+               href="{{ url('/services') }}">
+                Services
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('courses') ? 'active-nav' : '' }}"
+               href="{{ url('/courses') }}">
+                Courses
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('portfolio') ? 'active-nav' : '' }}"
+               href="{{ url('/portfolio') }}">
+                Portfolio
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('blogs') ? 'active-nav' : '' }}"
+               href="{{ url('/blogs') }}">
+                Blogs
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('contact') ? 'active-nav' : '' }}"
+               href="{{ url('/contact') }}">
+                Contact
+            </a>
+        </li>
+
+        <li class="nav-item ms-3">
+            <a href="{{ url('/contact') }}" class="get-start-btn btn-gradient">
+                Get Started
+            </a>
+        </li>
+
+    </ul>
+</div>
         </div>
     </nav>

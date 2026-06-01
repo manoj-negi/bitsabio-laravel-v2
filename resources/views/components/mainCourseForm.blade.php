@@ -47,7 +47,7 @@
                         <div class="enquery-form">    
                             <form method="POST" action="/contact" id="homeForm" class="needs-validation" novalidate>
                                 @csrf
-                                <input type="hidden" name="form_type" value="mainCourse">
+                                <input type="hidden" name="form_type" value="course">
                                 
                                 <!-- NAME -->
                                 <div class="mb-3">

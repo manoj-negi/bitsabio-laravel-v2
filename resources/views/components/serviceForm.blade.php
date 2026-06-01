@@ -33,7 +33,7 @@
             </div>
             <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
                 <button type ="submit"class="btn btn-gradient w-100 justify-content-center" id="submitBtn">
-                    Start Learning Now
+                    Submit
                 </button>
             </div>
         </form>

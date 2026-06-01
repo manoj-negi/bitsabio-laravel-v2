@@ -47,7 +47,10 @@ class ContactController extends Controller
             Message: {$data['message']}",
 
                 function ($msg) {
-                    $msg->to('bitvistara@gmail.com')
+                         $msg->to([
+                                env('ADMIN_MAIL'),
+                                env('SUPPORT_MAIL')
+                            ])
                         ->subject('New Contact Message');
                 }
             );
@@ -69,8 +72,6 @@ class ContactController extends Controller
             Log::error('Mail Sending Failed: ' . $e->getMessage());
 
         }
-
-    //   Dynamic data 
 
     //  Course Data 
         if ($formType === 'course') {
@@ -131,18 +132,5 @@ class ContactController extends Controller
                 'button_link' => route('services')
             ]);
         }
-
-    //    default modal 
-
-        return back()->with('modal', [
-            'title' =>
-                'Request Submitted Successfully!',
-            'message' => '
-                <p>
-                    Thank you for reaching out to us.
-                    Our team will contact you shortly.
-                </p>
-            '
-        ]);
     }
 }

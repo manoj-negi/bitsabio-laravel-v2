@@ -4,6 +4,10 @@
     </IfModule>
 
     RewriteEngine On
+   # Redirect WWW to NON-WWW
+    RewriteCond %{HTTP_HOST} ^www\.bitsabio\.in [NC]
+    RewriteRule ^(.*)$ https://bitsabio.in/$1 [L,R=301]
+
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

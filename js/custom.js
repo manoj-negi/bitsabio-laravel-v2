@@ -1,3 +1,41 @@
+// js for active class in menu 
+  
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    let currentPath = window.location.pathname;
+
+    // Fix home page
+    if (currentPath === '') {
+        currentPath = '/';
+    }
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+
+        let linkPath = new URL(link.href).pathname;
+
+        // Fix link home path
+        if (linkPath === '') {
+            linkPath = '/';
+        }
+
+        // Remove old active class
+        link.classList.remove('active-nav');
+
+        // Add active class
+        if (currentPath === linkPath) {
+            link.classList.add('active-nav');
+        }
+
+    });
+
+});
+
+
+
+
 $(document).ready(function () {
 
   const $services = $('#services');
@@ -407,3 +445,8 @@ function showGlobalModal(data) {
     modal.show();
 
 }
+
+
+
+
+ 

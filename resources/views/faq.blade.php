@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('meta_title', 'BitSabio - FAQ')
 
 @section('content')
  <section class="page-hero" id="faq">

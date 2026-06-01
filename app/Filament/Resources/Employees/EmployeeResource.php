@@ -19,7 +19,7 @@ class EmployeeResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -52,10 +52,22 @@ class EmployeeResource extends Resource
             'edit' => EditEmployee::route('/{record}/edit'),
         ];
     }
+    // public static function getEloquentQuery(): Builder
+    // {
+    //     return parent::getEloquentQuery()
+    //     ->whereHas('roles', function ($q) {
+    //         $q->whereIn('name', [
+    //             'employee',
+    //             'admin',
+    //             'super_admin',
+    //         ]);
+    //     });
+    // }
     public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()
-            // ->where('role_id', '2');
-            ->whereHas('role', fn ($q) => $q->where('name', 'employee'));
-    }
+{
+    return parent::getEloquentQuery()
+        ->whereDoesntHave('roles', function ($q) {
+            $q->where('name', 'intern');
+        });
+}
 }

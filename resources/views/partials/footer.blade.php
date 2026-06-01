@@ -20,9 +20,9 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Services</h5>
                     <ul class="footer-links">
-                        <li><a href="{{url('/services/web-app') }}">Web/App Development</a></li>
-                        <li><a href="{{url('/services/ai-solution')}}">AI Solutions</a></li>
-                        <li><a href="{{url('/services/ui-ux')}}">UI/UX Design</a></li>
+                        <li><a href="{{url('/services/web-app') }}">Web Development</a></li>
+                        <li><a href="{{url('/services/ai-solution')}}">App Development</a></li>
+                        <li><a href="{{url('/services/ui-ux')}}">Custom Software Solution</a></li>
                         <li><a href="{{ url('/services/digital-marketing') }}">Digital Marketing</a></li>
                         <!-- <li><a href="#services">Performance</a></li> -->
                         <!-- <li><a href="#services">Mobile Development</a></li> -->
@@ -59,7 +59,10 @@
                                 <i class="bi bi-telephone"></i>
                                 +91 7717320084
                             </a>
-                            <a href="#">
+                            <a 
+                                href="https://maps.app.goo.gl/Uia6ng7hmgkPbSuq9"
+                                target="_blank" class="location-link"
+                            >
                                 <i class="bi bi-geo-alt"></i>
                                 D-229 Prosperity Arcade, Phase 8b,<br/> Industrial Area Mohali, 160071
                             </a>
@@ -76,8 +79,8 @@
                     <a href="https://www.linkedin.com/company/bitsabio-pvt-ltd" class="social-link">
                         <i class="bi bi-linkedin"></i>
                     </a>
-                    <a href="#" class="social-link">
-                        <i class="bi bi-twitter"></i>
+                    <a href="https://www.facebook.com/bitsabio.in" class="social-link">
+                        <i class="bi bi-facebook"></i>
                     </a>
                     <!-- <a href="#" class="social-link">
                         <i class="bi bi-github"></i>

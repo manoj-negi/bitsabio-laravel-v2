@@ -2,53 +2,82 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Blog;
+use App\Models\Post;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
 class SitemapController extends Controller
 {
-        public function index() {
+    public function index()
+    {
         $sitemap = Sitemap::create();
-
     //    static pages 
-
         $pages = [
             '/',
             '/about',
             '/services',
+            '/courses',
+            '/blogs',
             '/portfolio',
             '/contact',
-
-            '/services/ai',
-            '/services/rag_solution',
-            '/services/data_science',
-            '/services/ai-ml',
-            '/services/web-app',
-            '/services/ai-solution',
-            '/services/ui-ux',
-            '/services/digital-marketing',
+            '/faq',
         ];
 
         foreach ($pages as $page) {
 
             $sitemap->add(
-                Url::create($page)
-                    ->setPriority(0.8)
+                Url::create(url($page))
+                    ->setPriority(1.0)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
             );
         }
 
-        // blog pages
+//   blog
 
-        $blogs = Blog::all();
+        $blogs = Post::where('type', 'blog')
+            ->where('status', 'published')
+            ->select('slug', 'updated_at')
+            ->get();
 
         foreach ($blogs as $blog) {
 
             $sitemap->add(
-                Url::create("/blog/{$blog->slug}")
+                Url::create(url('/blog/' . $blog->slug))
                     ->setLastModificationDate($blog->updated_at)
-                    ->setPriority(0.7)
+                    ->setPriority(0.8)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+            );
+        }
+
+        // course 
+        $courses = Post::where('type', 'course')
+            ->where('status', 'published')
+            ->select('slug', 'updated_at')
+            ->get();
+
+        foreach ($courses as $course) {
+
+            $sitemap->add(
+                Url::create(url('/course/' . $course->slug))
+                    ->setLastModificationDate($course->updated_at)
+                    ->setPriority(0.8)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+            );
+        }
+
+    // service 
+        $services = Post::where('type', 'service')
+            ->where('status', 'published')
+            ->select('slug', 'updated_at')
+            ->get();
+
+        foreach ($services as $service) {
+
+            $sitemap->add(
+                Url::create(url('/service/' . $service->slug))
+                    ->setLastModificationDate($service->updated_at)
+                    ->setPriority(0.9)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
             );
         }
 
