@@ -1,8 +1,11 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - Service')
-{{-- @extends('layouts.app', [
-    'title' => 'Services | BitSabio'
-]) --}}
+
+@section('meta_description', 'Explore BitSabio services including web development, AI solutions, UI/UX design, SEO optimization, and digital transformation.')
+@section('meta_keywords', 'web development services, AI solutions, UI UX services, SEO services')
+@section('og_title', 'BitSabio Services')
+@section('og_description', 'Professional web, AI, and digital services for modern businesses.')
+
 @section('content')
 
     <!-- Page Hero -->
@@ -144,25 +147,6 @@
                 </div>
             </div>
 
-             {{-- <div class="row g-4">
-                 @foreach($services as $service)
-                 <div class="col-lg-4">
-                    <a href="{{ url('/service/' . $service->slug) }}" class="service-card-link" data-aos="fade-up" data-aos-delay="100">
-
-                        <div class="card-custom">
-                            <div class="icon-box">
-                                <i class="bi bi-gear-wide-connected text-primary"></i>
-                            </div>
-                            <h5>{{$service->title}}</h5>
-                            <p>
-                            {{$service->short_description}}
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                    @endforeach
-           
-            </div> --}}
             <div class="row g-4">
                @foreach($services as $service)
                 <div class="col-lg-3">
@@ -188,7 +172,7 @@
     <section class="py-5" style="background-color: var(--color-surface-light);">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 data-aos="fade-up">End-to-End Development</h2>
+                <h3 data-aos="fade-up">End-to-End Development</h3>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                     From concept to deployment, we build products that users love
                 </p>
@@ -275,7 +259,7 @@
             <div class="slide bg-globe-img d-flex align-items-center justify-content-center text-center">
             <div class="overlay"></div>
             <div class="content text-white position-relative">
-                <h1 class="fw-bold">Built for Scale.<br>Designed for Impact.</h1>
+                <h3 class="fw-bold">Built for Scale.<br>Designed for Impact.</h3>
             </div>
             </div>
 
@@ -283,7 +267,7 @@
             <div class="slide bg-globe-img d-flex align-items-center justify-content-center text-center">
             <div class="overlay"></div>
             <div class="content text-white position-relative">
-                <h1 class="fw-bold">AI Solutions for Modern Businesses</h1>
+                <h3 class="fw-bold">AI Solutions for Modern Businesses</h3>
             </div>
             </div>
 
@@ -291,7 +275,7 @@
             <div class="slide bg-globe-img d-flex align-items-center justify-content-center text-center">
             <div class="overlay"></div>
             <div class="content text-white position-relative">
-                <h1 class="fw-bold">Transforming Ideas into Scalable Systems</h1>
+                <h3 class="fw-bold">Transforming Ideas into Scalable Systems</h3>
             </div>
             </div>
 
@@ -304,7 +288,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="">
-                        <h2 class="mb-4" data-aos="fade-up">Why Innovators Partner With Us</h2>
+                        <h3 class="mb-4" data-aos="fade-up">Why Innovators Partner With Us</h3>
                         <div class="h-100">
                             <div class="innovators-card" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon">
@@ -364,7 +348,7 @@
     <section class="py-5">
         <div class="container">
             <div class="cta-banner-2" data-aos="fade-up">
-                <h2>Ready to Build Scalable AI Solutions?</h2>
+                <h3>Ready to Build Scalable AI Solutions?</h3>
                 <p class="text-white mb-3">Let's discuss your challenges and find the right AI solution for your business</p>
                 <a href="{{url('/contact')}}" class="btn btn-primary btn-lg">
                     Talk to an Expert

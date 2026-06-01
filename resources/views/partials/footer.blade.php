@@ -20,12 +20,11 @@
                 <div class="col-lg-2 col-md-4">
                     <h5 class="footer-title">Services</h5>
                     <ul class="footer-links">
-                        <li><a href="{{url('/services/web-app') }}">Web Development</a></li>
-                        <li><a href="{{url('/services/ai-solution')}}">App Development</a></li>
-                        <li><a href="{{url('/services/ui-ux')}}">Custom Software Solution</a></li>
-                        <li><a href="{{ url('/services/digital-marketing') }}">Digital Marketing</a></li>
-                        <!-- <li><a href="#services">Performance</a></li> -->
-                        <!-- <li><a href="#services">Mobile Development</a></li> -->
+                        {{-- <a href="{{ route('service.details', 'web-development-services') }}"> --}}
+                        <li><a href="{{ route('content.showService', 'web-development-services') }}">Web Development</a></li>
+                        <li><a href="{{ route('content.showService', 'mobile-app-development') }}">App Development</a></li>
+                        <li><a href="{{ route('content.showService', 'custom-software-solutions') }}">Custom Software Solution</a></li>
+                        <li><a href="{{ route('content.showService', 'digital-marketing') }}">Digital Marketing</a></li>
                     </ul>
                 </div>
 
@@ -42,6 +41,8 @@
                         <li><a href="{{url('blogs')}}">Blogs</a></li>
                         <li><a href="{{url('/contact')}}">Contact</a></li>
                         <li><a href="{{ url('/faq') }}">FAQ</a></li>
+                        <li><a href="{{ url('/privacy-policy') }}">Privacy-Policy</a></li>
+
                     </ul>
                 </div>
 

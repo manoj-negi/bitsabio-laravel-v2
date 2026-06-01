@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - Portfolio')
 
+@section('meta_description', 'Explore BitSabio portfolio showcasing successful web development, AI projects, branding, and digital transformation solutions.')
+@section('meta_keywords', 'portfolio, web development projects, AI projects, case studies')
+@section('og_title', 'BitSabio Portfolio')
+@section('og_description', 'Discover our latest projects and success stories.')
+
 @section('content')
     <!-- Page Hero -->
     <section class="page-hero">
@@ -193,7 +198,7 @@
     <section class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 data-aos="fade-up">Industries We Build For</h2>
+                <h3 data-aos="fade-up">Industries We Build For</h3>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                     We tailor solutions for high-impact domains where speed, reliability, and intelligence matter.
                 </p>

@@ -1,5 +1,21 @@
 @extends('layouts.app')
-@section('meta_title', $service->title . ' | BitSabio')
+@section('meta_title', $service->tags['meta']['title'] ?? $service->title . ' | BitSabio')
+@section('meta_description', $service->tags['meta']['description'] ?? '')
+@section('meta_keywords', $service->tags['meta']['keywords'] ?? '')
+@section('meta_robots', $service->tags['meta']['robots'] ?? 'index, follow')
+@section('meta_canonical', $service->tags['meta']['canonical'] ?? url()->current())
+
+
+{{-- open graph --}}
+@section('og_title', $service->tags['open_graph']['title'] ?? $service->title)
+
+@section('og_description', 
+    $service->tags['open_graph']['description'] 
+    ?? $service->tags['meta']['description'] 
+    ?? ''
+)
+@section('og_type', $service->tags['open_graph']['type'] ?? 'article')
+@section('og_url', $service->tags['open_graph']['url'] ?? url()->current())
 
 @section('content')
 
@@ -34,12 +50,7 @@
             <div class="col-md-9">
 
                 <div class="">
-
-                    <div class="">
-                    <img src="" alt="">
-                    </div>
-
-                    <div>
+                   <div>
                         {!! $service->content !!}
                     </div>
 

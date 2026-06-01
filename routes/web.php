@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\GoogleReviewController;
 
 Route::get('/', function () {
     return view('home');    
@@ -87,3 +88,5 @@ Route::get('/unsubscribe/{email}', [SubscriberController::class, 'unsubscribe'])
 
 // sitetmap route 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+Route::get('/google-reviews', [GoogleReviewController::class, 'index']);
+Route::view('privacy-policy','legal.privacy-policy');

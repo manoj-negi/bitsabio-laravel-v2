@@ -1,3 +1,5 @@
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -38,7 +40,7 @@
     <section id="solutions" class="py-5 position-relative" style="background-color: var(--color-surface);">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title gradient-text">Suggested Destinations </h2>
+                <h3 class="section-title gradient-text">Suggested Destinations </h3>
             </div>
 
             <div class="row g-4 mb-4">
@@ -50,7 +52,7 @@
                         <h4 class="fw-bold mb-3">Courses</h4>
                         <p class="text-secondary small">Master AI-driven workflows and tools.</p>
                         <div class="text-end">
-                            <a href="{{url('/course')}}" class="btn fs-2 p-0">
+                            <a href="{{url('/courses')}}" class="btn fs-2 p-0">
                                 <i class="bi bi-arrow-right-short"></i>
                             </a>
                         </div>
@@ -80,7 +82,7 @@
                         <h4 class="fw-bold mb-3">About Us</h4>
                         <p class="text-secondary small">TraLearn more about our agency mission.</p>
                         <div class="text-end">
-                            <a href="{{url('about-us')}}" class="btn fs-2 p-0">
+                            <a href="{{url('about')}}" class="btn fs-2 p-0">
                                 <i class="bi bi-arrow-right-short"></i>
                             </a>
                         </div>
@@ -106,29 +108,7 @@
         </div>
     </section>
 
-{{-- <section class="error-page py-5">
 
-    <div class="container text-center">
-
-        <h1 class="display-1 fw-bold text-primary">
-            404
-        </h1>
-
-        <h2 class="mb-3">
-            Page Not Found
-        </h2>
-
-        <p class="text-muted mb-4">
-            The page you are looking for does not exist.
-        </p>
-
-        <a href="{{ url('/') }}" class="btn btn-primary px-4 py-2">
-            Back To Home
-        </a>
-
-    </div>
-
-</section> --}}
 
 @endsection
 

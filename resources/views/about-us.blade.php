@@ -1,7 +1,13 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - About')
 
+@section('meta_description', 'Learn about BitSabio, our mission, team, expertise, and commitment to delivering innovative AI and digital solutions.')
+@section('meta_keywords', 'about bitsabio, digital agency, AI experts, web development company')
+@section('og_title', 'About BitSabio')
+@section('og_description', 'Meet the team behind BitSabio and discover our vision.')
+
 @section('content')
+
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
@@ -156,7 +162,7 @@
     <div id="stats-section" class="info-lable">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title gradient-text">Success Through Innovation</h2>
+                <h3 class="section-title gradient-text">Success Through Innovation</h3>
                 <p class="section-subtitle">Delivering measurable growth through innovation and expertise.</p>
             </div>
             <div class="row">
@@ -233,30 +239,6 @@
             </div>
         </div>
     </div>
-   
-
-    <!-- Certifications & Partners -->
-    {{-- <section class="py-5" style="background-color: var(--color-surface);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 data-aos="fade-up">Trusted & Certified</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                    Industry-recognized standards and partnerships
-                </p>
-            </div>
-            
-            <div class="tech-stack" data-aos="fade-up" data-aos-delay="200">
-                <div class="tech-pill">SOC 2 Type II Certified</div>
-                <div class="tech-pill">GDPR Compliant</div>
-                <div class="tech-pill">HIPAA Compliant</div>
-                <div class="tech-pill">ISO 27001</div>
-                <div class="tech-pill">AWS Advanced Partner</div>
-                <div class="tech-pill">Google Cloud Partner</div>
-                <div class="tech-pill">Microsoft Azure Partner</div>
-                <div class="tech-pill">OpenAI Partner</div>
-            </div>
-        </div>
-    </section> --}}
 
     <!-- Culture & Careers Teaser -->
     <section class="py-5">
@@ -264,7 +246,7 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="section-badge">Join Our Team</div>
-                    <h2 class="mb-4">Build the Future with Us</h2>
+                    <h3 class="mb-4">Build the Future with Us</h3>
                     <p class="mb-4" style="font-size: 1.125rem; color: var(--color-text-secondary);">
                         We're always looking for exceptional engineers, data scientists, and product builders who want to push the boundaries of what's possible with AI.
                     </p>
