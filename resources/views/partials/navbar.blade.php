@@ -36,9 +36,9 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('courses') ? 'active-nav' : '' }}"
-               href="{{ url('/courses') }}">
-                Courses
+            <a class="nav-link {{ request()->is('training') ? 'active-nav' : '' }}"
+               href="{{ url('/training') }}">
+                Training 
             </a>
         </li>
 

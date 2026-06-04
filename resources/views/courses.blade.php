@@ -212,7 +212,7 @@
                                     <span class="level-tag">{{$course->level}}</span>
                                 </div>
                             </div> --}}
-                            <a href="{{ url('/course/' . $course->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
+                            <a href="{{ url('/training/' . $course->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
                         </div>
                    
                 </div>

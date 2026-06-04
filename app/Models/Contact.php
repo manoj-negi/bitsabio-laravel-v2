@@ -9,9 +9,12 @@ class Contact extends Model
       protected $fillable = [
         'name',
         'email',
-        // 'company',
+        'phone',
+        'company',
         'project_type',
-        'status',
         'message',
+        'status',
+        'inquiry_type',
+        'course_name',
     ];
 }

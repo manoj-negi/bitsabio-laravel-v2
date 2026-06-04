@@ -16,10 +16,10 @@ class ContactController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email',
             'phone' => 'nullable|string|max:20',
-            'course' => 'nullable|string|max:255',
+            'course_name' => 'nullable|string|max:255',
             'project_type' => 'nullable|string|max:255',
             'message' => 'nullable|string',
-            'form_type' => 'nullable|string',
+            'inquiry_type' => 'nullable|string',
         ]);
 
         // Default values
@@ -28,7 +28,7 @@ class ContactController extends Controller
         $data['message'] = $data['message'] ?? 'No message provided';
         $data['phone'] = $data['phone'] ?? 'N/A';
         $data['course'] = $data['course'] ?? 'N/A';
-        $formType = $data['form_type'] ?? 'general';
+        $formType = $data['inquiry_type'] ?? 'general';
 
         // Save
         Contact::create($data);

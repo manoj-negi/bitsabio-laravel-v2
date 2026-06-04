@@ -18,13 +18,16 @@ use Illuminate\Database\Eloquent\Builder;
 class EmployeeResource extends Resource
 {
     protected static ?string $model = User::class;
+    protected static ?string $modelLabel = 'Employee';
+    protected static ?string $pluralModelLabel = 'Employees';
+    protected static ?string $navigationLabel = 'Employees';
+
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static string | \UnitEnum | null $navigationGroup = 'Users';
-    protected static ?string $navigationLabel = 'Employees';
     protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
@@ -64,10 +67,10 @@ class EmployeeResource extends Resource
     //     });
     // }
     public static function getEloquentQuery(): Builder
-{
-    return parent::getEloquentQuery()
-        ->whereDoesntHave('roles', function ($q) {
-            $q->where('name', 'intern');
-        });
-}
+    {
+        return parent::getEloquentQuery()
+            ->whereDoesntHave('roles', function ($q) {
+                $q->where('name', 'intern');
+            });
+    }
 }
