@@ -2,7 +2,7 @@
     <h5>Enroll Now</h5>    
         <form method="POST" action="{{route ('contact.send')}}" class="needs-validation" novalidate>
             @csrf
-            <input type="hidden" name="form_type" value="service">
+            <input type="hidden" name="inquiry_type" value="service">
               <!-- NAME -->
             <div class="mb-3">
                 <input type="text" name="name" class="form-control" placeholder="Your name" required>

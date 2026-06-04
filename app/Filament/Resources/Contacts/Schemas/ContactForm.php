@@ -16,31 +16,42 @@ class ContactForm
 
                 TextInput::make('name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->disabled(),
 
                 TextInput::make('email')
                     ->email()
-                    ->required(),
+                    ->required()
+                    ->disabled(),
 
-                TextInput::make('company')
-                    ->maxLength(255),
+                TextInput::make('phone')
+                    ->label('Phone Number')
+                    ->disabled(),
+
+                TextInput::make('inquiry_type')
+                    ->label('Inquiry Type')
+                    ->disabled(),
+
+                TextInput::make('course_name')
+                    ->label('Course')
+                    ->disabled(),
 
                 TextInput::make('project_type')
-                    ->label('Project Type'),
+                    ->label('Project Type')
+                    ->disabled(),
 
                 Textarea::make('message')
                     ->rows(4)
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->disabled(),
 
-            
                 Select::make('status')
                     ->options([
-                        'pending' => 'Pending',
+                        'pending'  => 'Pending',
                         'resolved' => 'Resolved',
                     ])
                     ->default('pending')
                     ->required(),
-
             ]);
     }
 }

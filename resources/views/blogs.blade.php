@@ -1,8 +1,11 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - Blogs')
-{{-- @extends('layouts.app', [
-    'title' => 'Blogs | BitSabio'
-]) --}}
+
+@section('meta_description', 'Read the latest articles, insights, tutorials, and industry trends on AI, web development, SEO, design, and digital growth.')
+@section('meta_keywords', 'AI blog, web development blog, SEO articles, technology insights')
+@section('og_title', 'BitSabio Blog')
+@section('og_description', 'Latest articles and insights from BitSabio.')
+
 @section('content')
 
     <!-- Page Hero -->

@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - Contact')
 
+@section('meta_description', 'Get in touch with BitSabio for web development, AI solutions, SEO services, UI/UX design, and business growth consultation.')
+@section('meta_keywords', 'contact bitsabio, web development consultation, AI agency contact')
+@section('og_title', 'Contact BitSabio')
+@section('og_description', 'Contact our team to discuss your project requirements.')
+
 @section('content')
 
     <!-- Page Hero -->

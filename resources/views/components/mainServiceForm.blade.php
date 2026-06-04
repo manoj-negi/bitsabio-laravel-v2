@@ -52,7 +52,7 @@
                         <div class="contact-form-container" data-aos="fade-up">
                             <form method="POST" action="{{ route('contact.send') }}" class="needs-validation" novalidate>
                                 @csrf
-                                <input type="hidden" name="form_type" value="service">
+                                <input type="hidden" name="inquiry_type" value="service">
                                 <!-- Name -->
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name *</label>

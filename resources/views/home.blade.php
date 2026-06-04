@@ -1,10 +1,14 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - Home')
 
+@section('meta_description', 'BitSabio helps businesses grow with AI-powered web development, UI/UX design, SEO, digital marketing, and custom software solutions.')
+@section('meta_keywords', 'AI agency, web development, UI UX design, SEO services, digital marketing, software development')
+@section('og_title', 'BitSabio - AI-First Digital Agency')
+@section('og_description', 'AI-powered web development and digital growth services.')
+
 @section('content')
 
     <!-- ========== HERO SECTION ========== -->
-
     <section class="hero-section gradient-bg">
         <div class="container">
             <div class="hero-slider">
@@ -18,9 +22,9 @@
                             </div>
 
                             <!-- Title -->
-                            <h1 class="hero-title gradient-text" data-aos="fade-up">
+                            <h3 class="hero-title gradient-text" data-aos="fade-up">
                                 Transform Your Business<br>With AI-First Solutions
-                            </h1>
+                            </h3>
 
 
 
@@ -68,9 +72,9 @@
                             </div>
 
                             <!-- Title -->
-                            <h1 class="hero-title gradient-text" data-aos="fade-up">
+                            <h3 class="hero-title gradient-text" data-aos="fade-up">
                                 MLOps (Machine Learning Operations)
-                            </h1>
+                            </h3>
 
                             <!-- Subtitle -->
                             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
@@ -116,9 +120,9 @@
                             </div>
 
                             <!-- Title -->
-                            <h1 class="hero-title gradient-text" data-aos="fade-up">
+                            <h3 class="hero-title gradient-text" data-aos="fade-up">
                                 DevOps & Cloud (AWS / GCP)
-                            </h1>
+                            </h3>
 
                             <!-- Subtitle -->
                             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
@@ -397,7 +401,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
                     <i class="bi bi-robot"></i>
                     <span>AI-Powered</span>
                 </div>
-                <h2 class="section-title gradient-text">Intelligent Solutions That Scale</h2>
+                <h3 class="section-title gradient-text">Intelligent Solutions That Scale</h3>
                 <p class="section-subtitle">Harness the power of AI to transform your business operations and deliver exceptional user experiences</p>
             </div>
 
@@ -454,7 +458,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
     <div id="stats-section" class="info-lable">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title gradient-text">Success Through Innovation</h2>
+                <h3 class="section-title gradient-text">Success Through Innovation</h3>
                 <p class="section-subtitle">Delivering measurable growth through innovation and expertise.</p>
             </div>
             <div class="row">
@@ -536,7 +540,7 @@ Our scalable backend architecture ensures reliability, flexibility, and future-r
     <section id="process" class="py-5 my-5" style="background: var(--bg-overlay);">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title gradient-text">How We Work</h2>
+                <h3 class="section-title gradient-text">How We Work</h3>
                 <p class="section-subtitle">A proven process that delivers results, from concept to launch and beyond</p>
             </div>
 

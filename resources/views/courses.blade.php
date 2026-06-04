@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('meta_title', 'BitSabio - Courses')
 
+@section('meta_description', 'Learn web development, AI technologies, design, and digital skills through practical courses and industry-focused training programs.')
+@section('meta_keywords', 'web development courses, AI courses, programming training, digital skills')
+@section('og_title', 'BitSabio Courses')
+@section('og_description', 'Industry-ready courses and training programs.')
+
 @section('content')
 
     <!-- ========== HERO SECTION ========== -->
@@ -17,9 +22,9 @@
                             </div>
 
                             <!-- Title -->
-                            <h1 class="hero-title" data-aos="fade-up">
+                            <h3 class="hero-title" data-aos="fade-up">
                                 Explore <span class="color-liner-004ED0">Industry Ready</span> Tech Courses
-                            </h1>
+                            </h3>
 
                             <!-- Subtitle -->
                             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
@@ -53,9 +58,9 @@
                             </div>
 
                             <!-- Title -->
-                            <h1 class="hero-title" data-aos="fade-up">
+                            <h3 class="hero-title" data-aos="fade-up">
                                 Become a <span class="color-liner-004ED0">Full Stack Developer</span>
-                            </h1>
+                            </h3>
 
                             <!-- Subtitle -->
                             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
@@ -89,9 +94,9 @@
                             </div>
 
                             <!-- Title -->
-                            <h1 class="hero-title" data-aos="fade-up">
+                            <h3 class="hero-title" data-aos="fade-up">
                                 Learn <span class="color-liner-004ED0">AI, Machine Learning, DevOps & RAG</span>
-                            </h1>
+                            </h3>
 
                             <!-- Subtitle -->
                             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
@@ -207,7 +212,7 @@
                                     <span class="level-tag">{{$course->level}}</span>
                                 </div>
                             </div> --}}
-                            <a href="{{ url('/course/' . $course->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
+                            <a href="{{ url('/training/' . $course->slug) }}" class="btn btn-white w-100 justify-content-center color-liner-004ED0" tabindex="0">View more</a>
                         </div>
                    
                 </div>
@@ -226,7 +231,7 @@
                     <i class="bi bi-robot"></i>
                     <span>WHAT YOU’LL GET</span>
                 </div>
-                <h2 class="section-title gradient-text">Everything You Need to Start Your Tech Career</h2>
+                <h3 class="section-title gradient-text">Everything You Need to Start Your Tech Career</h3>
                 <p class="section-subtitle">Learn practical skills, build real projects, and get guided support to grow from beginner to job-ready.</p>
             </div>
 
@@ -283,7 +288,7 @@
     <div id="stats-section" class="info-lable">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title gradient-text">Real Results from Real Learning</h2>
+                <h3 class="section-title gradient-text">Real Results from Real Learning</h3>
                 <p class="section-subtitle">Helping students build skills, complete projects, and confidently step into the tech industry.</p>
             </div>
             <div class="row">
@@ -369,7 +374,7 @@
           <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="mb-3" data-aos="fade-up">
-                    <h2 class="section-title gradient-text">About Bitsabio Learning</h2>
+                    <h3 class="section-title gradient-text">About Bitsabio Learning</h3>
                     <p><b>Bitsabio</b> is a fast-growing <b>IT training company</b> focused on delivering practical, job-oriented learning. We help <b>students, professionals, and businesses </b>build </b>in-demand skills</b>and stay ahead in the evolving tech industry.</p>
                     <p>Our programs are designed with a <b>hands-on approach,</b>including <b>live projects</b> and <b>expert mentorship</b>. We aim to <b> bridge the gap between learning and industry needs,</b> helping individuals gain <b>real-world experience </b>and succeed in their careers.</p>
                                      

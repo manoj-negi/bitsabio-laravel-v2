@@ -18,13 +18,15 @@ use Illuminate\Database\Eloquent\Builder;
 class InternResource extends Resource
 {
     protected static ?string $model = User::class;
+    protected static ?string $modelLabel = 'Intern';
+    protected static ?string $pluralModelLabel = 'Interns';
+    protected static ?string $navigationLabel = 'Interns';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedAcademicCap;
 
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static string | \UnitEnum | null $navigationGroup = 'Users';
-    protected static ?string $navigationLabel = 'Interns';
     protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
@@ -52,11 +54,11 @@ class InternResource extends Resource
             'edit' => EditIntern::route('/{record}/edit'),
         ];
     }
-    public static function getEloquentQuery(): Builder
+        public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-            ->whereHas('roles', function ($q) {
-                $q->where('name', 'intern');
+            ->whereHas('roles', function ($query) {
+                $query->where('name', 'Intern');
             });
     }
 }

@@ -28,9 +28,6 @@ class InternsTable
                 TextColumn::make('joining_date')
                     ->date(),
 
-                TextColumn::make('leaving_date')
-                    ->date(),
-
                 BadgeColumn::make('status')
                     ->colors([
                         'success' => 'active',

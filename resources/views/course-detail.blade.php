@@ -1,5 +1,21 @@
 @extends('layouts.app')
-@section('meta_title', $course->title . ' | BitSabio')
+@section('meta_title', $course->tags['meta']['title'] ?? $course->title . ' | BitSabio')
+@section('meta_description', $course->tags['meta']['description'] ?? '')
+@section('meta_keywords', $course->tags['meta']['keywords'] ?? '')
+@section('meta_robots', $course->tags['meta']['robots'] ?? 'index, follow')
+@section('meta_canonical', $course->tags['meta']['canonical'] ?? url()->current())
+
+
+{{-- open graph --}}
+@section('og_title', $course->tags['open_graph']['title'] ?? $course->title)
+
+@section('og_description', 
+    $course->tags['open_graph']['description'] 
+    ?? $course->tags['meta']['description'] 
+    ?? ''
+)
+@section('og_type', $course->tags['open_graph']['type'] ?? 'article')
+@section('og_url', $course->tags['open_graph']['url'] ?? url()->current())
 
 @section('content')
 
@@ -34,11 +50,6 @@
             <div class="col-md-9">
 
                 <div class="">
-
-                    <div class="">
-                    <img src="" alt="">
-                    </div>
-
                     <div>
                         {!! $course->content !!}
                     </div>
@@ -54,7 +65,7 @@
                            <ul>
                                 @foreach($courses as $course)
                                     <li>
-                                        <a href="{{ url('/course/' . $course->slug) }}">
+                                        <a href="{{ url('/training/' . $course->slug) }}">
                                             {{ $course->title }}
                                         </a>
                                     </li>

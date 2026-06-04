@@ -58,7 +58,7 @@ class SitemapController extends Controller
         foreach ($courses as $course) {
 
             $sitemap->add(
-                Url::create(url('/course/' . $course->slug))
+                Url::create(url('/training/' . $course->slug))
                     ->setLastModificationDate($course->updated_at)
                     ->setPriority(0.8)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)

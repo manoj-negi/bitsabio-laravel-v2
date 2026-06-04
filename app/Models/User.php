@@ -15,6 +15,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
         'phone',
         'designation',
         'salary',
@@ -23,6 +24,7 @@ class User extends Authenticatable
         'number_of_leaves',
         'status',
         'notes',
+        'intern_details',
     ];
 
     protected $hidden = [
@@ -37,6 +39,7 @@ class User extends Authenticatable
             'joining_date' => 'date',
             'leaving_date' => 'date',
             'password' => 'hashed',
+            'intern_details' => 'array',
         ];
     }
 

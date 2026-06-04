@@ -7,6 +7,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\GoogleReviewController;
+use App\Http\Controllers\InvoicePdfController;
+use App\Http\Controllers\InternController;
 
 Route::get('/', function () {
     return view('home');    
@@ -31,8 +34,8 @@ Route::get('/contact', function () {
 Route::get('/blogs', [PostController::class, 'blogs'])->name('blogs');
 Route::get('/blog/{slug}', [PostController::class, 'showBlog']);
 
-Route::get('/courses', [PostController::class, 'courses'])->name('courses');
-Route::get('/course/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
+Route::get('/training', [PostController::class, 'courses'])->name('courses');
+Route::get('/training/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
 
 Route::get('/services', [PostController::class, 'services'])->name('services');
 Route::get('/service/{slug}', [PostController::class, 'showService'])->name('content.showService');
@@ -87,3 +90,12 @@ Route::get('/unsubscribe/{email}', [SubscriberController::class, 'unsubscribe'])
 
 // sitetmap route 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+Route::get('/google-reviews', [GoogleReviewController::class, 'index']);
+Route::view('privacy-policy','legal.privacy-policy');
+
+Route::get('/invoice/{invoice}/pdf',[InvoicePdfController::class, 'download'])->name('invoice.pdf');
+
+Route::get('/internForm', function () {
+    return view('internForm');
+});Route::post('/internForm', [InternController::class, 'store'])
+    ->name('intern.store');

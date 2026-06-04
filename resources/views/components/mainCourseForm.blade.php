@@ -45,9 +45,9 @@
 
                     <div class="col-md-7">
                         <div class="enquery-form">    
-                            <form method="POST" action="/contact" id="homeForm" class="needs-validation" novalidate>
+                            <form method="POST" action="{{route ('contact.send')}}" id="homeForm" class="needs-validation" novalidate>
                                 @csrf
-                                <input type="hidden" name="form_type" value="course">
+                                <input type="hidden" name="inquiry_type" value="course">
                                 
                                 <!-- NAME -->
                                 <div class="mb-3">

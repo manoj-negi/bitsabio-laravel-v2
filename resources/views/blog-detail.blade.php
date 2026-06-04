@@ -86,5 +86,4 @@
 
     {{-- Main inquiry form  --}}
       @include('components.mainCourseForm')
-
   @endsection
