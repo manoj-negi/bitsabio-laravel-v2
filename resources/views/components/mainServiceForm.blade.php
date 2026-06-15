@@ -1,7 +1,7 @@
  <!-- Contact Form -->
-    <section id="contact-page-form" class="py-5" style="background-color: var(--color-surface);">
+    <section id="contact-page-form" class="cta-section gradient-bg">
         <div class="container">
-            <div class="">
+            <div class="glass-card cta-card">
                 <div class="row align-items-center">
                     <div class="col-md-5">
                         <div class="why-partner-us">
@@ -124,7 +124,7 @@
                         </div>
                     </div>  
 
-                    <div class="trust-indicators">
+                        <div class="trust-indicators">
                             <div class="trust-item">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"></circle>
@@ -148,10 +148,11 @@
                                 <span>Free consultation</span>
                             </div>
                         </div>
+                   
                 </div>
-                
              
             </div>
         </div>
+    </section>
 
             

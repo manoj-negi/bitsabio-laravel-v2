@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Events\PostPublished;
+use Illuminate\Support\Facades\Storage;
+
 
 class Post extends Model
 {
@@ -67,4 +69,11 @@ public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+public function getImageUrlAttribute()
+{
+    return $this->image
+        ? Storage::disk('s3')->url($this->image)
+        : null;
+}
 }

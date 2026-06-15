@@ -74,7 +74,7 @@
 
                              <div class="mb-3">
                                  <label class="form-label">Select Course</label>
-                                <select name="course" class="form-select">
+                                <select name="course_name" class="form-select">
                                     <option value="" disabled selected>Select Course</option>
                                     <option value="full_stack">Full Stack Web Developer</option>
                                     <option value="data_science">Data Science</option>
