@@ -70,10 +70,11 @@ public function user()
         return $this->belongsTo(User::class);
     }
 
-public function getImageUrlAttribute()
+
+public function getImageUrlAttribute(): ?string
 {
     return $this->image
-        ? Storage::disk('s3')->url($this->image)
+        ? Storage::disk('s3')->url('posts/' . $this->image)
         : null;
 }
 }

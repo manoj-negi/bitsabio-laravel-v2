@@ -30,7 +30,9 @@
                     
                     {{-- Image --}}
                     <div class="blog-detail-img mt-3">
-                        <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                    
+                        {{-- <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                     --}}
+                        <img src="{{ $blog->image_url }}" alt="{{ $blog->title }}">
+
 
                     </div>
 

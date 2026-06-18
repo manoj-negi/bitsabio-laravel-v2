@@ -97,94 +97,48 @@ class PostForm
                         in_array($get('type'), ['course','service'])
                     ),
 
-            FileUpload::make('hero_image')
-                    ->image()
-                    ->disk('public')
-                    ->visibility('public')
-                    ->nullable()
-                    ->maxSize(5120)
-                    ->visible(fn (Get $get) => in_array($get('type'), ['course','service']))
-                    ->imageEditor(false)
+                FileUpload::make('hero_image')
+                        ->image()
+                        ->disk('s3')
+                        ->directory('posts')
+                        ->visibility('public')
+                        ->getUploadedFileNameForStorageUsing(
+                            fn (TemporaryUploadedFile $file): string =>
+                                time() . '-' .
+                                Str::slug(
+                                    pathinfo(
+                                        $file->getClientOriginalName(),
+                                        PATHINFO_FILENAME
+                                    )
+                                ) . '.' .
+                                $file->getClientOriginalExtension()
+                        )
+                        ->dehydrateStateUsing(fn ($state) => basename($state))
+                        ->visible(fn (Get $get) => in_array($get('type'), ['course','service'])),
 
-                    ->getUploadedFileNameForStorageUsing(
-                        function (TemporaryUploadedFile $file): string {
-                            $name = pathinfo(
-                                $file->getClientOriginalName(),
-                                PATHINFO_FILENAME
-                            );
-                            $name = Str::slug($name);
-                            $extension = $file->getClientOriginalExtension();
-                            return time() . '-' . $name . '.' . $extension;
-                        }
-                    )
-                    ->getUploadedFileUsing(
-                            function ($file): ?array {
-
-                                if (! $file) {
-                                    return null;
-                                }
-
-                                return [
-                                    'name' => $file,
-
-                                    'size' => filesize(
-                                        storage_path('app/public/' . $file)
-                                    ),
-
-                                    'type' => mime_content_type(
-                                        storage_path('app/public/' . $file)
-                                    ),
-
-                                     'url' => url('/public/storage/' . $file),
-                                ];
-                            }
-                    ),         
                        //   blog
 
                 TextInput::make('category')
                         ->visible(fn (Get $get) => $get('type') === 'blog'),
 
+
                 FileUpload::make('image')
-                    ->image()
-                    ->disk('public')
-                    ->visibility('public')
-                    ->nullable()
-                    ->maxSize(5120)
-                    ->imageEditor(false)
-
-                    ->getUploadedFileNameForStorageUsing(
-                        function (TemporaryUploadedFile $file): string {
-                            $name = pathinfo(
-                                $file->getClientOriginalName(),
-                                PATHINFO_FILENAME
-                            );
-                            $name = Str::slug($name);
-                            $extension = $file->getClientOriginalExtension();
-                            return time() . '-' . $name . '.' . $extension;
-                        }
-                    )
-                    ->getUploadedFileUsing(
-                            function ($file): ?array {
-
-                                if (! $file) {
-                                    return null;
-                                }
-
-                                return [
-                                    'name' => $file,
-
-                                    'size' => filesize(
-                                        storage_path('app/public/' . $file)
-                                    ),
-
-                                    'type' => mime_content_type(
-                                        storage_path('app/public/' . $file)
-                                    ),
-
-                                     'url' => url('/public/storage/' . $file),
-                                ];
-                            }
-                    ),
+                        ->image()
+                        ->disk('s3')
+                        ->directory('posts')
+                        ->visibility('public')
+                        ->getUploadedFileNameForStorageUsing(
+                            fn (TemporaryUploadedFile $file): string =>
+                                time() . '-' .
+                                Str::slug(pathinfo(
+                                    $file->getClientOriginalName(),
+                                    PATHINFO_FILENAME
+                                )) . '.' .
+                                $file->getClientOriginalExtension()
+                        )
+                        ->dehydrateStateUsing(fn ($state) => basename($state))
+                        ->formatStateUsing(fn ($state) => $state ? 'posts/' . $state : null),
+        
                 TextInput::make('author')
                     ->disabled()
                     ->dehydrated()

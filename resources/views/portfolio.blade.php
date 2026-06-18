@@ -32,28 +32,68 @@
         </div>
     </section>
 
-    <!-- ========== TRUST SIGNALS ========== -->
-    <section class="py-5" style="background: var(--bg-overlay); backdrop-filter: blur(10px); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+        <!-- ========== TRUST SIGNALS ========== -->
+    <section class="py-5">
         <div class="container">
-            <p class="text-center text-secondary mb-4">Trusted by innovative companies worldwide</p>
-            <div class="row g-4">
-                <div class="col-6 col-md-2 text-center" data-aos="fade-up" data-aos-delay="0">
-                    <h5 class="text-secondary">Company A</h5>
+            <p class="text-center text-secondary mb-5">Powered by Modern Technologies</p>
+            <div class="autoplay powered-by">
+
+                <div class="powered-by-icon">
+                    <img src="./images/icons/aws (1).svg" alt="aws">
                 </div>
-                <div class="col-6 col-md-2 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="text-secondary">Company B</h5>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/bootstrap (1).svg" alt="bootstrap">
                 </div>
-                <div class="col-6 col-md-2 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <h5 class="text-secondary">Company C</h5>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/laravel (1).svg" alt="laravel">
                 </div>
-                <div class="col-6 col-md-2 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <h5 class="text-secondary">Company D</h5>
+                 <div class="powered-by-icon">
+                    <img src="./images/icons/adobe.svg" alt="adobe">
                 </div>
-                <div class="col-6 col-md-2 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <h5 class="text-secondary">Company E</h5>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/astro-icon-dark.svg" alt="astro">
                 </div>
-                <div class="col-6 col-md-2 text-center" data-aos="fade-up" data-aos-delay="500">
-                    <h5 class="text-secondary">Company F</h5>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/solidjs.svg" alt="solidjs">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/svelte.svg" alt="svelte">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/mailchimp (1).svg" alt="mailchimp">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/mongodb (1).svg" alt="mongodb">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/nodejs (1).svg" alt="nodejs">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/react.svg" alt="react">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/tailwind-css (1).svg" alt="tailwind">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/blender.svg" alt="blender">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/tech_logo_2 (1) (1).webp" alt="tech_logo_2">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/tech_logo_3 (1).webp" alt="tech_logo_3">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/figma.svg" alt="figma">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/tech_logo_7 (1).webp" alt="tech_logo_7">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/tensorflow (1).svg" alt="tensorflow">
+                </div>
+                <div class="powered-by-icon">
+                    <img src="./images/icons/zapier (1).svg" alt="zapier">
                 </div>
             </div>
         </div>

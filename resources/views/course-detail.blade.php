@@ -36,7 +36,9 @@
                 </div>
                 <div class="col-md-5">
                     <div class="">
-                         <img class="rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                    
+                         {{-- <img class="rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                     --}}
+                        <img src="{{ $course->image_url }}" alt="{{ $course->title }}">
+                         
                         
                     </div>
                 </div>

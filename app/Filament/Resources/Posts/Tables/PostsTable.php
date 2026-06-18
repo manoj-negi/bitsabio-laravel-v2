@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Columns\ImageColumn;
+use Illuminate\Support\Facades\Storage;
 
 use Filament\Tables\Table;
 
@@ -37,8 +38,8 @@ class PostsTable
                 ->limit(40),
                 
                 ImageColumn::make('image')
-                    ->disk('public')
-                    ->visibility('public'),
+                ->disk('s3')
+                ->getStateUsing(fn ($record) => 'posts/' . $record->image),
 
                 TextColumn::make('status')
                     ->badge()

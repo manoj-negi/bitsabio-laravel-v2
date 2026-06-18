@@ -197,7 +197,9 @@
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
                             </div> --}}
                             <div>
-                                <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                    
+                                {{-- <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                     --}}
+                            <img src="{{ $course->image_url }}" alt="{{ $course->title }}">
+
                             </div>
                             <h5>{{$course->title}}</h5>
                             <p class="four-line-ellipsis">
