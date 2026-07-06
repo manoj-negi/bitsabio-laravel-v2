@@ -2,23 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <meta name="description" content="AI-First Digital Agency - Web Development, AI Solutions, UI/UX Design, SEO & Digital Growth Services"> --}}
-    <meta name="description" content="@yield('meta_description', 'AI-First Digital Agency - Web Development, AI Solutions, UI/UX Design, SEO & Digital Growth Services')">
-    <meta name="google-site-verification" content="48kW_3xYjlOklX8znf7OU-BIrqfsyLzI-fkx51sLnXI" />
-    <meta name="keywords" content="@yield('meta_keywords', '')">
-    <meta name="robots" content="@yield('meta_robots', 'index, follow')">
-
-    <meta property="og:title" content="@yield('og_title', 'BitSabio')">
-    <meta property="og:description" content="@yield('og_description', '')">
-    <meta property="og:type" content="@yield('og_type', 'website')">
-    <meta property="og:url" content="@yield('og_url', url()->current())">
-    <link rel="canonical" href="@yield('meta_canonical', url()->current())">
-
-    {{-- <title>BitSabio - AI-First Digital Agency</title> --}}
-    <title>@yield('meta_title', 'BitSabio - AI-First Digital Agency')</title>
-    <!-- Google Tag Manager -->
+        <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -35,6 +19,23 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-T8H45WGB');
     </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <meta name="description" content="AI-First Digital Agency - Web Development, AI Solutions, UI/UX Design, SEO & Digital Growth Services"> --}}
+    <meta name="description" content="@yield('meta_description', 'AI-First Digital Agency - Web Development, AI Solutions, UI/UX Design, SEO & Digital Growth Services')">
+    <meta name="google-site-verification" content="48kW_3xYjlOklX8znf7OU-BIrqfsyLzI-fkx51sLnXI" />
+    <meta name="keywords" content="@yield('meta_keywords', '')">
+    <meta name="robots" content="@yield('meta_robots', 'index, follow')">
+
+    <meta property="og:title" content="@yield('og_title', 'BitSabio')">
+    <meta property="og:description" content="@yield('og_description', '')">
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:url" content="@yield('og_url', url()->current())">
+    <link rel="canonical" href="@yield('meta_canonical', url()->current())">
+
+    {{-- <title>BitSabio - AI-First Digital Agency</title> --}}
+    <title>@yield('meta_title', 'BitSabio - AI-First Digital Agency')</title>
+
     <!-- End Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP0V9E2SLJ"></script>
     {{-- <script>
