@@ -71,10 +71,10 @@ public function user()
     }
 
 
-public function getImageUrlAttribute(): ?string
-{
-    return $this->image
-        ? Storage::disk('s3')->url('posts/' . $this->image)
-        : null;
-}
+// public function getImageUrlAttribute(): ?string
+// {
+//     return $this->image
+//         ? Storage::disk('s3')->url('posts/' . $this->image)
+//         : null;
+// }
 }

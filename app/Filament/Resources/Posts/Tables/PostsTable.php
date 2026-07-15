@@ -37,9 +37,16 @@ class PostsTable
                 ->searchable()
                 ->limit(40),
                 
+                // ImageColumn::make('image')
+                // ->disk('s3')
+                // ->getStateUsing(fn ($record) => 'posts/' . $record->image),
+
                 ImageColumn::make('image')
-                ->disk('s3')
-                ->getStateUsing(fn ($record) => 'posts/' . $record->image),
+                    ->disk('public')
+                    ->visibility('public'),
+
+
+
 
                 TextColumn::make('status')
                     ->badge()
