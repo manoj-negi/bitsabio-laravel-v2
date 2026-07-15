@@ -41,9 +41,8 @@ class PostsTable
                 // ->disk('s3')
                 // ->getStateUsing(fn ($record) => 'posts/' . $record->image),
 
-                ImageColumn::make('image')
-                    ->disk('public')
-                    ->visibility('public'),
+              ImageColumn::make('image')
+                  ->getStateUsing(fn ($record) => asset('public/storage/' . $record->image)),
 
 
 

@@ -36,8 +36,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="">
-                        {{-- <img src="{{ url('/public/storage/' . $service->hero_image) }}" alt="{{ $service->title }}">                                                                                     --}}
-                            <img src="{{ $service->image_url }}" alt="{{ $service->title }}">
+                        <img src="{{ url('/public/storage/' . $service->image) }}" alt="{{ $service->title }}">                                                                                    
+                            {{-- <img src="{{ $service->image_url }}" alt="{{ $service->title }}"> --}}
                         
                         
                     </div>

@@ -152,8 +152,8 @@
                 <div class="col-lg-3">
                         <div class="glass-card p-4 h-100">
                             <div>
-                                {{-- <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $service->hero_image) }}" alt="{{ $service->title }}">                                                                                     --}}
-                            <img src="{{ $service->image_url }}" alt="{{ $service->title }}">
+                                <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $service->hero_image) }}" alt="{{ $service->title }}">                                                                                    
+                            {{-- <img src="{{ $service->image_url }}" alt="{{ $service->title }}"> --}}
 
                             </div>
                             <h5>{{$service->title}}</h5>
