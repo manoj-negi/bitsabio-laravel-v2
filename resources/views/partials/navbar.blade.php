@@ -37,7 +37,8 @@
 
         <li class="nav-item">
             <a class="nav-link {{ request()->is('training') ? 'active-nav' : '' }}"
-               href="{{ url('https://academy.bitsabio.in/') }}">
+               href="{{ url('https://academy.bitsabio.in/') }}"
+               target="_blank">
                 Training
             </a>
         </li>

@@ -250,6 +250,28 @@
 </div>
 </section>
    
+<!-- ==========  Companies logos Grid ========== -->
+
+{{-- <section class="py-60">
+<div class="container">
+       <div class="">
+                    <h2 data-aos="fade-up" class="aos-init aos-animate">Selected Case Studies</h2>
+                    <p class="section-subtitle aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        We don't just build software; we architect the digital future of your enterprise through precision engineering and advanced intelligence.
+                    </p>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-2">
+                        <img src="./images/data-science.jpg" alt="">
+                    </div>
+                </div>
+</div>
+</section> --}}
+<!-- ==========  Companies logos Grid ========== -->
+
+
+
+
 <!-- ==========  Our End-to-End Expertise ========== -->
 
 <section class="e2e-expertise py-60">
@@ -396,4 +418,6 @@
             
         </div>
     </section>
+
+   
 @endsection

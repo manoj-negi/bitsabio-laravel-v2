@@ -51,7 +51,12 @@
                         <i class="bi bi-envelope text-primary"></i>
                     </div>
                     <h3>Email Us</h3>
-                    <a href="e-mil">contact@bitsabio.in</a>
+                    {{-- <a href="e-mil">contact@bitsabio.in</a> --}}
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@bitsabio.in"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        contact@bitsabio.in
+                    </a>
                     <p>We respond within 24 hours</p>
                 </div>
 
