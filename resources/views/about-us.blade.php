@@ -245,38 +245,38 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-up">
-                    <div class="section-badge">Join Our Team</div>
-                    <h3 class="mb-4">Build the Future with Us</h3>
+                    <div class="section-badge">Our Team</div>
+                    <h3 class="mb-4">Why Businesses Choose BitSabio</h3>
                     <p class="mb-4" style="font-size: 1.125rem; color: var(--color-text-secondary);">
-                        We're always looking for exceptional engineers, data scientists, and product builders who want to push the boundaries of what's possible with AI.
+                        We combine technical expertise, innovation, and business understanding to deliver digital solutions that create measurable impact.
                     </p>
                     <ul style="list-style: none; padding: 0; margin-bottom: 32px;">
                         <li style="padding: 12px 0; display: flex; align-items: center; gap: 12px;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Remote-first culture with flexible hours</span>
+                            <span>AI-First Development</span>
                         </li>
                         <li style="padding: 12px 0; display: flex; align-items: center; gap: 12px;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Competitive salary + equity packages</span>
+                            <span>Dedicated Project Teams</span>
                         </li>
                         <li style="padding: 12px 0; display: flex; align-items: center; gap: 12px;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Work on cutting-edge AI projects</span>
+                            <span>Transparent Communication</span>
                         </li>
                         <li style="padding: 12px 0; display: flex; align-items: center; gap: 12px;">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span>Learning budget for courses and conferences</span>
+                            <span>Agile Delivery</span>
                         </li>
                     </ul>
-                    <a href="contact.html" class="btn btn-gradient btn-lg">
+                    <a href="{{url('/training')}}" class="btn btn-gradient btn-lg">
                         View Open Positions
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -297,7 +297,7 @@
                                 </svg>
                             </div>
                             <h4>AI Engineers</h4>
-                            <p>Build production RAG systems</p>
+                            <p>Building intelligent automation and AI-powered applications.</p>
                         </div>
                         
                         <div class="problem-card">
@@ -307,8 +307,8 @@
                                     <polyline points="8 6 2 12 8 18"></polyline>
                                 </svg>
                             </div>
-                            <h4>Data Scientists</h4>
-                            <p>Advanced ML modeling</p>
+                            <h4>Cloud & DevOps</h4>
+                            <p>Ensuring secure, reliable, and scalable infrastructure.</p>
                         </div>
                         
                         <div class="problem-card">
@@ -319,8 +319,8 @@
                                     <path d="M2 2l7.586 7.586"></path>
                                 </svg>
                             </div>
-                            <h4>Product Designers</h4>
-                            <p>AI-first UX design</p>
+                            <h4>Full Stack Developers</h4>
+                            <p>Creating scalable web and mobile solutions.</p>
                         </div>
                         
                         <div class="problem-card">
@@ -331,8 +331,8 @@
                                     <line x1="12" y1="17" x2="12" y2="21"></line>
                                 </svg>
                             </div>
-                            <h4>Full Stack Engineers</h4>
-                            <p>AI-powered web apps</p>
+                            <h4>UI/UX Designers</h4>
+                            <p>Designing intuitive and user-friendly experiences.</p>
                         </div>
                     </div>
                 </div>
