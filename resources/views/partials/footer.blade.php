@@ -24,7 +24,7 @@
                         <li><a href="{{ route('content.showService', 'web-development-services') }}">Web Development</a></li>
                         <li><a href="{{ route('content.showService', 'mobile-app-development') }}">App Development</a></li>
                         <li><a href="{{ route('content.showService', 'custom-software-solutions') }}">Custom Software Solution</a></li>
-                        <li><a href="{{ route('content.showService', 'digital-marketing') }}">Digital Marketing</a></li>
+                        <li><a href="{{ route('content.showService', 'digital-marketing-services') }}">Digital Marketing</a></li>
                     </ul>
                 </div>
 

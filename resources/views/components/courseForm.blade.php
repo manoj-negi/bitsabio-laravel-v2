@@ -27,7 +27,7 @@
                                     
 
                         <div class="mb-3">
-                            <select name="course" class="form-select" required>
+                            <select name="course_name" class="form-select" required>
                                 <option value="" disabled selected>Select Course</option>
 
                                     <option value="full_stack">Full Stack Web Developer</option>

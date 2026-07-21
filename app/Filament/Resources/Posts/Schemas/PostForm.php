@@ -9,6 +9,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Support\Str;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -20,236 +21,274 @@ class PostForm
         return $schema
             ->components([
                 Select::make('type')
-                ->options([
-                    'blog' => 'Blog',
-                    'course' => 'Course',
-                    'service' => 'Service',
-                ])
-                ->live()
-                ->required(),
+                    ->options([
+                        'blog' => 'Blog',
+                        'course' => 'Course',
+                        'service' => 'Service',
+                    ])
+                    ->live()
+                    ->required(),
 
-               TextInput::make('title')
-                            ->required()
-                            ->live(onBlur: true)
-                            ->afterStateUpdated(fn ($state, $set) =>
-                                $set('slug', Str::slug($state))
-                            ),
+                TextInput::make('title')
+                                ->required()
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(fn ($state, $set) =>
+                                    $set('slug', Str::slug($state))
+                                ),
 
-            TextInput::make('slug')
-                ->unique(ignoreRecord: true)
-                ->required(),             
-                
-            Select::make('status')
-                ->options([
-                    'draft' => 'Draft',
-                    'published' => 'Published',
-                ])
-                ->default('draft'),
+                TextInput::make('slug')
+                    ->unique(ignoreRecord: true)
+                    ->required(),             
+                    
+                Select::make('status')
+                    ->options([
+                        'draft' => 'Draft',
+                        'published' => 'Published',
+                    ])
+                    ->default('draft'),
 
-            Textarea::make('short_description'),
+                Textarea::make('short_description'),
 
-             Textarea::make('description'),
+                Textarea::make('description'),
 
-        //  course
+            //  course
 
-            Select::make('duration')
-                ->options([
-                            '1 Month'  => '1 Month',
-                            '2 Months' => '2 Months',
-                            '3 Months' => '3 Months',
-                            '4 Months' => '4 Months',
-                            '5 Months' => '5 Months',
-                            '6 Months' => '6 Months',
-                            '7 Months' => '7 Months',
-                            '8 Months' => '8 Months',
-                            '9 Months' => '9 Months',
-                            '10 Months' => '10 Months',
-                            '11 Months' => '11 Months',
-                            '12 Months' => '12 Months',
-                       ])
-                ->placeholder('6 Months')
-                ->default('6 Months')
-                ->required()
-                ->visible(fn (Get $get): bool => $get('type') === 'course'),
+                Select::make('duration')
+                    ->options([
+                                '1 Month'  => '1 Month',
+                                '2 Months' => '2 Months',
+                                '3 Months' => '3 Months',
+                                '4 Months' => '4 Months',
+                                '5 Months' => '5 Months',
+                                '6 Months' => '6 Months',
+                                '7 Months' => '7 Months',
+                                '8 Months' => '8 Months',
+                                '9 Months' => '9 Months',
+                                '10 Months' => '10 Months',
+                                '11 Months' => '11 Months',
+                                '12 Months' => '12 Months',
+                        ])
+                    ->placeholder('6 Months')
+                    ->default('6 Months')
+                    ->required()
+                    ->visible(fn (Get $get): bool => $get('type') === 'course'),
 
-            Select::make('level')
-                ->options([
-                    'Beginner' => 'Beginner',
-                    'Intermediate' => 'Intermediate',
-                    'Advanced' => 'Advanced',
-                ])
-                 ->visible(fn (Get $get): bool => $get('type') === 'course'),
-        
-        // course hero section
+                Select::make('level')
+                    ->options([
+                        'Beginner' => 'Beginner',
+                        'Intermediate' => 'Intermediate',
+                        'Advanced' => 'Advanced',
+                    ])
+                        ->visible(fn (Get $get): bool => $get('type') === 'course'),
+            
+            // course hero section
 
-            TextInput::make('hero_title_black')
-                ->visible(fn (Get $get) =>
-                    in_array($get('type'), ['course','service'])
-                ),
+                TextInput::make('hero_title_black')
+                        ->visible(fn (Get $get) =>
+                            in_array($get('type'), ['course','service'])
+                    ),
 
-            TextInput::make('hero_title_blue')
-                ->visible(fn (Get $get) =>
-                    in_array($get('type'), ['course','service'])
-                ),
+                TextInput::make('hero_title_blue')
+                        ->visible(fn (Get $get) =>
+                        in_array($get('type'), ['course','service'])
+                    ),  
 
-            Textarea::make('hero_description')
-                ->visible(fn (Get $get) =>
-                    in_array($get('type'), ['course','service'])
-                ),
-
+                Textarea::make('hero_description')
+                        ->visible(fn (Get $get) =>
+                        in_array($get('type'), ['course','service'])
+                    ),
                 FileUpload::make('hero_image')
-                    ->image()
-                    ->disk('public')
-                    ->visibility('public')
-                    ->nullable()
-                    ->maxSize(5120)
-                    ->visible(fn (Get $get) => in_array($get('type'), ['course','service']))
-                    ->imageEditor(false)
+                                ->image()
+                                ->disk('public')
+                                ->visibility('public')
+                                ->nullable()
+                                ->maxSize(5120)
+                                ->visible(fn (Get $get) => in_array($get('type'), ['course','service']))
+                                ->imageEditor(false)
 
-                    ->getUploadedFileNameForStorageUsing(
-                        function (TemporaryUploadedFile $file): string {
-                            $name = pathinfo(
-                                $file->getClientOriginalName(),
-                                PATHINFO_FILENAME
-                            );
-                            $name = Str::slug($name);
-                            $extension = $file->getClientOriginalExtension();
-                            return time() . '-' . $name . '.' . $extension;
-                        }
-                    )
-                    ->getUploadedFileUsing(
-                            function ($file): ?array {
+                                ->getUploadedFileNameForStorageUsing(
+                                    function (TemporaryUploadedFile $file): string {
+                                        $name = pathinfo(
+                                            $file->getClientOriginalName(),
+                                            PATHINFO_FILENAME
+                                        );
+                                        $name = Str::slug($name);
+                                        $extension = $file->getClientOriginalExtension();
+                                        return time() . '-' . $name . '.' . $extension;
+                                    }
+                                )
+                                ->getUploadedFileUsing(
+                                        function ($file): ?array {
 
-                                if (! $file) {
-                                    return null;
-                                }
+                                            if (! $file) {
+                                                return null;
+                                            }
 
-                                return [
-                                    'name' => $file,
+                                            return [
+                                                'name' => $file,
 
-                                    'size' => filesize(
-                                        storage_path('app/public/' . $file)
-                                    ),
+                                                'size' => filesize(
+                                                    storage_path('app/public/' . $file)
+                                                ),
 
-                                    'type' => mime_content_type(
-                                        storage_path('app/public/' . $file)
-                                    ),
+                                                'type' => mime_content_type(
+                                                    storage_path('app/public/' . $file)
+                                                ),
 
-                                     'url' => url('/public/storage/' . $file),
-                                ];
+                                                'url' => url('/public/storage/' . $file),
+                                            ];
+                                        }
+                                ),
+                // FileUpload::make('hero_image')
+                //         ->image()
+                //         ->disk('s3')
+                //         ->directory('posts')
+                //         ->visibility('public')
+                //         ->getUploadedFileNameForStorageUsing(
+                //             fn (TemporaryUploadedFile $file): string =>
+                //                 time() . '-' .
+                //                 Str::slug(
+                //                     pathinfo(
+                //                         $file->getClientOriginalName(),
+                //                         PATHINFO_FILENAME
+                //                     )
+                //                 ) . '.' .
+                //                 $file->getClientOriginalExtension()
+                //         )
+                //         ->dehydrateStateUsing(fn ($state) => basename($state))
+                //         ->visible(fn (Get $get) => in_array($get('type'), ['course','service'])),
+
+                       //   blog
+
+                TextInput::make('category')
+                        ->visible(fn (Get $get) => $get('type') === 'blog'),
+
+
+                // FileUpload::make('image')
+                //         ->image()
+                //         ->disk('s3')
+                //         ->directory('posts')
+                //         ->visibility('public')
+                //         ->getUploadedFileNameForStorageUsing(
+                //             fn (TemporaryUploadedFile $file): string =>
+                //                 time() . '-' .
+                //                 Str::slug(pathinfo(
+                //                     $file->getClientOriginalName(),
+                //                     PATHINFO_FILENAME
+                //                 )) . '.' .
+                //                 $file->getClientOriginalExtension()
+                //         )
+                //         ->dehydrateStateUsing(fn ($state) => basename($state))
+                //         ->formatStateUsing(fn ($state) => $state ? 'posts/' . $state : null),
+
+                 FileUpload::make('image')
+                        ->image()
+                        ->disk('public')
+                        ->visibility('public')
+                        ->nullable()
+                        ->maxSize(5120)
+                        ->imageEditor(false)
+
+                        ->getUploadedFileNameForStorageUsing(
+                            function (TemporaryUploadedFile $file): string {
+                                $name = pathinfo(
+                                    $file->getClientOriginalName(),
+                                    PATHINFO_FILENAME
+                                );
+                                $name = Str::slug($name);
+                                $extension = $file->getClientOriginalExtension();
+                                return time() . '-' . $name . '.' . $extension;
                             }
-                    ),
-        //   blog
+                        )
+                        ->getUploadedFileUsing(
+                                function ($file): ?array {
 
-            TextInput::make('category')
-                ->visible(fn (Get $get) => $get('type') === 'blog'),
+                                    if (! $file) {
+                                        return null;
+                                    }
 
-                    FileUpload::make('image')
-                    ->image()
-                    ->disk('public')
-                    ->visibility('public')
-                    ->nullable()
-                    ->maxSize(5120)
-                    ->imageEditor(false)
+                                    return [
+                                        'name' => $file,
 
-                    ->getUploadedFileNameForStorageUsing(
-                        function (TemporaryUploadedFile $file): string {
-                            $name = pathinfo(
-                                $file->getClientOriginalName(),
-                                PATHINFO_FILENAME
-                            );
-                            $name = Str::slug($name);
-                            $extension = $file->getClientOriginalExtension();
-                            return time() . '-' . $name . '.' . $extension;
-                        }
-                    )
-                    ->getUploadedFileUsing(
-                            function ($file): ?array {
+                                        'size' => filesize(
+                                            storage_path('app/public/' . $file)
+                                        ),
 
-                                if (! $file) {
-                                    return null;
+                                        'type' => mime_content_type(
+                                            storage_path('app/public/' . $file)
+                                        ),
+
+                                        'url' => url('/public/storage/' . $file),
+                                    ];
                                 }
+                        ),
 
-                                return [
-                                    'name' => $file,
-
-                                    'size' => filesize(
-                                        storage_path('app/public/' . $file)
-                                    ),
-
-                                    'type' => mime_content_type(
-                                        storage_path('app/public/' . $file)
-                                    ),
-
-                                     'url' => url('/public/storage/' . $file),
-                                ];
-                            }
-                    ),
-           TextInput::make('author')
+    
+                TextInput::make('author')
                     ->disabled()
                     ->dehydrated()
                     ->afterStateHydrated(function ($component) {
-                        $component->state(auth()->user()?->name);
-                    })
+                            $component->state(auth()->user()?->name);
+                        })
                     ->dehydrateStateUsing(function () {
-                        return auth()->user()?->name;
-                    })
+                            return auth()->user()?->name;
+                        })
                     ->required(),
-            // meta tag
+                // meta tag
 
-            TextInput::make('tags.meta.title')
-                ->label('Meta Title'),
-
-
-            TextInput::make('tags.meta.keywords')
-                ->label('Meta Keywords'),
+                TextInput::make('tags.meta.title')
+                    ->label('Meta Title'),
 
 
-            Textarea::make('tags.meta.description')
-                 ->label('Meta Description'),
+                TextInput::make('tags.meta.keywords')
+                    ->label('Meta Keywords'),
 
 
-            TextInput::make('tags.meta.canonical')
-                  ->label('Canonical URL'),
+                Textarea::make('tags.meta.description')
+                    ->label('Meta Description'),
 
 
-            Select::make('tags.meta.robots')
-                    ->label('Robots')
-                    ->options([
-                        'index, follow' => 'Index, Follow',
-                        'noindex, follow' => 'NoIndex, Follow',
-                        'index, nofollow' => 'Index, NoFollow',
-                        'noindex, nofollow' => 'NoIndex, NoFollow',
-                        ]),
-                   
+                TextInput::make('tags.meta.canonical')
+                        ->label('Canonical URL'),
 
 
-            //  og tag 
+                Select::make('tags.meta.robots')
+                        ->label('Robots')
+                        ->options([
+                            'index, follow' => 'Index, Follow',
+                            'noindex, follow' => 'NoIndex, Follow',
+                            'index, nofollow' => 'Index, NoFollow',
+                            'noindex, nofollow' => 'NoIndex, NoFollow',
+                            ]),
+                    
 
-            TextInput::make('tags.open_graph.title')
-                    ->label('Open Graph Title'),
+
+                //  og tag 
+
+                TextInput::make('tags.open_graph.title')
+                        ->label('Open Graph Title'),
 
 
-            Textarea::make('tags.open_graph.description')
-                    ->label('Open Graph Description'),
-                     
-
-            TextInput::make('tags.open_graph.url')
-                    ->label('Open Graph URL'),
+                Textarea::make('tags.open_graph.description')
+                        ->label('Open Graph Description'),
                         
 
-            Select::make('tags.open_graph.type')
-                    ->label('Open Graph Type')
-                    ->options([
-                        'article' => 'Article',
-                        'website' => 'Website',
-                        ]),
-            
-            Textarea::make('content')
-                    ->rows(5)
-                    ->columnSpanFull(),
-                    
-        ]);
+                TextInput::make('tags.open_graph.url')
+                        ->label('Open Graph URL'),
+                            
+
+                Select::make('tags.open_graph.type')
+                        ->label('Open Graph Type')
+                        ->options([
+                            'article' => 'Article',
+                            'website' => 'Website',
+                            ]),
+                
+                Textarea::make('content')
+                        ->rows(5)
+                        ->columnSpanFull(),
+                        
+            ]);
 
     }
 }

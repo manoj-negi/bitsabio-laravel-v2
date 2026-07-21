@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
-class User extends Authenticatable
+class User extends Authenticatable 
+
 {
     use HasFactory, Notifiable, HasRoles;
 
@@ -51,5 +54,17 @@ class User extends Authenticatable
     public function projects()
     {
         return $this->belongsToMany(Project::class);
+    }
+    // Tasks assigned 
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class, 'task_user')
+            ->withTimestamps();
+    }
+
+    // Tasks created 
+    public function createdTasks()
+    {
+        return $this->hasMany(Task::class, 'created_by');
     }
 }

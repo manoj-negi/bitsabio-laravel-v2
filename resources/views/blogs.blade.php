@@ -67,6 +67,9 @@
                         <!-- Image -->
                         <div class="blog-card-image">  
                             <img src="{{ url('/public/storage/' . $blog->image) }}" alt="{{ $blog->title }}">                                                                                    
+                            {{-- <img src="{{ asset('storage/posts/' . $blog->image) }}" alt="{{ $blog->title }}"> --}}
+                            {{-- <img src="{{ $blog->image_url }}" alt="{{ $blog->title }}"> --}}
+
                             
                         </div>
 

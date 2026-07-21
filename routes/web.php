@@ -10,6 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\GoogleReviewController;
 use App\Http\Controllers\InvoicePdfController;
 use App\Http\Controllers\InternController;
+use App\Http\Controllers\PortfolioController;
 
 Route::get('/', function () {
     return view('home');    
@@ -19,10 +20,11 @@ Route::get('/about', function () {
     return view('about-us');
 })->name('about-us');
 
-Route::get('/portfolio', function () {
-    return view('portfolio');   
-})->name('portfolio');
+Route::get('/portfolio', [PortfolioController::class, 'index'])
+    ->name('portfolio');
 
+// Route::get('/portfolio/{slug}', [PortfolioController::class, 'show'])
+//     ->name('portfolio.details');
 
 Route::get('/contact', function () {
     return view('contact');

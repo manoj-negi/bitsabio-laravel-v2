@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Columns\ImageColumn;
+use Illuminate\Support\Facades\Storage;
 
 use Filament\Tables\Table;
 
@@ -36,9 +37,15 @@ class PostsTable
                 ->searchable()
                 ->limit(40),
                 
-                ImageColumn::make('image')
-                    ->disk('public')
-                    ->visibility('public'),
+                // ImageColumn::make('image')
+                // ->disk('s3')
+                // ->getStateUsing(fn ($record) => 'posts/' . $record->image),
+
+              ImageColumn::make('image')
+                  ->getStateUsing(fn ($record) => asset('public/storage/' . $record->image)),
+
+
+
 
                 TextColumn::make('status')
                     ->badge()

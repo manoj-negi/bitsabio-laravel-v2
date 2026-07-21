@@ -23,7 +23,7 @@ class EmployeeResource extends Resource
     protected static ?string $navigationLabel = 'Employees';
 
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -55,18 +55,7 @@ class EmployeeResource extends Resource
             'edit' => EditEmployee::route('/{record}/edit'),
         ];
     }
-    // public static function getEloquentQuery(): Builder
-    // {
-    //     return parent::getEloquentQuery()
-    //     ->whereHas('roles', function ($q) {
-    //         $q->whereIn('name', [
-    //             'employee',
-    //             'admin',
-    //             'super_admin',
-    //         ]);
-    //     });
-    // }
-    public static function getEloquentQuery(): Builder
+     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
             ->whereDoesntHave('roles', function ($q) {

@@ -65,6 +65,22 @@ class InternForm
 
                 Textarea::make('notes'),
 
+                Textarea::make('intern_details_view')
+                        ->label('Intern Details')
+                        ->disabled()
+                        ->formatStateUsing(function ($record) {
+
+                            if (! $record?->intern_details) {
+                                return null;
+                            }
+
+                            return collect($record->intern_details)
+                                ->map(fn ($value, $key) => ucfirst(str_replace('_', ' ', $key)) . ': ' . $value)
+                                ->implode("\n");
+                        })
+                        ->rows(5)
+                        ->visible(fn ($record) => ! empty($record?->intern_details)),
+
             ]);
     }
 }

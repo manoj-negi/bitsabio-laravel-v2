@@ -27,7 +27,7 @@ class ContactController extends Controller
         $data['company'] = 'N/A';
         $data['message'] = $data['message'] ?? 'No message provided';
         $data['phone'] = $data['phone'] ?? 'N/A';
-        $data['course'] = $data['course'] ?? 'N/A';
+        $data['course_name'] = $data['course_name'] ?? 'N/A';
         $formType = $data['inquiry_type'] ?? 'general';
 
         // Save

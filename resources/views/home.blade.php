@@ -167,65 +167,64 @@
         <div class="container">
             <p class="text-center text-secondary mb-5">Powered by Modern Technologies</p>
             <div class="autoplay powered-by">
-
-                <div class="powered-by-icon">
-                    <img src="./images/icons/aws (1).svg" alt="aws">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/bootstrap (1).svg" alt="bootstrap">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/laravel (1).svg" alt="laravel">
-                </div>
-                 <div class="powered-by-icon">
-                    <img src="./images/icons/adobe.svg" alt="adobe">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/astro-icon-dark.svg" alt="astro">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/solidjs.svg" alt="solidjs">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/svelte.svg" alt="svelte">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/mailchimp (1).svg" alt="mailchimp">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/mongodb (1).svg" alt="mongodb">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/nodejs (1).svg" alt="nodejs">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/react.svg" alt="react">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/tailwind-css (1).svg" alt="tailwind">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/blender.svg" alt="blender">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_2 (1) (1).webp" alt="tech_logo_2">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_3 (1).webp" alt="tech_logo_3">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/figma.svg" alt="figma">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/tech_logo_7 (1).webp" alt="tech_logo_7">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/tensorflow (1).svg" alt="tensorflow">
-                </div>
-                <div class="powered-by-icon">
-                    <img src="./images/icons/zapier (1).svg" alt="zapier">
-                </div>
-            </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/aws (1).svg" alt="aws">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/bootstrap (1).svg" alt="bootstrap">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/laravel (1).svg" alt="laravel">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/adobe.svg" alt="adobe">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/astro-icon-dark.svg" alt="astro">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/solidjs.svg" alt="solidjs">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/svelte.svg" alt="svelte">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/mailchimp (1).svg" alt="mailchimp">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/mongodb (1).svg" alt="mongodb">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/nodejs (1).svg" alt="nodejs">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/react.svg" alt="react">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/tailwind-css (1).svg" alt="tailwind">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/blender.svg" alt="blender">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/tech_logo_2 (1) (1).png" alt="tech_logo_2">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/tech_logo_3 (1).png" alt="tech_logo_3">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/figma.svg" alt="figma">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/tech_logo_7 (1).png" alt="tech_logo_7">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/tensorflow (1).svg" alt="tensorflow">
+                        </div>
+                        <div class="powered-by-icon">
+                            <img src="./images/icons/zapier (1).svg" alt="zapier">
+                        </div>
+                    </div>
         </div>
     </section>
 
