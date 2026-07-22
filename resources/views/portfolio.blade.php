@@ -419,5 +419,8 @@
         </div>
     </section>
 
+       {{-- Inquiry Form  --}}
+    @include('components.mainServiceForm')
+
    
 @endsection

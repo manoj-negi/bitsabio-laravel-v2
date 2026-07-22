@@ -64,6 +64,17 @@ class PostController extends Controller
         ));
     }
 
+       public function curriculum($slug)
+    {
+        $course = Post::where('type', 'course')
+            ->where('slug', $slug)
+            ->where('status', 'published')
+            ->firstOrFail();
+
+        return view('curriculum', compact('course'));
+    }
+
+
 // service list 
 
     public function services()

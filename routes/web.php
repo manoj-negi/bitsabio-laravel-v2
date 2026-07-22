@@ -38,6 +38,8 @@ Route::get('/blog/{slug}', [PostController::class, 'showBlog']);
 
 Route::get('/training', [PostController::class, 'courses'])->name('courses');
 Route::get('/training/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
+Route::get('/training/{slug}/curriculum', [PostController::class, 'curriculum'])
+    ->name('course.curriculum');
 
 Route::get('/services', [PostController::class, 'services'])->name('services');
 Route::get('/service/{slug}', [PostController::class, 'showService'])->name('content.showService');
@@ -101,3 +103,11 @@ Route::get('/internForm', function () {
     return view('internForm');
 });Route::post('/internForm', [InternController::class, 'store'])
     ->name('intern.store');
+
+Route::get('/case-study', function () {
+    return view('case-study');
+})->name('case.study');
+
+Route::get('/curriculum', function () {
+    return view('curriculum');    
+})->name('curriculum');

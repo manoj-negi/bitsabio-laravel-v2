@@ -35,14 +35,22 @@
             </a>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link {{ request()->is('training') ? 'active-nav' : '' }}"
                href="{{ url('https://academy.bitsabio.in/') }}"
                target="_blank">
                 Training
             </a>
-        </li>
+        </li> --}}
 
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->is('training') ? 'active-nav' : '' }}"
+               href="{{ url('/training') }}">
+                Training 
+            </a>
+        </li>
+        
         <li class="nav-item">
             <a class="nav-link {{ request()->is('portfolio') ? 'active-nav' : '' }}"
                href="{{ url('/portfolio') }}">
