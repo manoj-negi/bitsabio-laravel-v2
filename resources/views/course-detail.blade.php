@@ -9,18 +9,14 @@
 {{-- open graph --}}
 @section('og_title', $course->tags['open_graph']['title'] ?? $course->title)
 
-@section('og_description', 
-    $course->tags['open_graph']['description'] 
-    ?? $course->tags['meta']['description'] 
-    ?? ''
-)
+@section('og_description', $course->tags['open_graph']['description'] ?? ($course->tags['meta']['description'] ?? ''))
 @section('og_type', $course->tags['open_graph']['type'] ?? 'article')
 @section('og_url', $course->tags['open_graph']['url'] ?? url()->current())
 
 @section('content')
 
- <!-- Page Hero -->
-     <section class="page-hero" style="background-color: var(--color-surface);">
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-color: var(--color-surface);">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7">
@@ -29,8 +25,25 @@
                         <span>AI & MACHINE LEARNING TRAINING PROGRAM</span>
                     </div>
                     <h1 data-aos="fade-up">{{ $course->hero_title_black }} <span
-                            class="color-liner-004ED0">{{ $course->hero_title_blue }}</span> </h1>
-                    <p data-aos="fade-up" data-aos-delay="100">{{ $course->hero_description }}</p>
+                            class="color-liner-004ED0">{{ $course->hero_title_blue }}
+                            @if (isset($location))
+                                <span class="text-dark">in {{ $location->name }}</span>
+                            @endif
+                        </span> </h1>
+                    {{-- <p data-aos="fade-up" data-aos-delay="100">{{ $course->hero_description }}</p> --}}
+                    @php
+                        $heroDescription = $course->hero_description;
+                        $heroDescription = str_replace(
+                            '{{ location }}',
+                            isset($location) ? $location->name : '',
+                            $heroDescription,
+                        );
+                    @endphp
+
+                    <p data-aos="fade-up" data-aos-delay="100">
+                        {{ $heroDescription }}
+                    </p>
+
                     <div class="row mt-4 mb-4">
                         <div class="col-6">
                             <div class="feature-item">
@@ -84,7 +97,7 @@
         </div>
     </section>
 
-    {{-- Course Content  --}}    
+    {{-- Course Content  --}}
     <section class="py-5">
         <div class="container">
             <div class="row align-items-start">
@@ -94,7 +107,15 @@
                         Course Content
                     </h2>
 
-                    {!! $course->content !!}
+                    @php
+                        $content = str_replace(
+                            ['{{ location }}', '{{ location }}'],
+                            isset($location) ? 'in ' . $location->name : '',
+                            $course->content,
+                        );
+                    @endphp
+
+                    {!! $content !!}
                 </div>
 
                 <div class="col-lg-3">
@@ -397,13 +418,13 @@
             </div>
         </div>
     </section>
-   
 
-     {{-- Google review form  --}}
+
+    {{-- Google review form  --}}
     @include('components.google-reviews')
     @include('components.download-pdf-modal')
 
-{{-- <Section class="py-5">
+    {{-- <Section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
@@ -422,7 +443,7 @@
                             <h5 class="mt-5"> Courses Offered</h5>
                             
                            <ul>
-                                @foreach($courses as $course)
+                                @foreach ($courses as $course)
                                     <li>
                                         <a href="{{ url('/training/' . $course->slug) }}">
                                             {{ $course->title }}
@@ -436,6 +457,6 @@
     </div>
 </Section> --}}
 
-@include('components.mainCourseForm')
+    @include('components.mainCourseForm')
 
 @endsection

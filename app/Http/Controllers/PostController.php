@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Location;
 
 class PostController extends Controller
 {
@@ -46,24 +47,60 @@ class PostController extends Controller
     }
 
         // course detail 
-    public function showCourse($slug)
-    {
-        $course = Post::where('type', 'course')
-            ->where('slug', $slug)
-            ->where('status', 'published')
+    // public function showCourse($slug)
+    // {
+    //     $course = Post::where('type', 'course')
+    //         ->where('slug', $slug)
+    //         ->where('status', 'published')
+    //         ->firstOrFail();
+
+    //     $courses = Post::where('type', 'course')
+    //         ->where('status', 'published')
+    //         ->latest()
+    //         ->get();
+
+    //     return view('course-detail', compact(
+    //         'course',
+    //         'courses'
+    //     ));
+    // }
+public function showCourse($slug)
+{
+    $location = null;
+
+    // Check if URL contains location
+    if (str_contains($slug, '-in-')) {
+
+        [$courseSlug, $locationSlug] = explode('-in-', $slug, 2);
+
+        $location = Location::where('slug', $locationSlug)
+            ->where('status', 1)
             ->firstOrFail();
 
-        $courses = Post::where('type', 'course')
-            ->where('status', 'published')
-            ->latest()
-            ->get();
-
-        return view('course-detail', compact(
-            'course',
-            'courses'
-        ));
+        $slug = $courseSlug;
     }
 
+    $course = Post::where('type', 'course')
+        ->where('slug', $slug)
+        ->where('status', 'published')
+        ->firstOrFail();
+
+    // Optional: ensure this course is assigned to this location
+    if ($location && ! $course->locations()->where('locations.id', $location->id)->exists()) {
+        abort(404);
+    }
+
+    $courses = Post::where('type', 'course')
+        ->where('status', 'published')
+        ->latest()
+        ->get();
+
+    return view('course-detail', compact(
+        'course',
+        'courses',
+        'location'
+    ));
+}
        public function curriculum($slug)
     {
         $course = Post::where('type', 'course')

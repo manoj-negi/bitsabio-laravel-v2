@@ -37,9 +37,9 @@ Route::get('/blogs', [PostController::class, 'blogs'])->name('blogs');
 Route::get('/blog/{slug}', [PostController::class, 'showBlog']);
 
 Route::get('/training', [PostController::class, 'courses'])->name('courses');
-Route::get('/training/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
 Route::get('/training/{slug}/curriculum', [PostController::class, 'curriculum'])
     ->name('course.curriculum');
+Route::get('/training/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
 
 Route::get('/services', [PostController::class, 'services'])->name('services');
 Route::get('/service/{slug}', [PostController::class, 'showService'])->name('content.showService');
@@ -111,3 +111,7 @@ Route::get('/case-study', function () {
 Route::get('/curriculum', function () {
     return view('curriculum');    
 })->name('curriculum');
+
+// Route::get('/project',function(){
+//     return view('project');
+// })->name('project');

@@ -27,7 +27,7 @@
                     <h1 data-aos="fade-up">{{ $service->hero_title_black }} <span class="color-liner-004ED0">{{$service->hero_title_blue}}</span> </h1>
                     <p data-aos="fade-up" data-aos-delay="100">{{$service->hero_description}}</p>
                     <div class="d-flex align-items-center">
-                    <a href="" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#contact" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
                         Enroll Now
                     </a>
                    

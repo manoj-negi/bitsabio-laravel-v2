@@ -110,6 +110,13 @@ class PostForm
                     ->preload()
                     ->label('Service Icons')
                     ->visible(fn (Get $get): bool => $get('type') === 'course'),
+                    
+                Select::make('locations')
+                    ->relationship('locations', 'name')
+                    ->multiple()
+                    ->preload()
+                    ->searchable()
+                    ->visible(fn($get): bool=>$get('type')==='course'),
 
                 FileUpload::make('hero_image')
                                 ->image()

@@ -1,26 +1,42 @@
 <?php
 
-namespace App\Filament\Resources\ServiceIcons\Tables;
+namespace App\Filament\Resources\Locations\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
-class ServiceIconsTable
+class LocationsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
+
+                TextColumn::make('id')
+                    ->sortable(),
+
                 TextColumn::make('name')
                     ->searchable()
-                    ->sortable()
-                    ->limit(40),
-                ImageColumn::make('image')
-                  ->getStateUsing(fn ($record) => asset('public/storage/' . $record->image)),
+                    ->sortable(),
+
+                TextColumn::make('slug')
+                    ->searchable()
+                    ->copyable(),
+
+                TextColumn::make('phone')
+                    ->searchable(),
+
+                IconColumn::make('status')
+                    ->boolean(),
+
+                TextColumn::make('created_at')
+                    ->dateTime('d M Y')
+                    ->sortable(),
+
             ])
             ->filters([
                 //

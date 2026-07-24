@@ -17,7 +17,7 @@ class PortfoliosTable
         return $table
             ->columns([
                 ImageColumn::make('image')
-                    ->label('Image'),
+                  ->getStateUsing(fn ($record) => asset('public/storage/' . $record->image)),
 
                 TextColumn::make('title')
                     ->searchable()
