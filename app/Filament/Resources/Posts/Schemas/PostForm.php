@@ -305,17 +305,13 @@ class PostForm
                             'article' => 'Article',
                             'website' => 'Website',
                             ]),
-                TextInput::make('average_salary.practical_learning')
-                    ->label('Practical Learning Salary')
-                    ->placeholder('$130K'),
+                TextInput::make('average_salary.min_salary')
+                    ->label('Minimum Salary')
+                    ->placeholder('₹2,50,000 P.A'),
 
-                TextInput::make('average_salary.expert_mentorship')
-                    ->label('Expert Mentorship Salary')
-                    ->placeholder('$145K'),
-
-                TextInput::make('average_salary.job_oriented_training')
-                    ->label('Job Oriented Training Salary')
-                    ->placeholder('$150K'),
+                TextInput::make('average_salary.max_salary')
+                    ->label('Maximum Salary')
+                    ->placeholder('₹18,00,000 P.A'),
                         
                 Textarea::make('content')
                         ->rows(5)

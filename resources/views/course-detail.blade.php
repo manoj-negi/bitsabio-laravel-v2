@@ -33,9 +33,10 @@
                     {{-- <p data-aos="fade-up" data-aos-delay="100">{{ $course->hero_description }}</p> --}}
                     @php
                         $heroDescription = $course->hero_description;
+
                         $heroDescription = str_replace(
                             '{{ location }}',
-                            isset($location) ? $location->name : '',
+                            isset($location) ? 'in ' . $location->name : '',
                             $heroDescription,
                         );
                     @endphp
@@ -43,7 +44,17 @@
                     <p data-aos="fade-up" data-aos-delay="100">
                         {{ $heroDescription }}
                     </p>
-
+                    @if (!empty($course->average_salary))
+                        <h4 data-aos="fade-up">
+                            Average Salary Package:
+                            <span class="color-liner-004ED0">
+                                {{ $course->average_salary['min_salary'] ?? '' }}
+                                @if (!empty($course->average_salary['max_salary']))
+                                    To {{ $course->average_salary['max_salary'] }}
+                                @endif
+                            </span>
+                        </h4>
+                    @endif
                     <div class="row mt-4 mb-4">
                         <div class="col-6">
                             <div class="feature-item">
@@ -249,7 +260,7 @@
 
 
     {{-- Curriculum Preview  --}}
-    <section class="page-hero">
+    {{-- <section class="page-hero">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -292,7 +303,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="py-5">
         <div class="container">
@@ -395,7 +406,7 @@
     </section>
 
     {{-- High-Growth Career Roles --}}
-    <section class="section-contact-options py-5">
+    {{-- <section class="section-contact-options py-5">
         <div class="container">
             <h2 class="text-center fw-bold mb-5">
                 High-Growth Career Roles
@@ -417,7 +428,7 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     {{-- Google review form  --}}
