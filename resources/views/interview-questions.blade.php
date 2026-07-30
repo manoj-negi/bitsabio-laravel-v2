@@ -27,12 +27,12 @@
                         Adobe, and many more.
                     </p>
                     <div class="d-flex align-items-center">
-                        <a href="{{ url('/contact') }}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up"
+                        <a href="{{ url('/training') }}" class="btn btn-gradient btn-lg me-3" data-aos="fade-up"
                             data-aos-delay="200">
-                            Start Practicing
+                            View all Courses
                         </a>
-                        <a href="{{ url('/contact') }}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
-                            Browse Categories
+                        <a href="{{ url('#contact') }}" class="btn btn-gray btn-lg" data-aos="fade-up" data-aos-delay="200">
+                            Enroll Now
                         </a>
                     </div>
 
@@ -156,7 +156,7 @@
                         </p>
                     </div>
 
-                    <div class="col-md-5 text-end">
+                    {{-- <div class="col-md-5 text-end">
                         <a href="#" class="view-link">
                             Explore Interview Topics
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -165,7 +165,7 @@
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

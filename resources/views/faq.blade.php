@@ -6,7 +6,7 @@
 @section('og_description', 'Get answers to common questions about our web development, AI, SEO, and digital services.')
 
 @section('content')
- <section class="page-hero" id="faq">
+    <section class="page-hero" id="faq">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">

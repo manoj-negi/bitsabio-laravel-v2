@@ -17,7 +17,7 @@
                 <div class="col-md-7">
                     <h1 data-aos="fade-up">
                         {{-- <span class="color-liner-004ED0"> --}}
-                            {{ $interviewQuestion->title }}
+                        {{ $interviewQuestion->title }}
                         {{-- </span> --}}
                     </h1>
 
@@ -33,7 +33,7 @@
                             <span class="color-liner-004ED0">
                                 {{ $interviewQuestion->average_salary }}
                             </span>
-                        </h4>
+                            </h4>
                     @endif
 
                     <div class="row mt-4 mb-4">
@@ -102,38 +102,43 @@
             </div>
         </div>
     </section> --}}
-    <section class="py-5">
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col-lg">
-                    <h2 class="mb-5">
-                        {{ $interviewQuestion->title }}
-                    </h2>
-                    @if (!empty($interviewQuestion->content))
+
+
+
+    {{--  Curriculum Breakdown  --}}
+<section class="page-hero" style="background-color: var(--color-surface);" id="faq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="text-center mb-3" data-aos="fade-up">{{ $interviewQuestion->title }}</h3>
+                <div class="container py-5">
+                    <div class="accordion custom-accordion" id="faqAccordion">
                         @foreach ($interviewQuestion->content as $item)
-                            <div class="mb-5">
-                                {{-- Question --}}
-                                <h4 class="fw-bold mb-3">
-                                    {{ $loop->iteration }}. {{ $item['question'] }}
-                                </h4>
-                                {{-- Answer --}}
-                                <div class="interview-answer">
-                                    {!! $item['answer'] !!}
-                                </div>
-                                {{-- Code (Only if available) --}}
-                                @if (!empty($item['code']))
-                                    <div class="mt-4">
-                                        <h6 class="fw-semibold mb-2">Code Example</h6>
-                                        <pre class="bg-light border rounded p-3 overflow-auto"><code>{{ $item['code'] }}</code></pre>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ $loop->iteration }}">
+                                        {{ $loop->iteration }}. {{ $item['question'] }}
+                                    </button>
+                                </h3>
+                                <div id="faq{{ $loop->iteration }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        {!! $item['answer'] !!}
+                                        @if (!empty($item['code']))
+                                            <div class="mt-3">
+                                                <pre class="bg-dark text-white p-3 rounded overflow-auto"><code>{{ $item['code'] }}</code></pre>
+                                            </div>
+                                        @endif
                                     </div>
-                                @endif
+                                </div>
                             </div>
                         @endforeach
-                    @endif
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <!-- CTA Section -->
     @include('components.inquiryForm')
 
