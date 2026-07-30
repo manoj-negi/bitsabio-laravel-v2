@@ -31,9 +31,13 @@
                         <h4 data-aos="fade-up">
                             Average Salary Package:
                             <span class="color-liner-004ED0">
-                                {{ $interviewQuestion->average_salary }}
+                                {{ $interviewQuestion->average_salary['min_salary'] ?? '' }}
                             </span>
-                            </h4>
+                            <span data-aos="fade-up">to</span>
+                            <span class="color-liner-004ED0">
+                                {{ $interviewQuestion->average_salary['max_salary'] ?? '' }}
+                            </span>
+                        </h4>
                     @endif
 
                     <div class="row mt-4 mb-4">
@@ -106,38 +110,42 @@
 
 
     {{--  Curriculum Breakdown  --}}
-<section class="page-hero" style="background-color: var(--color-surface);" id="faq">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h3 class="text-center mb-3" data-aos="fade-up">{{ $interviewQuestion->title }}</h3>
-                <div class="container py-5">
-                    <div class="accordion custom-accordion" id="faqAccordion">
-                        @foreach ($interviewQuestion->content as $item)
-                            <div class="accordion-item">
-                                <h3 class="accordion-header">
-                                    <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ $loop->iteration }}">
-                                        {{ $loop->iteration }}. {{ $item['question'] }}
-                                    </button>
-                                </h3>
-                                <div id="faq{{ $loop->iteration }}" class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        {!! $item['answer'] !!}
-                                        @if (!empty($item['code']))
-                                            <div class="mt-3">
-                                                <pre class="bg-dark text-white p-3 rounded overflow-auto"><code>{{ $item['code'] }}</code></pre>
-                                            </div>
-                                        @endif
+    <section class="page-hero" style="background-color: var(--color-surface);" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h3 class="text-center mb-3" data-aos="fade-up">{{ $interviewQuestion->title }}</h3>
+                    <div class="container py-5">
+                        <div class="accordion custom-accordion" id="faqAccordion">
+                            @foreach ($interviewQuestion->content as $item)
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq{{ $loop->iteration }}">
+                                            {{ $loop->iteration }}. {{ $item['question'] }}
+                                        </button>
+                                    </h3>
+                                    <div id="faq{{ $loop->iteration }}"
+                                        class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            {!! $item['answer'] !!}
+                                            @if (!empty($item['code']))
+                                                <div class="mt-3">
+                                                    <pre class="bg-dark text-white p-3 rounded overflow-auto"><code>{{ $item['code'] }}</code></pre>
+                                                </div>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- CTA Section -->
     @include('components.inquiryForm')

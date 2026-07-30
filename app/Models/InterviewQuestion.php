@@ -19,6 +19,7 @@ class InterviewQuestion extends Model
 
     protected $casts = [
         'content' => 'array',
+        'average_salary' => 'array',
         'status'  => 'boolean',
     ];
 }

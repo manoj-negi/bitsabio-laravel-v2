@@ -72,9 +72,15 @@ class InterviewQuestionForm
                                 ];
                             }
                     ),
-                TextInput::make('average_salary')
-                        ->label('Average Salary Package')
-                        ->columnSpanFull(),
+                TextInput::make('average_salary.min_salary')
+                    ->label('Minimum Salary')
+                    ->placeholder('₹18,00,000 P.A')
+                    ->required(),
+
+                TextInput::make('average_salary.max_salary')
+                    ->label('Maximum Salary')
+                    ->placeholder('₹25,00,000 P.A')
+                    ->required(),
 
 
                 Textarea::make('short_description')
