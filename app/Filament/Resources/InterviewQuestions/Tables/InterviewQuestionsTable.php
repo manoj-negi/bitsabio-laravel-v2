@@ -1,21 +1,23 @@
 <?php
 
-namespace App\Filament\Resources\Portfolios\Tables;
+namespace App\Filament\Resources\InterviewQuestions\Tables;
 
-use Filament\Tables\Table;
-use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Tables\Columns\ImageColumn;
+use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
-class PortfoliosTable
+class InterviewQuestionsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
+            ->defaultSort('priority')
             ->columns([
+
                 ImageColumn::make('image')
                   ->getStateUsing(fn ($record) => asset('public/storage/' . $record->image)),
 
@@ -26,15 +28,17 @@ class PortfoliosTable
                 TextColumn::make('slug')
                     ->searchable(),
 
-                TextColumn::make('result_title')
-                    ->label('Result'),
+                TextColumn::make('priority')
+                    ->sortable(),
 
                 IconColumn::make('status')
                     ->boolean(),
 
                 TextColumn::make('created_at')
-                    ->dateTime('d M Y')
-                    ->sortable(),
+                    ->label('Created')
+                    ->dateTime('d M Y'),
+
+                //
             ])
             ->filters([
                 //

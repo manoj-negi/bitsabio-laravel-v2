@@ -476,6 +476,83 @@ a {
     padding: 10px 24px;
 }
 
+
+/* Review section  */
+.student-review-section{
+    background: var(--bg-overlay);
+}
+
+.review-card{
+    transition: all .3s ease;
+    border-radius: 16px;
+}
+
+.review-card:hover{
+    transform: translateY(-8px);
+}
+
+.review-user{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar-circle{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#004ED0,#6C63FF);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:18px;
+    flex-shrink:0;
+}
+
+.review-stars{
+    color:#FFC107;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.review-text{
+    color:#6b7280;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.review-badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(0,78,208,.08);
+    color:#004ED0;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.review-heading{
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.review-subtitle{
+    max-width:650px;
+    color:#6b7280;
+}
+
+.review-slider .slick-slide {
+  margin: 36px 6px;
+}
+.reviews-card {
+  border: 1px solid #cad8dff5;
+  border-radius: 12px;
+  height: 100%;
+}
+
 /* ==========================================
    Hero Section
    ========================================== */
@@ -964,6 +1041,13 @@ a {
     color: var(--color-text-primary);
     margin-bottom: 8px;
 }
+  .hero-img-case-study {
+   height: 722px;
+   object-fit: cover;
+   object-position: top center;
+   border-radius: 20px;
+   box-shadow: 2px 8px 14px #d7d7d7;
+  }
 
 .rag-step p {
     font-size: 0.875rem;
@@ -2678,6 +2762,18 @@ html {
   padding: 30px 30px 30px 0px;
 }
 
+ .tool-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+
+.interview-icon {
+  height: 50px;
+  width: 50px;
+}
+
 
  
 /* Card */
@@ -2777,6 +2873,40 @@ html {
     padding-top: 100px;
     padding-bottom: 100px;
 }
+
+.dropdown-custom{
+    position: relative;
+}
+
+.dropdown-custom-menu{
+    display: none;
+    position: absolute;
+    top:100%;
+    left:0;
+    min-width:220px;
+    background:#fff;
+    list-style:none;
+    padding:10px 0;
+    margin:0;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    border-radius:6px;
+    z-index:9999;
+}
+
+.dropdown-custom-menu li a{
+    display:block;
+    padding:10px 18px;
+    color:#222;
+    text-decoration:none;
+}
+
+.dropdown-custom-menu li a:hover{
+    background:#f5f5f5;
+}
+
+.dropdown-custom:hover .dropdown-custom-menu{
+    display:block;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .stat-card {
@@ -2791,6 +2921,5 @@ html {
   .stat-content p {
     font-size: 18px;
   }
+
 }
- 
- 

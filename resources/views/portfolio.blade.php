@@ -250,6 +250,93 @@
 </div>
 </section>
    
+ <!-- ========== Our Project Logo ========== -->
+    {{-- <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h3 class="section-title gradient-text">
+                    Tools & Technologies You'll Master
+                </h3>
+            </div>
+            <div class="row g-4 justify-content-center">
+                @foreach ($course->serviceIcons as $icon)
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="tool-card text-center">
+                            <img src="{{ asset('public/storage/' . $icon->image) }}"
+                                alt="{{ $icon->name }}"class="img-fluid mb-2 tool-icon">
+                            <h6>
+                                {{ strtoupper($icon->name) }}
+                            </h6>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section> --}}
+    <section class="py-5 bg-light">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h3 class="section-title gradient-text">
+                Our Projects 
+            </h3>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="tool-card text-center">
+                    <img src="{{ asset('images/icons/react.svg') }}"
+                        alt="React"
+                        class="img-fluid mb-2 tool-icon">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="tool-card text-center">
+                    <img src="{{ asset('images/icons/adobe.svg') }}"
+                        alt="Angular"
+                        class="img-fluid mb-2 tool-icon">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="tool-card text-center">
+                    <img src="{{ asset('images/icons/astro-icon-dark.svg') }}"
+                        alt="Vue"
+                        class="img-fluid mb-2 tool-icon">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="tool-card text-center">
+                    <img src="{{ asset('images/icons/figma.svg') }}"
+                        alt="JavaScript"
+                        class="img-fluid mb-2 tool-icon">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="tool-card text-center">
+                    <img src="{{ asset('images/icons/nodejs (1).svg') }}"
+                        alt="TypeScript"
+                        class="img-fluid mb-2 tool-icon">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="tool-card text-center">
+                    <img src="{{ asset('images/icons/bootstrap (1).svg') }}"
+                        alt="Bootstrap"
+                        class="img-fluid mb-2 tool-icon">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 <!-- ==========  Companies logos Grid ========== -->
 
 {{-- <section class="py-60">
@@ -418,6 +505,9 @@
             
         </div>
     </section>
+
+       {{-- Inquiry Form  --}}
+    @include('components.mainServiceForm')
 
    
 @endsection

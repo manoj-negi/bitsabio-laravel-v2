@@ -19,8 +19,7 @@ class TasksTable
             ->columns([
 
                 ImageColumn::make('image')
-                    ->label('Image')
-                    ->square(),
+                  ->getStateUsing(fn ($record) => asset('public/storage/' . $record->image)),
 
                 TextColumn::make('title')
                     ->label('Task')

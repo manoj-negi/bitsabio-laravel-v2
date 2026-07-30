@@ -11,6 +11,7 @@ use App\Http\Controllers\GoogleReviewController;
 use App\Http\Controllers\InvoicePdfController;
 use App\Http\Controllers\InternController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\InterviewQuestionController;
 
 Route::get('/', function () {
     return view('home');    
@@ -37,6 +38,8 @@ Route::get('/blogs', [PostController::class, 'blogs'])->name('blogs');
 Route::get('/blog/{slug}', [PostController::class, 'showBlog']);
 
 Route::get('/training', [PostController::class, 'courses'])->name('courses');
+Route::get('/training/{slug}/curriculum', [PostController::class, 'curriculum'])
+    ->name('course.curriculum');
 Route::get('/training/{slug}', [PostController::class, 'showCourse'])->name('content.showCourse');
 
 Route::get('/services', [PostController::class, 'services'])->name('services');
@@ -101,3 +104,29 @@ Route::get('/internForm', function () {
     return view('internForm');
 });Route::post('/internForm', [InternController::class, 'store'])
     ->name('intern.store');
+
+Route::get('/case-study', function () {
+    return view('case-study');
+})->name('case.study');
+
+Route::get('/curriculum', function () {
+    return view('curriculum');    
+})->name('curriculum');
+
+// Route::get('/project',function(){
+//     return view('project');
+// })->name('project');
+
+// Route::get('/interview-questions',function(){
+//     return view('interview-questions');
+// })->name('interview-questions');
+
+Route::get('/interview-questions', [InterviewQuestionController::class, 'index'])
+    ->name('interview-questions');
+    
+Route::get('/interview-questions/{slug}', [InterviewQuestionController::class, 'show'])
+    ->name('interview-detail');
+
+// Route::get('/interview-detail',function(){
+//     return view('interview-detail');
+// })->name('interview-detail');

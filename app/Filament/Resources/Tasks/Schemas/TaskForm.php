@@ -44,10 +44,52 @@ class TaskForm
                     ->label('Description')
                     ->rows(5),
 
-                FileUpload::make('image')
-                    ->label('Task Image')
-                    ->image()
-                    ->directory('tasks'),
+                // FileUpload::make('image')
+                //     ->label('Task Image')
+                //     ->image()
+                //     ->directory('tasks'),
+                 FileUpload::make('image')
+                        ->image()
+                        ->disk('public')
+                        ->visibility('public')
+                        ->nullable()
+                        ->maxSize(5120)
+                        ->imageEditor(false)
+
+                        ->getUploadedFileNameForStorageUsing(
+                            function (TemporaryUploadedFile $file): string {
+                                $name = pathinfo(
+                                    $file->getClientOriginalName(),
+                                    PATHINFO_FILENAME
+                                );
+                                $name = Str::slug($name);
+                                $extension = $file->getClientOriginalExtension();
+                                return time() . '-' . $name . '.' . $extension;
+                            }
+                        )
+                        ->getUploadedFileUsing(
+                                function ($file): ?array {
+
+                                    if (! $file) {
+                                        return null;
+                                    }
+
+                                    return [
+                                        'name' => $file,
+
+                                        'size' => filesize(
+                                            storage_path('app/public/' . $file)
+                                        ),
+
+                                        'type' => mime_content_type(
+                                            storage_path('app/public/' . $file)
+                                        ),
+
+                                        'url' => url('/public/storage/' . $file),
+                                    ];
+                                }
+                        ),
+
 
                 Select::make('status')
                     ->options([

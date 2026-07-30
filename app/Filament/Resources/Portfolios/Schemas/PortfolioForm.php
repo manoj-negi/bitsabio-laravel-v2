@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Portfolios\Schemas;
 
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Illuminate\Support\Str;
 use Filament\Schemas\Schema;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;

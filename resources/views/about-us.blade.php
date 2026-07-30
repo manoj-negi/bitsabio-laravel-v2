@@ -157,8 +157,7 @@
         </div>
     </section>
 
-        <!-- ========== STATS ========== -->
-
+    <!-- ========== STATS ========== -->
     <div id="stats-section" class="info-lable">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -245,7 +244,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-up">
-                    <div class="section-badge">Our Team</div>
+                    {{-- <div class="section-badge">Our Team</div> --}}
                     <h3 class="mb-4">Why Businesses Choose BitSabio</h3>
                     <p class="mb-4" style="font-size: 1.125rem; color: var(--color-text-secondary);">
                         We combine technical expertise, innovation, and business understanding to deliver digital solutions that create measurable impact.
@@ -276,13 +275,13 @@
                             <span>Agile Delivery</span>
                         </li>
                     </ul>
-                    <a href="{{url('/training')}}" class="btn btn-gradient btn-lg">
+                    {{-- <a href="{{url('/training')}}" class="btn btn-gradient btn-lg">
                         View Open Positions
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
-                    </a>
+                    </a> --}}
                 </div>
                 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">

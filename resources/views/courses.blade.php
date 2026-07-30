@@ -1,133 +1,82 @@
 @extends('layouts.app')
-@section('meta_title', 'BitSabio - Courses')
+@section('meta_title', 'BitSabio - Training')
 
-@section('meta_description', 'Learn web development, AI technologies, design, and digital skills through practical courses and industry-focused training programs.')
+@section('meta_description', 'Learn web development, AI technologies, design, and digital skills through practical
+    courses and industry-focused training programs.')
 @section('meta_keywords', 'web development courses, AI courses, programming training, digital skills')
-@section('og_title', 'BitSabio Courses')
+@section('og_title', 'BitSabio Training')
 @section('og_description', 'Industry-ready courses and training programs.')
 
 @section('content')
 
-    <!-- ========== HERO SECTION ========== -->
-    <section class="hero-section">
+  <!-- ========== HERO SECTION ========== -->
+    <section class="page-hero">
         <div class="container">
-            <div class="hero-slider">
-                <div class="px-3">
+            {{-- <div class="hero-slider"> --}}
+                {{-- <div class="px-3"> --}}
                     <div class="row align-items-center">
                         <div class="col-lg-7">
                             <!-- Badge -->
                             <div class="hero-badge" data-aos="fade-down">
                                 <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
-                                <span>FUTURE-PROOF YOUR CAREER</span>
+                                <span>START YOUR TECH CAREER</span>
                             </div>
 
                             <!-- Title -->
                             <h3 class="hero-title" data-aos="fade-up">
-                                Explore <span class="color-liner-004ED0">Industry Ready</span> Tech Courses
+                                Industry-Oriented<span class="color-liner-004ED0"> IT Training &</span>Internship Programs
                             </h3>
 
                             <!-- Subtitle -->
                             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-                                Master in-demand skills with hands-on training, real projects, and certification. Our curated curriculum is designed by industry veterans to take you from beginner to professional.
-                            </p>
+                                Gain practical skills through industry-focused training, expert mentorship, and real-world
+                                projects. Build job-ready expertise and accelerate your career in today's fast-growing
+                                technology industry. </p>
 
-                            <!-- CTA Buttons -->
-                            <div class="d-flex flex-column flex-sm-row gap-3 mb-5 mt-5" data-aos="fade-up" data-aos-delay="200">
-                                <a href="#contact" class="btn btn-gradient">
-                                    Browse All Courses
-                                    <i class="bi bi-arrow-right ms-2"></i>
-                                </a>
-                                <a href="#work" class="btn btn-glass">Talk to a Mentor</a>
+                            <div class="row mt-4 mb-4">
+                                <div class="col-6">
+                                    <div class="feature-item">
+                                        <i class="bi bi-check-circle-fill text-primary"></i>
+                                        Live Projects
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="feature-item">
+                                        <i class="bi bi-check-circle-fill text-primary"></i>
+                                        Certification
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mt-3">
+                                    <div class="feature-item">
+                                        <i class="bi bi-check-circle-fill text-primary"></i>
+                                        Placement Assistance
+                                    </div>
+                                </div>
+
+                                <div class="col-6 mt-3">
+                                    <div class="feature-item">
+                                        <i class="bi bi-check-circle-fill text-primary"></i>
+                                        Expert Mentors
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
                         <div class="col-lg-5">
                             <div class="edu-home-img">
-                                <img class="rounded-3" src="./images/edu-home2.jpg" alt="edu-home">
+                                {{-- <img class="rounded-3" src="./images/data-science.jpg" alt="edu-home"> --}}
+                                @include('components.courseForm')
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="px-3">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 ">
-                            <!-- Badge -->
-                            <div class="hero-badge" data-aos="fade-down">
-                                <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
-                                <span>BUILD REAL-WORLD APPS</span>
-                            </div>
-
-                            <!-- Title -->
-                            <h3 class="hero-title" data-aos="fade-up">
-                                Become a <span class="color-liner-004ED0">Full Stack Developer</span>
-                            </h3>
-
-                            <!-- Subtitle -->
-                            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-                                Build powerful web applications using modern technologies like MongoDB, Express, React, and Node.js. Learn by creating real-world projects from scratch.
-                            </p>
-
-                            <!-- CTA Buttons -->
-                            <div class="d-flex flex-column flex-sm-row gap-3 mb-5 mt-5" data-aos="fade-up" data-aos-delay="200">
-                                <a href="#contact" class="btn btn-gradient">
-                                    Browse All Courses
-                                    <i class="bi bi-arrow-right ms-2"></i>
-                                </a>
-                                <a href="#work" class="btn btn-glass">Talk to a Mentor</a>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="edu-home-img">
-                                <img class="rounded-3" src="./images/slide2.jpg" alt="edu-home">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-3">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 ">
-                            <!-- Badge -->
-                            <div class="hero-badge" data-aos="fade-down">
-                                <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
-                                <span>ENTER THE AI ERA</span>
-                            </div>
-
-                            <!-- Title -->
-                            <h3 class="hero-title" data-aos="fade-up">
-                                Learn <span class="color-liner-004ED0">AI, Machine Learning, DevOps & RAG</span>
-                            </h3>
-
-                            <!-- Subtitle -->
-                            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-                                Dive into AI, Machine Learning, and RAG-based systems. Work on real-world datasets, build intelligent apps, and understand how modern AI tools actually work.
-                            </p>
-
-                            <!-- CTA Buttons -->
-                            <div class="d-flex flex-column flex-sm-row gap-3 mb-5 mt-5" data-aos="fade-up" data-aos-delay="200">
-                                <a href="#contact" class="btn btn-gradient">
-                                    Browse All Courses
-                                    <i class="bi bi-arrow-right ms-2"></i>
-                                </a>
-                                <a href="#work" class="btn btn-glass">Talk to a Mentor</a>
-                            </div>
-
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="edu-home-img">
-                                <img class="rounded-3" src="./images/slide3.jpg" alt="edu-home">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+                {{-- </div> --}}
+            {{-- </div> --}}
         </div>
-
     </section>
 
-        <!-- ========== STATS ========== -->
-
+    <!-- ========== STATS ========== -->
     <div id="stats-section" class="info-lable">
         <div class="container">
             
@@ -173,8 +122,7 @@
     </div>
 
   <!-- Courses section -->
-
-  <section class="py-5">
+    <section class="py-5">
         <div class="container">
             <div class="mb-5">
                 <div class="row align-items-end">
@@ -197,9 +145,9 @@
                                 <i class="bi bi-gear-wide-connected text-primary"></i>
                             </div> --}}
                             <div>
-                                {{-- <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                     --}}
-                            <img src="{{ $course->image_url }}" alt="{{ $course->title }}">
-
+                            <img class="course-card-img rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}">                                                                                    
+                            {{-- <img src="{{ $course->image_url }}" alt="{{ $course->title }}"> --}}
+                            {{-- <img class="rounded-3" src="{{ url('/public/storage/' . $course->hero_image) }}" alt="{{ $course->title }}"> --}}
                             </div>
                             <h5>{{$course->title}}</h5>
                             <p class="four-line-ellipsis">
@@ -221,6 +169,130 @@
                 @endforeach
 
             </div>
+        </div>
+    </section>
+
+    <!-- ========== Why Choose Bitsabio ========== -->        
+    <section class="py-5" style="background-color: var(--color-surface-light);">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h3 data-aos="fade-up">Why Choose Bitsabio?</h3>
+
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    We don't just teach theory; we provide a complete learning
+                    ecosystem that prepares you for real-world careers.
+                </p>
+            </div>
+
+            <div class="problem-grid">
+
+                <!-- Expert Trainers -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+
+                    <h4>Expert Trainers</h4>
+
+                    <p>
+                        Learn directly from experienced industry professionals and mentors.
+                    </p>
+                </div>
+
+                <!-- Real Projects -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+
+                    <h4>Real Projects</h4>
+
+                    <p>
+                        Build portfolio-ready applications using modern technologies.
+                    </p>
+                </div>
+
+                <!-- Practical Learning -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+
+                    <h4>Practical Learning</h4>
+
+                    <p>
+                        Hands-on coding sessions with real-world implementation.
+                    </p>
+                </div>
+
+                <!-- Career Guidance -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-signpost"></i>
+                    </div>
+
+                    <h4>Career Guidance</h4>
+
+                    <p>
+                        Personalized career roadmaps and growth strategies.
+                    </p>
+                </div>
+
+                <!-- Interview Preparation -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-chat-square-text"></i>
+                    </div>
+
+                    <h4>Interview Preparation</h4>
+
+                    <p>
+                        Mock interviews, resume reviews, and technical preparation.
+                    </p>
+                </div>
+
+                <!-- Affordable Fees -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+
+                    <h4>Affordable Fees</h4>
+
+                    <p>
+                        Premium quality education at student-friendly pricing.
+                    </p>
+                </div>
+
+                <!-- Certification -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-award"></i>
+                    </div>
+
+                    <h4>Certification</h4>
+
+                    <p>
+                        Industry-recognized certificates after successful completion.
+                    </p>
+                </div>
+
+                <!-- Job-Oriented Curriculum -->
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="icon" style="background: var(--gradient-light);">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <h4>Job-Oriented Curriculum</h4>
+
+                    <p>
+                        Training aligned with current industry hiring requirements.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -369,36 +441,7 @@
     </div>
 
     <!-- ========== PROCESS SECTION ========== -->
-    <section class="py-5 my-5" style="background: var(--bg-overlay);">
-        <div class="container">
-           
-
-          <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="mb-3" data-aos="fade-up">
-                    <h3 class="section-title gradient-text">About Bitsabio Learning</h3>
-                    <p><b>Bitsabio</b> is a fast-growing <b>IT training company</b> focused on delivering practical, job-oriented learning. We help <b>students, professionals, and businesses </b>build </b>in-demand skills</b>and stay ahead in the evolving tech industry.</p>
-                    <p>Our programs are designed with a <b>hands-on approach,</b>including <b>live projects</b> and <b>expert mentorship</b>. We aim to <b> bridge the gap between learning and industry needs,</b> helping individuals gain <b>real-world experience </b>and succeed in their careers.</p>
-                                     
-                    </ul>
-                        <li>✔ Key Highlights</li>
-                        <li>✔ Job-Oriented Training Programs</li>
-                        <li>✔ Work on Live & Real-World Projects</li>
-                        <li>✔ Skill Development with Practical Approach</li>
-                        <li>✔ Career Guidance & Interview Preparation</li>
-                        <li>✔ Affordable Courses with High Value</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-              <img class="rounded" src="./images/about-us.jpg" alt="about-home">
-            </div>
-          </div>
-        </div>
-    </section>
-
-
-  <section class="py-5" style="background-color: var(--color-surface)">
+    <section class="py-5" style="background-color: var(--color-surface)">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-0 pe-md-4">
@@ -420,7 +463,9 @@
         </div>
     </section>
 
-
+    {{-- Reviews Section --}}
+    @include('components.google-reviews')
+    
     <!-- ========== CTA SECTION ========== -->
     @include('components.mainCourseForm')
      <!-- Modal sendmsg -->

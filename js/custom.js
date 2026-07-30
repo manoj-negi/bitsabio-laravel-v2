@@ -1,5 +1,14 @@
 // js for active class in menu 
-  
+  $('.review-slider').slick({
+  infinite: true,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1000,
+  dots:true,
+//   arrows:true,
+//   centerMargin: '15px'
+});
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -346,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             sessionStorage.setItem("popupShown", "true");
 
-        }, 2000);
+        }, 10000);
     }
 
 });
@@ -446,7 +455,30 @@ function showGlobalModal(data) {
 
 }
 
+// pdf download js 
+document.addEventListener('DOMContentLoaded', function () {
 
+    const pdfModal = document.getElementById('downloadPdfModal');
 
+    if (!pdfModal) return;
 
- 
+    pdfModal.addEventListener('show.bs.modal', function (event) {
+
+        const button = event.relatedTarget;
+
+        const course = button.dataset.course;
+        const slug = button.dataset.slug;
+        const description = button.dataset.description;
+
+        document.getElementById('pdfModalTitle').innerText =
+            'Download ' + course + ' Brochure';
+
+        document.getElementById('pdfModalDescription').innerText =
+            description;
+
+        document.getElementById('pdfCourseSlug').value = slug;
+        document.getElementById('pdfCourseName').value = course;
+
+    });
+
+});
