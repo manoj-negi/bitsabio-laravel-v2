@@ -455,32 +455,39 @@ class PostForm
                         ->visible(fn (Get $get): bool => $get('type') === 'course'),
 
                 // Roadmap section 
-                Section::make('Interactive Roadmap')
-                    ->schema([
+                
+                // Section::make('Interactive Roadmap')
+                //     ->schema([
 
-                        Repeater::make('interactive_roadmap')
-                            ->schema([
-                                TextInput::make('icon')
-                                    ->label('Bootstrap Icon')
-                                    ->required()
-                                    ->placeholder('bi bi-cpu'),                                
-                                TextInput::make('title')
-                                    ->required(),
+                //         Repeater::make('interactive_roadmap')
+                //             ->schema([
+                //                 TextInput::make('icon')
+                //                     ->label('Bootstrap Icon')
+                //                     ->required()
+                //                     ->placeholder('bi bi-cpu'),                                
+                //                 TextInput::make('title')
+                //                     ->required(),
 
-                                Textarea::make('description')
-                                    ->required(),
+                //                 Textarea::make('description')
+                //                     ->required(),
 
-                            ])
-                            ->columnSpanFull()
-                            ->collapsible()
-                            ->cloneable()
-                            ->reorderable()
-                            ->addActionLabel('Add Roadmap Item'),
+                //             ])
+                //             ->columnSpanFull()
+                //             ->collapsible()
+                //             ->cloneable()
+                //             ->reorderable()
+                //             ->addActionLabel('Add Roadmap Item'),
 
-                    ])
+                //     ])
+                    // ->columnSpanFull()
+                    // ->visible(fn (Get $get): bool => $get('type') === 'course'),
+
+                Textarea::make('roadmap_content')
+                    ->label('Roadmap Content')
+                    ->rows(5)
                     ->columnSpanFull()
                     ->visible(fn (Get $get): bool => $get('type') === 'course'),
-
+                  
                     // industry project 
                     Section::make('Industry Projects')
                         ->schema([
@@ -549,6 +556,44 @@ class PostForm
                                 ->cloneable()
                                 ->reorderable()
                                 ->addActionLabel('Add Industry Project'),
+
+                        ])
+                        ->columnSpanFull()
+                        ->visible(fn (Get $get): bool => $get('type') === 'course'),
+
+                        //  faq 
+                        Section::make('Course FAQs')
+                                ->schema([
+
+                        Repeater::make('faqs')
+                                ->schema([  
+
+                                    TextInput::make('question')
+                                        ->label('Question')
+                                        ->placeholder('e.g. Do I need prior programming experience?')
+                                        ->required()
+                                        ->columnSpanFull(),
+
+                                    RichEditor::make('answer')
+                                        ->label('Answer')
+                                        ->required()
+                                        ->toolbarButtons([
+                                            'bold',
+                                            'italic',
+                                            'bulletList',
+                                            'orderedList',
+                                            'link',
+                                            'undo',
+                                            'redo',
+                                        ])
+                                        ->columnSpanFull(),
+
+                                ])
+                                ->columnSpanFull()
+                                ->collapsible()
+                                ->cloneable()
+                                ->reorderable()
+                                ->addActionLabel('Add FAQ'),
 
                         ])
                         ->columnSpanFull()

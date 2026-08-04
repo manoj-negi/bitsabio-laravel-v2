@@ -43,12 +43,12 @@
         </li> --}}
 
 
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                      <a class="nav-link {{ request()->is('training') ? 'active-nav' : '' }}"
                          href="{{ url('/training') }}">
                          Training
                      </a>
-                 </li>
+                 </li> --}}
 
                  <li class="nav-item">
                      <a class="nav-link {{ request()->is('portfolio') ? 'active-nav' : '' }}"
@@ -70,29 +70,20 @@
                      </a>
                  </li>
 
-                 {{-- <li class="nav-item dropdown-custom">
-                     <a class="nav-link {{ request()->is('interview-questions') ? 'active-nav' : '' }}" href="#">
+                 <li class="nav-item dropdown-custom">
+                     <a class="nav-link {{ request()->is('interview-questions*') || request()->is('training*') ? 'active-nav' : '' }}"
+                         href="#">
                          Student Zone
                      </a>
-
                      <ul class="dropdown-custom-menu">
                          <li>
                              <a href="{{ route('interview-questions') }}">
                                  Interview Questions
                              </a>
                          </li>
-                     </ul>
-                 </li> --}}
-                 <li class="nav-item dropdown-custom">
-                     <a class="nav-link {{ request()->routeIs('interview-questions') ? 'active-nav' : '' }}"
-                         href="#">
-                         Student Zone
-                     </a>
-
-                     <ul class="dropdown-custom-menu">
                          <li>
-                             <a href="{{ route('interview-questions') }}">
-                                 Interview Questions
+                             <a href="{{ route('courses') }}">
+                                 Training
                              </a>
                          </li>
                      </ul>

@@ -2907,6 +2907,10 @@ html {
 .dropdown-custom:hover .dropdown-custom-menu{
     display:block;
 }
+.sticky-top {
+    position: sticky;
+    top: 100px;
+}
 /* Responsive */
 @media (max-width: 768px) {
   .stat-card {

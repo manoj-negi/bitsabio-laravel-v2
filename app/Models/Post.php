@@ -37,17 +37,20 @@ class Post extends Model
     'industry_projects',
     'average_salary',
     'curriculum_hero',
+    'roadmap_content',
     'career_roles',
+    "faqs"
 ];
 protected $casts = [
     'tags' => 'array',
     'curriculum_preview' => 'array',
     'projects_you_will_build' => 'array',
-    'interactive_roadmap' => 'array',
+    // 'interactive_roadmap' => 'array',
     'average_salary' => 'array',
     'career_roles' => 'array',
     'industry_projects' => 'array',
     'curriculum_hero' => 'array',
+    'faqs' => 'array',
 ];
 public $sortable = [
     'order_column_name' => 'priority',

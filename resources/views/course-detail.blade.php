@@ -88,12 +88,16 @@
                         <a href="#contact" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
                             Enroll Now
                         </a>
+                        <a href="{{ route('course.curriculum', $course->slug) }}" class="btn btn-glass text-primary"
+                            data-aos="fade-up" data-aos-delay="200">
+                            View curriculum
+                        </a>
                         {{-- <a href="#work" class="btn btn-glass text-primary">Download PDF <i class="bi bi-download text-primary"></i></a> --}}
-                        <a type="button" class="btn btn-glass text-primary" data-bs-toggle="modal"
+                        {{-- <a type="button" class="btn btn-glass text-primary" data-bs-toggle="modal"
                             data-bs-target="#downloadPdfModal">
                             Download PDF
                             <i class="bi bi-download text-primary"></i>
-                        </a>
+                        </a> --}}
                     </div>
 
                 </div>
@@ -111,7 +115,7 @@
     {{-- Course Content  --}}
     <section class="py-5">
         <div class="container">
-            <div class="row align-items-start">
+            <div class="row">
 
                 <div class="col-lg-9">
                     <h2 class="mb-4">
@@ -130,8 +134,15 @@
                 </div>
 
                 <div class="col-lg-3">
+                    <div class="sticky-top">
                     @include('components.courseForm')
+                    <a href="{{ route('course.curriculum', $course->slug) }}" class="btn btn-glass w-100 justify-content-center mt-2 text-primary"
+                        data-aos="fade-up" data-aos-delay="200">
+                        View curriculum
+                    </a>
+                    </div>
                 </div>
+
 
             </div>
         </div>
@@ -232,40 +243,13 @@
 
         </div>
     </div>
-
-    <!-- ========== ToolS and Technology ========== -->
-    <section class="py-5 bg-light">
-        <div class="container">
-
-            <div class="text-center mb-5">
-                <h3 class="section-title gradient-text">
-                    Tools & Technologies You'll Master
-                </h3>
-            </div>
-            <div class="row g-4 justify-content-center">
-                @foreach ($course->serviceIcons as $icon)
-                    <div class="col-lg-2 col-md-3 col-6">
-                        <div class="tool-card text-center">
-                            <img src="{{ asset('public/storage/' . $icon->image) }}"
-                                alt="{{ $icon->name }}"class="img-fluid mb-2 tool-icon">
-                            <h6>
-                                {{ strtoupper($icon->name) }}
-                            </h6>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-
     {{-- Curriculum Preview  --}}
-    {{-- <section class="page-hero">
+    <section class="page-hero">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <h3 class="text-center mb-3" data-aos="fade-up">
-                        Curriculum Preview
+                        Structured, Module-by-Module Learning
                     </h3>
                     <div class="container py-5">
                         <div class="accordion custom-accordion" id="faqAccordion">
@@ -303,7 +287,31 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
+    <!-- ========== ToolS and Technology ========== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h3 class="section-title gradient-text">
+                    Tools & Technologies You'll Master
+                </h3>
+            </div>
+            <div class="row g-4 justify-content-center">
+                @foreach ($course->serviceIcons as $icon)
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="tool-card text-center">
+                            <img src="{{ asset('public/storage/' . $icon->image) }}"
+                                alt="{{ $icon->name }}"class="img-fluid mb-2 tool-icon">
+                            <h6>
+                                {{ strtoupper($icon->name) }}
+                            </h6>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     <section class="py-5">
         <div class="container">
@@ -405,6 +413,41 @@
         </div>
     </section>
 
+    <section class="py-5 my-5" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-5">
+                        Frequently Asked Questions
+                    </h2>
+                    @if (!empty($course->faqs))
+                        <div class="accordion custom-accordion" id="courseFaqAccordion">
+                            @foreach ($course->faqs as $index => $faq)
+                                <div class="accordion-item">
+                                    <h3 class="accordion-header">
+                                        <button class="accordion-button {{ $loop->first ? '' : 'collapsed' }}"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#courseFaq{{ $index }}"
+                                            aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                                            aria-controls="courseFaq{{ $index }}">
+                                            {{ $loop->iteration }}. {{ $faq['question'] }}
+                                        </button>
+                                    </h3>
+                                    <div id="courseFaq{{ $index }}"
+                                        class="accordion-collapse collapse {{ $loop->first ? 'show' : '' }}"
+                                        data-bs-parent="#courseFaqAccordion">
+                                        <div class="accordion-body">
+                                            {!! $faq['answer'] !!}
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
     {{-- High-Growth Career Roles --}}
     {{-- <section class="section-contact-options py-5">
         <div class="container">

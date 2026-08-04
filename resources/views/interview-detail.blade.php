@@ -11,7 +11,7 @@
 @section('content')
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero " style="background-color: var(--color-surface)">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7">
@@ -107,10 +107,8 @@
         </div>
     </section> --}}
 
-
-
     {{--  Curriculum Breakdown  --}}
-    <section class="page-hero" style="background-color: var(--color-surface);" id="faq">
+    <section class="page-hero py-5 my-5" id="faq">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">

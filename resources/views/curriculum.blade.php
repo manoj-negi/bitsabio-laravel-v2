@@ -15,7 +15,7 @@
         <section class="page-hero">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-7">
+                    <div class="col-md-9">
                         <div class="hero-badge aos-init aos-animate" data-aos="fade-down">
                             <i class="bi bi-circle-fill" style="color: var(--gradient-blue); font-size: 7px;"></i>
                             <span>Professional Certification</span>
@@ -25,31 +25,159 @@
                         <p data-aos="fade-up" data-aos-delay="100">
                             {{ $hero['description'] }}
                         </p>
-
-                    </div>
-                    <div class="col-md-5">
-                        <div class="contact-hero-img">
-                            <img class="rounded" src="{{ url('/public/storage/' . $hero['curriculum-hero_image']) }}"
-                                alt="{{ $hero['title'] }}">
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <a href="#contact" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
-                            Enroll Now
-                        </a>
-                        <a type="button" class="btn btn-glass text-primary" data-bs-toggle="modal"
+                        <div class="d-flex align-items-center">
+                            <a href="#contact" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
+                                Enroll Now
+                            </a>
+                            {{-- <a type="button" class="btn btn-glass text-primary" data-bs-toggle="modal"
                             data-bs-target="#downloadPdfModal">
                             Download PDF
                             <i class="bi bi-download text-primary"></i>
-                        </a>
+                        </a> --}}
+                        </div>
+
                     </div>
+                    <div class="col-md-3">
+                        <div class="contact-hero-img">
+                            {{-- <img class="rounded" src="{{ url('/public/storage/' . $hero['curriculum-hero_image']) }}" --}}
+                            {{-- alt="{{ $hero['title'] }}"> --}}
+                            @include('components.courseForm')
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
     @endforeach
+    {{-- <div class="roadmap-view">
+<div class="wrap">
 
-    <!--Interactive Roadmap -->  
-    <section class="py-5" style="background-color: var(--color-surface);">
+  <span class="eyebrow">YOUR LEARNING PATH</span>
+  <h1>The Complete Full-Stack Development Roadmap</h1>
+  <p class="sub">A four-phase path — from web fundamentals to building, shipping and scaling production-ready full-stack applications.</p>
+
+  <!-- PHASE 1 -->
+  <div class="phase">
+    <div class="rail"></div>
+    <div class="num"><span class="n">1</span><span class="l">PHASE</span></div>
+    <div class="card">
+      <h2>Web Foundations</h2>
+      <p class="desc">Before touching a framework, you master how the web actually works — markup, styling, logic and version control:
+      <span class="tags" style="display:inline-flex;vertical-align:middle;">
+        <span class="tag">HTML &amp; CSS</span><span class="arrow">→</span><span class="tag">JavaScript</span><span class="arrow">→</span><span class="tag">Git &amp; GitHub</span>
+      </span></p>
+      <div class="cols">
+        <div class="col">
+          <h3>Markup &amp; Styling</h3>
+          <ul>
+            <li><b>HTML5:</b> semantic structure, accessibility and forms.</li>
+            <li><b>CSS3:</b> Flexbox, Grid, responsive design &amp; media queries.</li>
+            <li><b>Tailwind CSS:</b> utility-first styling for fast iteration.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Logic &amp; Tooling</h3>
+          <ul>
+            <li><b>JavaScript (ES6+):</b> DOM, async/await, fetch &amp; modules.</li>
+            <li><b>Git &amp; GitHub:</b> branching, pull requests, collaboration.</li>
+            <li><b>DevTools &amp; npm:</b> debugging and package management.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase">
+    <div class="rail"></div>
+    <div class="num"><span class="n">2</span><span class="l">PHASE</span></div>
+    <div class="card">
+      <h2>Frontend Development <span class="badge">CLIENT-SIDE</span></h2>
+      <p class="desc">Turn static pages into dynamic, interactive interfaces using a modern component framework.</p>
+      <div class="cols">
+        <div class="col">
+          <h3>Framework &amp; State</h3>
+          <ul>
+            <li><b>React:</b> components, hooks, and the virtual DOM.</li>
+            <li><b>State Management:</b> Context API, Zustand or Redux.</li>
+            <li><b>Routing:</b> client-side navigation with React Router.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Data &amp; Quality</h3>
+          <ul>
+            <li><b>API Integration:</b> REST &amp; fetching with React Query.</li>
+            <li><b>TypeScript:</b> static typing for safer components.</li>
+            <li><b>Testing:</b> unit tests with Vitest / React Testing Library.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase">
+    <div class="rail"></div>
+    <div class="num"><span class="n">3</span><span class="l">PHASE</span></div>
+    <div class="card">
+      <h2>Backend Development <span class="badge">SERVER-SIDE</span></h2>
+      <p class="desc">Move behind the interface — build the servers, databases and APIs that power your app.</p>
+      <div class="cols">
+        <div class="col">
+          <h3>Server &amp; APIs</h3>
+          <ul>
+            <li><b>Node.js &amp; Express:</b> building RESTful APIs.</li>
+            <li><b>Authentication:</b> JWT, OAuth &amp; session management.</li>
+            <li><b>GraphQL:</b> flexible querying as an alternative to REST.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Data &amp; Storage</h3>
+          <ul>
+            <li><b>SQL:</b> PostgreSQL schema design &amp; queries.</li>
+            <li><b>NoSQL:</b> MongoDB for flexible document storage.</li>
+            <li><b>ORMs:</b> Prisma or Sequelize for type-safe data access.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase">
+    <div class="num"><span class="n">4</span><span class="l">PHASE</span></div>
+    <div class="card">
+      <h2>Deployment &amp; Hands-On Projects <span class="badge">SHIP IT</span></h2>
+      <p class="desc">Containerize, deploy and monitor real apps — plus the capstone projects you'll build in this course.</p>
+      <div class="cols">
+        <div class="col">
+          <h3>DevOps Basics</h3>
+          <ul>
+            <li><b>Docker:</b> containerizing frontend &amp; backend services.</li>
+            <li><b>CI/CD:</b> automated builds &amp; deploys with GitHub Actions.</li>
+            <li><b>Hosting:</b> Vercel, Render or AWS for production apps.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Starter Projects You'll Build</h3>
+          <ul>
+            <li><b>Full-Stack Blog:</b> auth, CRUD posts &amp; comments.</li>
+            <li><b>Real-Time Chat App:</b> WebSockets &amp; live updates.</li>
+            <li><b>E-Commerce Store:</b> cart, payments &amp; order dashboard.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div> --}}
+ <!--Interactive Roadmap -->
+    @if (!empty($course->roadmap_content))
+        {!! $course->roadmap_content !!}
+    @endif
+    <!--Interactive Roadmap -->
+    {{-- <section class="py-5" style="background-color: var(--color-surface);">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-9">
@@ -60,11 +188,6 @@
                         <div class="h-100">
                             <div class="innovators-card" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon">
-                                    {{-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10">
-                                    </circle>
-                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                                </svg> --}}
                                     <i class="{{ $roadmap['icon'] }}"></i>
                                 </div>
                                 <div>
@@ -84,7 +207,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{--  Curriculum Breakdown  --}}
     <section class="page-hero">
@@ -92,7 +215,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <h3 class="text-center mb-3" data-aos="fade-up">
-                        Curriculum Breakdown
+                        Structured, Module-by-Module Learning
                     </h3>
                     <div class="container py-5">
                         <div class="accordion custom-accordion" id="faqAccordion">
@@ -126,7 +249,7 @@
     </section>
 
     {{-- Industry Projects --}}
-     <section class="py-5">
+    <section class="py-5">
         <div class="container">
             <h2 class="mb-5">
                 Industry Projects
