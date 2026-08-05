@@ -20,10 +20,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <div class="hero-badge" data-aos="fade-down">
+                    {{-- <div class="hero-badge" data-aos="fade-down">
                         <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
                         <span>Industry-Recognized DevOps Training Program</span>
-                    </div>
+                    </div> --}}
                     <h1 data-aos="fade-up">{{ $course->hero_title_black }} <span
                             class="color-liner-004ED0">{{ $course->hero_title_blue }}
                             @if (isset($location))
@@ -135,11 +135,7 @@
             <div class="row">
 
                 <div class="col-lg-9">
-                    <h2 class="mb-4">
-                        Course Content
-                    </h2>
-
-                    @php
+                                     @php
                         $content = str_replace(
                             ['{{ location }}', '{{ location }}'],
                             isset($location) ? 'in ' . $location->name : '',
