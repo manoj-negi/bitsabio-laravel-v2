@@ -57,6 +57,7 @@
     <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/training.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/course_content.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
 
 

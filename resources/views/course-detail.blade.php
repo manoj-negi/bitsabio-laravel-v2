@@ -22,7 +22,7 @@
                 <div class="col-md-7">
                     <div class="hero-badge" data-aos="fade-down">
                         <i class="bi bi-stars" style="color: var(--gradient-blue);"></i>
-                        <span>AI & MACHINE LEARNING TRAINING PROGRAM</span>
+                        <span>Industry-Recognized DevOps Training Program</span>
                     </div>
                     <h1 data-aos="fade-up">{{ $course->hero_title_black }} <span
                             class="color-liner-004ED0">{{ $course->hero_title_blue }}
@@ -45,17 +45,34 @@
                         {{ $heroDescription }}
                     </p>
                     @if (!empty($course->average_salary))
-                        <h4 data-aos="fade-up">
-                            Average Salary Package:
+                        {{-- <div class="dvt-salary" data-aos="fade-up">
+                            
+                            Average Salary Package
                             <span class="color-liner-004ED0">
                                 {{ $course->average_salary['min_salary'] ?? '' }}
                                 @if (!empty($course->average_salary['max_salary']))
-                                    To {{ $course->average_salary['max_salary'] }}
+                                    - {{ $course->average_salary['max_salary'] }}
                                 @endif
                             </span>
-                        </h4>
+                        </div> --}}
+                        <div class="dvt-salary">
+                            <h4 class="">Average Salary Package</h4>
+                            <div class="dvt-salary-amount color-liner-004ED0">
+                                {{ $course->average_salary['min_salary'] ?? '' }}
+                                @if (!empty($course->average_salary['max_salary']))
+                                    - {{ $course->average_salary['max_salary'] }}
+                                @endif
+                            </div>
+                            <ul class="dvt-perks color-liner-004ED0">
+                                <li>100% Placement Assistance</li>
+                                <li>Live Projects</li>
+                                <li>Industry-Recognized Certification</li>
+
+                                <li>Learn from Expert Mentors</li>
+                            </ul>
+                        </div>
                     @endif
-                    <div class="row mt-4 mb-4">
+                    {{-- <div class="row mt-4 mb-4">
                         <div class="col-6">
                             <div class="feature-item">
                                 <i class="bi bi-check-circle-fill text-primary"></i>
@@ -83,7 +100,7 @@
                                 Expert Mentors
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="d-flex align-items-center">
                         <a href="#contact" class="btn btn-gradient btn-lg me-3" data-aos="fade-up" data-aos-delay="200">
                             Enroll Now
@@ -135,11 +152,12 @@
 
                 <div class="col-lg-3">
                     <div class="sticky-top">
-                    @include('components.courseForm')
-                    <a href="{{ route('course.curriculum', $course->slug) }}" class="btn btn-glass w-100 justify-content-center mt-2 text-primary"
-                        data-aos="fade-up" data-aos-delay="200">
-                        View curriculum
-                    </a>
+                        @include('components.courseForm')
+                        <a href="{{ route('course.curriculum', $course->slug) }}"
+                            class="btn btn-glass w-100 justify-content-center mt-2 text-primary" data-aos="fade-up"
+                            data-aos-delay="200">
+                            View curriculum
+                        </a>
                     </div>
                 </div>
 
