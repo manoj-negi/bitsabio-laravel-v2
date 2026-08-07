@@ -15,12 +15,14 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TagsInput;
 use Filament\Schemas\Components\Section;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+use Filament\Schemas\Components\Grid;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 class PostForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
+        ->columns(3)
             ->components([
                 Select::make('type')
                     ->options([
@@ -49,11 +51,8 @@ class PostForm
                     ])
                     ->default('draft'),
 
-                Textarea::make('short_description'),
 
-                Textarea::make('description'),
-
-            //  course
+                      //  course
 
                 Select::make('duration')
                     ->options([
@@ -82,9 +81,8 @@ class PostForm
                         'Advanced' => 'Advanced',
                     ])
                         ->visible(fn (Get $get): bool => $get('type') === 'course'),
-            
-            // course hero section
-
+       
+                // course hero section
                 TextInput::make('hero_title_black')
                         ->visible(fn (Get $get) =>
                             in_array($get('type'), ['course','service'])
@@ -95,10 +93,6 @@ class PostForm
                         in_array($get('type'), ['course','service'])
                     ),  
 
-                Textarea::make('hero_description')
-                        ->visible(fn (Get $get) =>
-                        in_array($get('type'), ['course','service'])
-                    ),
 
                 Select::make('serviceIcons')
                     ->relationship(
@@ -117,9 +111,32 @@ class PostForm
                     ->preload()
                     ->searchable()
                     ->visible(fn($get): bool=>$get('type')==='course'),
+                
+                TextInput::make('author')
+                    ->disabled()
+                    ->dehydrated()
+                    ->afterStateHydrated(function ($component) {
+                            $component->state(auth()->user()?->name);
+                        })
+                    ->dehydrateStateUsing(function () {
+                            return auth()->user()?->name;
+                        })
+                    ->required(),
+
+                Textarea::make('short_description'),
+
+                Textarea::make('description'),
+
+       
+                // course hero section
+                Textarea::make('hero_description')
+                        ->visible(fn (Get $get) =>
+                        in_array($get('type'), ['course','service'])
+                    ),
 
                 FileUpload::make('hero_image')
                                 ->image()
+                                ->imagePreviewHeight('100')                                
                                 ->disk('public')
                                 ->visibility('public')
                                 ->nullable()
@@ -160,50 +177,14 @@ class PostForm
                                             ];
                                         }
                                 ),
-                // FileUpload::make('hero_image')
-                //         ->image()
-                //         ->disk('s3')
-                //         ->directory('posts')
-                //         ->visibility('public')
-                //         ->getUploadedFileNameForStorageUsing(
-                //             fn (TemporaryUploadedFile $file): string =>
-                //                 time() . '-' .
-                //                 Str::slug(
-                //                     pathinfo(
-                //                         $file->getClientOriginalName(),
-                //                         PATHINFO_FILENAME
-                //                     )
-                //                 ) . '.' .
-                //                 $file->getClientOriginalExtension()
-                //         )
-                //         ->dehydrateStateUsing(fn ($state) => basename($state))
-                //         ->visible(fn (Get $get) => in_array($get('type'), ['course','service'])),
-
-                       //   blog
+                //   blog
 
                 TextInput::make('category')
                         ->visible(fn (Get $get) => $get('type') === 'blog'),
 
-
-                // FileUpload::make('image')
-                //         ->image()
-                //         ->disk('s3')
-                //         ->directory('posts')
-                //         ->visibility('public')
-                //         ->getUploadedFileNameForStorageUsing(
-                //             fn (TemporaryUploadedFile $file): string =>
-                //                 time() . '-' .
-                //                 Str::slug(pathinfo(
-                //                     $file->getClientOriginalName(),
-                //                     PATHINFO_FILENAME
-                //                 )) . '.' .
-                //                 $file->getClientOriginalExtension()
-                //         )
-                //         ->dehydrateStateUsing(fn ($state) => basename($state))
-                //         ->formatStateUsing(fn ($state) => $state ? 'posts/' . $state : null),
-
                  FileUpload::make('image')
                         ->image()
+                        ->imagePreviewHeight('100')
                         ->disk('public')
                         ->visibility('public')
                         ->nullable()
@@ -245,29 +226,21 @@ class PostForm
                         ),
 
     
-                TextInput::make('author')
-                    ->disabled()
-                    ->dehydrated()
-                    ->afterStateHydrated(function ($component) {
-                            $component->state(auth()->user()?->name);
-                        })
-                    ->dehydrateStateUsing(function () {
-                            return auth()->user()?->name;
-                        })
-                    ->required(),
+                
                 // meta tag
-
+                Section::make('Meta tags')
+                        ->columnSpanFull()
+                        ->collapsible()
+                        ->collapsed()
+                        ->schema([
+                               Grid::make(3)
+                ->schema([
                 TextInput::make('tags.meta.title')
                     ->label('Meta Title'),
 
 
                 TextInput::make('tags.meta.keywords')
                     ->label('Meta Keywords'),
-
-
-                Textarea::make('tags.meta.description')
-                    ->label('Meta Description'),
-
 
                 TextInput::make('tags.meta.canonical')
                         ->label('Canonical URL'),
@@ -281,19 +254,12 @@ class PostForm
                             'index, nofollow' => 'Index, NoFollow',
                             'noindex, nofollow' => 'NoIndex, NoFollow',
                             ]),
-                    
 
 
-                
-                //  og tag 
+                             //  og tag 
 
                 TextInput::make('tags.open_graph.title')
                         ->label('Open Graph Title'),
-
-
-                Textarea::make('tags.open_graph.description')
-                        ->label('Open Graph Description'),
-                        
 
                 TextInput::make('tags.open_graph.url')
                         ->label('Open Graph URL'),
@@ -305,6 +271,14 @@ class PostForm
                             'article' => 'Article',
                             'website' => 'Website',
                             ]),
+                Textarea::make('tags.open_graph.description')
+                        ->label('Open Graph Description'),
+
+                Textarea::make('tags.meta.description')
+                            ->label('Meta Description'),
+                        
+    ]),          
+    ]),              
                 TextInput::make('average_salary.min_salary')
                     ->label('Minimum Salary')
                     ->placeholder('₹2,50,000 P.A'),
@@ -312,52 +286,90 @@ class PostForm
                 TextInput::make('average_salary.max_salary')
                     ->label('Maximum Salary')
                     ->placeholder('₹18,00,000 P.A'),
-                        
+
+                TextInput::make('average_salary.practical_learning')
+                    ->label('Practical Learning Salary')
+                    ->placeholder('₹8,00,000 P.A'),
+
+                TextInput::make('average_salary.expert_mentorship')
+                    ->label('Expert Mentorship Salary')
+                    ->placeholder('₹25,00,000 P.A'),
+
+                TextInput::make('average_salary.job_oriented')
+                    ->label('Job Oriented Salary')
+                    ->placeholder('₹15,00,000 P.A'),    
+            
                 Textarea::make('content')
                         ->rows(5)
                         ->columnSpanFull(),
 
-                Section::make('Curriculum Preview')
-                ->schema([
+                // Section::make('Curriculum Module')
+                // ->schema([
 
-                Repeater::make('curriculum_preview')
-                        ->label('Modules')
-                        ->schema([
+                //  Textarea::make('Module')
+                //         ->rows(5)
+                //         ->columnSpanFull()
+                //         ->visible(fn (Get $get): bool => $get('type') === 'course'),
 
-                            TextInput::make('title')
-                                ->label('Module Title')
-                                ->required(),
+                Textarea::make('module')
+                    ->label('Curriculum Module')
+                    ->rows(5)
+                    ->columnSpanFull()
+                    ->visible(fn (Get $get): bool => $get('type') === 'course'),
+                // Repeater::make('curriculum_preview')
+                //         ->label('Modules')
+                //         ->schema([
+
+                //             TextInput::make('title')
+                //                 ->label('Module Title')
+                //                 ->required(),
                                 
 
-                            Textarea::make('description')
-                                ->label('Module Description')
-                                ->required(),
+                //             Textarea::make('description')
+                //                 ->label('Module Description')
+                //                 ->required(),
 
-                        ])
-                        ->collapsible()
-                        ->cloneable()
-                        ->reorderable()
-                        ->addActionLabel('Add Module')
-                        ->columnSpanFull(),
+                //         ])
+                //         ->collapsible()
+                //         ->cloneable()
+                //         ->reorderable()
+                //         ->addActionLabel('Add Module')
+                //         ->columnSpanFull(),
 
-                ])
-                   ->columnSpanFull()
+                // ])
+
+            //    Roadmap_Content
+
+               Textarea::make('roadmap_content')
+                    ->label('Roadmap Content')
+                    ->rows(5)
+                    ->columnSpanFull()
                     ->visible(fn (Get $get): bool => $get('type') === 'course'),
 
                 Section::make('Projects You Will Build')
-                ->schema([
+                    ->collapsible()
+                    ->collapsed()
+                    ->schema([
 
                     Repeater::make('projects_you_will_build')
+                    ->itemLabel(fn (array $state): ?string => $state['title'] ?? 'New Project')
                         ->label('Projects')
+                        ->schema([
+                    Grid::make(3)
                         ->schema([
 
 
-                                    // FileUpload::make('image')
-                                    //     ->image()
-                                    //     ->directory('industry-projects'),
+                    TextInput::make('title')
+                            ->label('Project Title')
+                            ->required(),
+            
+                    Textarea::make('description')
+                            ->rows(2)
+                            ->required(),
 
                     FileUpload::make('Projects_image')
                     ->image()
+                    ->imagePreviewHeight('100')
                     ->disk('public')
                     ->visibility('public')
                     ->nullable()
@@ -397,16 +409,9 @@ class PostForm
                                 ];
                             }
                     ),
-
-                            
-                            TextInput::make('title')
-                                ->label('Project Title')
-                                ->required(),
-
-                            Textarea::make('description')
-                                ->rows(3)
-                                ->required(),
+                        ]),
                         ])
+
                         ->collapsible()
                         ->cloneable()
                         ->reorderable()
@@ -419,9 +424,13 @@ class PostForm
 
                 // High-Growth Career Roles 
                 Section::make('Career Roles')
+                        ->collapsible()
+                        ->collapsed()
                         ->schema([
 
                             Repeater::make('career_roles')
+                                ->schema([
+                            Grid::Make(4)
                                 ->schema([
                                     TextInput::make('icon')
                                         ->label('Bootstrap Icon')
@@ -443,7 +452,7 @@ class PostForm
                                     //     ->image()
                                     //     ->disk('public')
                                     //     ->visibility('public'),
-
+                                ]),
                                 ])
                                 ->cloneable()
                                 ->collapsible()
@@ -481,20 +490,22 @@ class PostForm
                 //     ])
                     // ->columnSpanFull()
                     // ->visible(fn (Get $get): bool => $get('type') === 'course'),
-
-                Textarea::make('roadmap_content')
-                    ->label('Roadmap Content')
-                    ->rows(5)
-                    ->columnSpanFull()
-                    ->visible(fn (Get $get): bool => $get('type') === 'course'),
                   
                     // industry project 
                     Section::make('Industry Projects')
+                        ->collapsible()
+                        ->collapsed()
                         ->schema([
 
                             Repeater::make('industry_projects')
                                 ->schema([
-
+                            Grid::make(4)
+                                ->schema([
+                                TextInput::make('title')
+                                        ->required(),
+                                TagsInput::make('tags'),
+                                Textarea::make('description')
+                                        ->required(),
                                     // FileUpload::make('image')
                                     //     ->image()
                                     //     ->directory('industry-projects'),
@@ -502,6 +513,7 @@ class PostForm
 
                                 FileUpload::make('industry_projects_image')
                                         ->image()
+                                        ->imagePreviewHeight('100')
                                         ->disk('public')
                                         ->visibility('public')
                                         ->nullable()
@@ -542,13 +554,7 @@ class PostForm
                                                 }
                                         ),
 
-                                    TextInput::make('title')
-                                        ->required(),
-
-                                    Textarea::make('description')
-                                        ->required(),
-
-                                    TagsInput::make('tags'),
+                                ]),
 
                                 ])
                                 ->columnSpanFull()
@@ -562,54 +568,61 @@ class PostForm
                         ->visible(fn (Get $get): bool => $get('type') === 'course'),
 
                         //  faq 
-                        Section::make('Course FAQs')
-                                ->schema([
+                       Section::make('Course FAQs')
+                            ->collapsible()
+                            ->collapsed()
+                            ->schema([
 
-                        Repeater::make('faqs')
-                                ->schema([  
+                                Repeater::make('faqs')
+                                    ->itemLabel(fn (array $state): ?string => $state['question'] ?? 'New FAQ')
+                                    ->schema([
 
-                                    TextInput::make('question')
-                                        ->label('Question')
-                                        ->placeholder('e.g. Do I need prior programming experience?')
-                                        ->required()
-                                        ->columnSpanFull(),
+                                        Grid::make(2)
+                                            ->schema([
 
-                                    RichEditor::make('answer')
-                                        ->label('Answer')
-                                        ->required()
-                                        ->toolbarButtons([
-                                            'bold',
-                                            'italic',
-                                            'bulletList',
-                                            'orderedList',
-                                            'link',
-                                            'undo',
-                                            'redo',
-                                        ])
-                                        ->columnSpanFull(),
+                                                TextInput::make('question')
+                                                    ->label('Question')
+                                                    ->placeholder('e.g. Do I need prior programming experience?')
+                                                    ->required(),
 
-                                ])
-                                ->columnSpanFull()
-                                ->collapsible()
-                                ->cloneable()
-                                ->reorderable()
-                                ->addActionLabel('Add FAQ'),
+                                                RichEditor::make('answer')
+                                                    ->label('Answer')
+                                                    ->required()
+                                                    ->toolbarButtons([
+                                                        'bold',
+                                                        'italic',
+                                                        'bulletList',
+                                                        'orderedList',
+                                                        'link',
+                                                        'undo',
+                                                        'redo',
+                                                    ]),
 
-                        ])
-                        ->columnSpanFull()
-                        ->visible(fn (Get $get): bool => $get('type') === 'course'),
+                                            ]),
 
+                                    ])
+                                    ->collapsible()
+                                    ->collapsed()
+                                    ->cloneable()
+                                    ->reorderable()
+                                    ->addActionLabel('Add FAQ'),
+
+                            ])
+                            ->columnSpanFull()
+                            ->visible(fn (Get $get) => $get('type') === 'course'),
                             // curriculum hero section 
-                    Repeater::make('curriculum_hero')
-                                ->label('Curriculum Hero')
-                                ->maxItems(1)
+                    Section::make('curriculum_hero')
+                                ->collapsible()
+                                ->collapsed()
                                 ->schema([
+                        Grid::make(3)
+                            ->schema([
 
                                     TextInput::make('title')
                                         ->required(),
 
                                     Textarea::make('description')
-                                        ->rows(4)
+                                        ->rows(2)
                                         ->required(),
 
                                     // FileUpload::make('image')
@@ -617,8 +630,9 @@ class PostForm
                                     //     ->disk('public')
                                     //     ->directory('curriculum-hero'),
 
-                                  FileUpload::make('curriculum-hero_image')
+                    FileUpload::make('curriculum-hero_image')
                         ->image()
+                        ->imagePreviewHeight('100')
                         ->disk('public')
                         ->visibility('public')
                         ->nullable()
@@ -659,11 +673,11 @@ class PostForm
                                 }
                         ),  
 
+                        ]),                                                    
                                 ])
                                 ->columnSpanFull()
                                 ->visible(fn (Get $get): bool => $get('type') === 'course'),
                             
-                                                    
         ]);
 
     }

@@ -16,4 +16,9 @@ class EditPost extends EditRecord
             DeleteAction::make(),
         ];
     }
+
+    public function hasStickyFormActions(): bool
+    {
+        return true;
+    }
 }

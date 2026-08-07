@@ -39,7 +39,9 @@ class Post extends Model
     'curriculum_hero',
     'roadmap_content',
     'career_roles',
-    "faqs"
+    "faqs",
+    "module"
+    
 ];
 protected $casts = [
     'tags' => 'array',

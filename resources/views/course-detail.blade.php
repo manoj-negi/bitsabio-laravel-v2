@@ -135,7 +135,7 @@
             <div class="row">
 
                 <div class="col-lg-9">
-                                     @php
+                    @php
                         $content = str_replace(
                             ['{{ location }}', '{{ location }}'],
                             isset($location) ? 'in ' . $location->name : '',
@@ -258,7 +258,7 @@
         </div>
     </div>
     {{-- Curriculum Preview  --}}
-    <section class="page-hero">
+    {{-- <section class="page-hero">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -301,7 +301,66 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+    {{-- @if (!empty($course->module))
+        {!! $course->module !!}
+    @endif --}}
+    @if (!empty($course->module))
+    <div id="module-preview">
+        {!! $course->module !!}
+    </div>
+@endif
+<div class="text-center mt-4">
+    <a href="{{ route('course.curriculum', $course->slug) }}"
+        class="fw-semibold text-primary text-decoration-none">
+        View Detailed Curriculum →
+    </a>
+</div>
+
+    <section class="page-hero">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <h3 class="text-center mb-3" data-aos="fade-up">
+                    Structured, Module-by-Module Learning
+                </h3>
+
+                <div class="container py-5">
+
+                    @if (!empty($course->module))
+                        @php
+                            $doc = new DOMDocument();
+                            libxml_use_internal_errors(true);
+                            $doc->loadHTML('<?xml encoding="utf-8" ?>' . $course->module);
+                            libxml_clear_errors();
+
+                            $xpath = new DOMXPath($doc);
+
+                            // Get all dvt-section divs
+                            $sections = $xpath->query("//div[contains(concat(' ', normalize-space(@class), ' '), ' dvt-section ')]");
+                        @endphp
+
+                        @foreach ($sections as $index => $section)
+                            @break($index >= 2)
+
+                            {!! $doc->saveHTML($section) !!}
+                        @endforeach
+                    @endif
+
+                    <div class="text-center mt-4">
+                        <a href="{{ route('course.curriculum', $course->slug) }}"
+                            class="fw-semibold text-primary text-decoration-none">
+                            View Detailed Curriculum →
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
     <!-- ========== ToolS and Technology ========== -->
     <section class="py-5 bg-light">
         <div class="container">
@@ -528,3 +587,190 @@
     @include('components.mainCourseForm')
 
 @endsection
+
+
+{{-- 
+
+
+<section class="section section-alt" id="curriculum">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Course Curriculum</div>
+      <h2>Structured, Module-by-Module Learning</h2>
+      <p>Every module builds on the last — from HTML fundamentals to MERN/PERN engineering, AI-powered development and your capstone project.</p>
+    </div>
+    <div class="curriculum accordion" id="curriculumAccordion">
+      <div class="acc-item open">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">01</div><div><b>HTML5, CSS3 &amp; Responsive Web Design</b><small>Foundations</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel" style="max-height:220px;">
+          <div class="acc-panel-inner">
+            <p>Build a strong foundation in semantic HTML5, modern CSS3 (Flexbox, Grid, animations), mobile-first responsive design and accessibility best practices used across every production website.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">02</div><div><b>JavaScript (ES6+) &amp; DOM Programming</b><small>Core Language</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>Variables, Functions &amp; Scope</li><li>ES6+ Syntax &amp; Destructuring</li><li>Promises &amp; Async/Await</li>
+              <li>DOM Manipulation</li><li>Fetch API &amp; JSON</li><li>Error Handling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">03</div><div><b>React.js &amp; Frontend Engineering</b><small>Frontend Framework</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>Components &amp; Props</li><li>Hooks (useState, useEffect)</li><li>React Router</li>
+              <li>Context API &amp; Redux</li><li>Forms &amp; Validation</li><li>Component Testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">04</div><div><b>Next.js &amp; TypeScript</b><small>Modern Frontend</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <p>Learn TypeScript for type-safe applications, then build production-grade apps with Next.js — server-side rendering, the App Router, API routes and static site generation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">05</div><div><b>Node.js &amp; Express.js</b><small>Backend Development</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>Node.js Runtime &amp; NPM</li><li>Express Routing &amp; Middleware</li><li>Error Handling</li>
+              <li>File Uploads</li><li>Environment Config</li><li>API Structuring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">06</div><div><b>MongoDB &amp; Mongoose (MERN)</b><small>NoSQL Database</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>Schema &amp; Model Design</li><li>CRUD Operations</li><li>Aggregation Pipelines</li>
+              <li>Indexing &amp; Performance</li><li>Relationships</li><li>Atlas Cloud Hosting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">07</div><div><b>PostgreSQL &amp; Prisma/Sequelize (PERN)</b><small>SQL Database</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>Relational Schema Design</li><li>Joins &amp; Transactions</li><li>ORM with Prisma/Sequelize</li>
+              <li>Migrations &amp; Seeding</li><li>Query Optimization</li><li>Cloud-Hosted Postgres</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">08</div><div><b>REST APIs &amp; GraphQL</b><small>API Development</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>REST API Design</li><li>API Versioning</li><li>GraphQL Schemas &amp; Resolvers</li>
+              <li>Apollo Server/Client</li><li>API Documentation</li><li>Rate Limiting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">09</div><div><b>Authentication, Security &amp; Testing</b><small>Production-Ready Apps</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>JWT &amp; OAuth 2.0</li><li>Password Hashing (bcrypt)</li><li>Role-Based Access Control</li>
+              <li>Unit Testing (Jest)</li><li>E2E Testing (Cypress)</li><li>OWASP Security Basics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">10</div><div><b>Git, Docker &amp; Cloud Deployment</b><small>DevOps for Full Stack</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>Git Branching &amp; PRs</li><li>Dockerizing Full Stack Apps</li><li>CI/CD with GitHub Actions</li>
+              <li>Deploying to AWS (EC2, Amplify)</li><li>Vercel &amp; Render Deployment</li><li>Environment &amp; Secrets Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">11</div><div><b>AI-Powered Full Stack Development (Bonus Module)</b><small>2026 Edge</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <ul>
+              <li>AI Coding Assistants (Copilot, Cursor)</li><li>Prompt-to-Code Workflows</li><li>OpenAI/Anthropic API Integration</li>
+              <li>Streaming AI Responses in React</li><li>RAG &amp; Vector Databases</li><li>AI Feature Cost &amp; Rate Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="acc-title"><div class="acc-badge">12</div><div><b>Capstone Project &amp; Interview Prep</b><small>Career Launch</small></div></div>
+          <svg class="acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <div class="acc-panel">
+          <div class="acc-panel-inner">
+            <p>Combine everything into one end-to-end capstone: a deployed full stack application with authentication, a database-backed API and an AI-powered feature — followed by DSA/mock interviews and resume review.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   </div>
+</section> --}}

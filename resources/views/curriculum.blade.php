@@ -210,7 +210,7 @@
     </section> --}}
 
     {{--  Curriculum Breakdown  --}}
-    <section class="page-hero">
+    {{-- <section class="page-hero">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -246,8 +246,10 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> --}}
+  @if (!empty($course->module))
+    {!! $course->module !!}
+@endif
     {{-- Industry Projects --}}
     <section class="py-5">
         <div class="container">
@@ -294,14 +296,14 @@
                 <div class="service-card-compact" data-aos="fade-up" data-aos-delay="100">
                     <h3>Practical Learning</h3>
                     <p class="color-liner-004ED0 fw-bold">Avg.
-                        Salary:{{ $course->average_salary['practical_learning'] ?? '' }}</p>
+                        Salary : {{ $course->average_salary['practical_learning'] ?? '' }}</p>
                     <p>Learn through hands-on coding, live projects, case studies, and real-world implementation rather than
                         just theory.</p>
                 </div>
 
                 <div class="service-card-compact" data-aos="fade-up" data-aos-delay="200">
                     <h3>Expert Mentorship</h3>
-                    <p class="color-liner-004ED0 fw-bold">Avg. Salary:
+                    <p class="color-liner-004ED0 fw-bold">Avg. Salary : 
                         {{ $course->average_salary['expert_mentorship'] ?? '' }}</p>
                     <p>Get guidance from experienced industry professionals who help you learn the latest technologies and
                         best practices.</p>
@@ -309,8 +311,8 @@
 
                 <div class="service-card-compact" data-aos="fade-up" data-aos-delay="300">
                     <h3>Job-Oriented Training</h3>
-                    <p class="color-liner-004ED0 fw-bold">Avg. Salary:
-                        {{ $course->average_salary['expert_mentorship'] ?? '' }}</p>
+                    <p class="color-liner-004ED0 fw-bold">Avg. Salary :
+                        {{ $course->average_salary['job_oriented'] ?? '' }}</p>
                     <p>Our curriculum is designed according to current industry requirements to make students job-ready.</p>
                 </div>
             </div>

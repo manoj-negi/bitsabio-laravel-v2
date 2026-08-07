@@ -334,6 +334,32 @@
   color:var(--muted);
 }
 
+/* ============ CURRICULUM ACCORDION ============ */
+.curriculum.accordion{max-width:900px;margin:0 auto;}
+.section-head{
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+.acc-item{border:1px solid var(--border);border-radius:var(--radius-md);margin-bottom:14px;overflow:hidden;background:#fff;}
+.acc-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;cursor:pointer;}
+.acc-head:hover{background:var(--surface-alt);}
+.acc-title{display:flex;align-items:center;gap:16px;}
+.acc-badge{
+  width:42px;height:42px;border-radius:12px;background:var(--grad-primary-soft);color:var(--purple-dark);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex:none;
+}
+.acc-title b{display:block;font-size:1.02rem;}
+.acc-title small{color:var(--text-muted);font-size:.78rem;}
+.acc-icon{width:22px;height:22px;flex:none;transition:transform .3s ease;color:var(--purple-dark);}
+.acc-item.open .acc-icon{transform:rotate(135deg);}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.acc-panel-inner{padding:0 26px 24px 84px;color:var(--text-muted);font-size:.94rem;}
+.acc-panel-inner ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
+.acc-panel-inner ul li{position:relative;padding-left:16px;}
+.acc-panel-inner ul li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--purple);}
+.curriculum-more{text-align:center;margin-top:30px;}
+
 @media(max-width:560px){
   .roadmap-view .cols{grid-template-columns:1fr;}
   .roadmap-view h1{font-size:28px;}
