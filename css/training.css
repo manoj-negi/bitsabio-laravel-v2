@@ -304,7 +304,7 @@
 
 /* ---- list item: bullet + two-column term/definition ---- */
 .roadmap-view .col li{
-  display:flex;
+  /* display:flex; */
   align-items:flex-start;
   gap:9px;
   font-size:13px;
